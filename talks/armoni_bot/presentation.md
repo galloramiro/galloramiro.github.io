@@ -21,7 +21,7 @@ author: Ramiro Gallo
 
 ### A little about me 
 
-<img src="/img/padawan.jpg" width="60%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/armoni_bot/img/padawan.jpg?raw=true" width="60%">
 
 --
 
@@ -34,7 +34,7 @@ author: Ramiro Gallo
 
 ### How armoniBot was born
 
-<img src="/img/togepi.gif" width="70%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/armoni_bot/img/togepi.gif?raw=true" width="70%">
 
 --
 
@@ -51,7 +51,7 @@ author: Ramiro Gallo
 
 ### How do I imagine it? 
 
-<img src="/img/imagination.gif" width="70%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/armoni_bot/img/imagination.gif?raw=true" width="70%">
 
 --
 
@@ -64,7 +64,7 @@ I imagine a bot that can give me:
 
 ### How do I split the work 
 
-<img src="/img/explaining-jack-black.png" width="70%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/armoni_bot/img/explaining-jack-black.png?raw=true" width="70%">
 
 --
 
@@ -86,7 +86,7 @@ Soo... I ask my self
 
 --
 
-<img src="/img/a-few-moments-latter.gif" width="100%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/armoni_bot/img/a-few-moments-latter.gif?raw=true" width="100%">
 
 --
 
@@ -292,16 +292,16 @@ Given a song tone in american notation we should return the harmonica tone, in a
 
 ---
 
-<img src="/img/thank-you.gif" width="80%" style="display: block; margin: 0 auto;">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/armoni_bot/img/thank-you.gif?raw=true" width="80%" style="display: block; margin: 0 auto;">
 
 <div style="text-align: center; margin-top: 20px;">
   <a href="https://github.com/galloramiro" style="margin-right: 10px;">
-    <img class="r-frame" src="/img/github.svg" width="25" style="background-color:white;" />
+    <img class="r-frame" src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/armoni_bot/img/github.svg?raw=true" width="25" style="background-color:white;" />
   </a>
   <a href="https://www.linkedin.com/in/ramirogallo/" style="margin-right: 10px;">
-    <img class="r-frame" src="/img/linked-in.svg" width="25" style="background-color:white;" />
+    <img class="r-frame" src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/armoni_bot/img/linked-in.svg?raw=true" width="25" style="background-color:white;" />
   </a>
   <a href="https://www.eurekalabs.io/">
-    <img class="r-frame" src="/img/eurekalabs.svg" width="25" style="background-color:white;" />
+    <img class="r-frame" src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/armoni_bot/img/eurekalabs.svg?raw=true" width="25" style="background-color:white;" />
   </a>
 </div>
