@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>ArmoniBot building something for my self, but in a sustainable way</title>
+
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="libs/reveal.js/4.3.1/reset.css">
+  <link rel="stylesheet" href="libs/reveal.js/4.3.1/reveal.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- highlight Theme -->
+  
+  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+  
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.3.1/plugin/chalkboard/style.css">
+	
+	
+	
+	
+
+
+
+  <!-- Revealjs Theme -->
+  
+  <link rel="stylesheet" href="libs/reveal.js/4.3.1/theme/night.css" id="theme">
+  
+  
+
+  <link rel="stylesheet" href="libs/styles/tasklist.css">
+	<link rel="stylesheet" href="libs/styles/iota.css">
+	<link rel="stylesheet" href="libs/styles/layout.css">
+
+
+  <!-- Revealjs Theme -->
+  
+
+   <!-- css list -->
+	
+
+   
+
+</head>
+
+<body>
+
+   
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+    <section>
+        <section >
+            <h2>ArmoniBot:</h2>
+<h3>bulding something for my self, but in a sustainable way</h3>
+
+            </section>
+        
+            <section >
+                <h3>What are we gonna cover today?</h3>
+<ul>
+<li class="fragment">A little about me</li>
+<li class="fragment">How armoniBot was born</li>
+<li class="fragment">How do I imagine it? </li>
+<li class="fragment">How do I split and organize the work and why</li>
+<li class="fragment">What problems did I find and what did I do?</li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h3>A little about me</h3>
+<img src="/img/padawan.jpg" width="60%">
+            </section>
+        
+            <section >
+                <ul>
+<li>Ramiro Gallo</li>
+<li class="fragment">Play with python since 2016</li>
+<li class="fragment">Working full time with python since 2019</li>
+<li class="fragment">Technical Lead in Eureka Labs</li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h3>How armoniBot was born</h3>
+<img src="/img/togepi.gif" width="70%">
+            </section>
+        
+            <section >
+                <h3>Where your ideas come from?</h3>
+
+            </section>
+        
+            <section >
+                <ul>
+<li>Curiosity</li>
+<li class="fragment">Wanting to automate things</li>
+<li class="fragment">Wanting to better understand something</li>
+<li class="fragment">From a lot of over the place ideas </li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h3>How do I imagine it?</h3>
+<img src="/img/imagination.gif" width="70%">
+            </section>
+        
+            <section >
+                <p>I imagine a bot that can give me:</p>
+<ul>
+<li class="fragment">The corret harmonica tone for play a song</li>
+<li class="fragment">The penthatonic of any tone</li>
+<li class="fragment">An image with a song if I send the notes</li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h3>How do I split the work</h3>
+<img src="/img/explaining-jack-black.png" width="70%">
+            </section>
+        
+            <section >
+                <h3>Do you think what’s the more convinient way to split the work?</h3>
+
+            </section>
+        
+            <section >
+                <h4>One key of being able to daily enjoy works is learn how to be good with our future selves</h4>
+
+            </section>
+        
+            <section >
+                <p>Soo… I ask my self</p>
+<ul>
+<li class="fragment">What are the key part and features of a bot like this?</li>
+<li class="fragment">No mutch thinking</li>
+<li class="fragment">No design patterns</li>
+<li class="fragment">No best practices</li>
+<li class="fragment">Just free writing in a .md file</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <img src="/img/a-few-moments-latter.gif" width="100%">
+            </section>
+        
+            <section >
+                <ul>
+<li>I have 7 tasks to build my v 0.1</li>
+<li class="fragment">I satart writing issues for each one</li>
+<li class="fragment">Each issue should have
+<ul>
+<li class="fragment">Description</li>
+<li class="fragment">Acceptance criteria</li>
+<li class="fragment">Utils</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Starting from scratch?</h3>
+<ul>
+<li class="fragment"><a href="https://github.com/galloramiro/python-template">Python template</a></li>
+<li class="fragment">DockerFile</li>
+<li class="fragment">pyproject.toml</li>
+<li class="fragment">Makefile</li>
+<li class="fragment">Logging config</li>
+<li class="fragment">.env.template</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h3>Issue 1 Create a  Telegram Bot</h3>
+<pre><code class="language-md">## Create a  Telegram Bot
+We need a Telegram Bot redy to by used.
+
+### AC
+- Bot with hello command 
+- Config file to store the token
+
+### Utils
+- [Python Telegram Bot documentation](https://docs.python-telegram-bot.org/en/v21.4/)
+- [Python Telegram Example](https://github.com/WinnaZ/PyCampNewbieBot)
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h3>Some surprise</h3>
+<ul>
+<li class="fragment">Never made a telegram bot</li>
+<li class="fragment">Tryit to dockerize from start</li>
+<li class="fragment">Didn’t work</li>
+<li class="fragment">Give it a few tries</li>
+<li class="fragment">Create an issue for future resolution pointintg to the question I create on the repo</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <ul>
+<li><a href="https://github.com/galloramiro/armonibot/issues/8">New ticket with tec debdt</a></li>
+<li><a href="https://github.com/galloramiro/armonibot/pull/9">PR</a></li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2>Issue 2</h2>
+<pre><code class="language-md">## Create the harmonica object
+We need an harmonica object.
+This object should contain the following layers of information:
+- Slot number
+- Slot note in American notation
+- Slot note in Latin notation
+
+### Utils
+- [Harmonica notes](https://www.harmonica.com/bending-tool/)
+- [Eng vs Latin notation](https://creatumusica.art/2022/02/25/como-leer-el-cifrado-americano/)
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h3>Some surprise</h3>
+<ul>
+<li class="fragment">How can I show this in a good way with out overingeering the thing?</li>
+<li class="fragment">Would be easier to do this on a dict?</li>
+<li class="fragment">Should I use a proper class?</li>
+<li class="fragment">A dataclass would be ok?</li>
+<li class="fragment">It’s really matter all this back anf forward?</li>
+<li class="fragment">End up forggoting some things and need a 2nd PR to fix</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <ul>
+<li><a href="https://github.com/galloramiro/armonibot/pull/11">PR</a></li>
+<li><a href="https://github.com/galloramiro/armonibot/pull/12">PR</a></li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2>Issue 3</h2>
+<pre><code class="language-md">## Persisting the harmonicas data
+Wee need a good way to persist the harmonica objects.
+
+### AC
+- Implement a way to persist the data
+- Leave one harmonica tone as example 
+- Implement a way to transform that data into the harmonica object develop in #2  
+
+### Utils
+- [Harmonica notes for each entonation](https://www.harmonica.com/bending-tool/)
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h3>Some surprise</h3>
+<ul>
+<li class="fragment">Create a simple json with 2 harmonicas for testing porpouses</li>
+<li class="fragment">Remember the network problem on the first issue?</li>
+<li class="fragment">Creating a docker-compose the thing</li>
+<li class="fragment">Create the first tests</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <ul>
+<li><a href="https://github.com/galloramiro/armonibot/pull/13">PR</a></li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2>Issue 4</h2>
+<pre><code class="language-md">## Load all the harmonica tones
+Using the feature develop in #3 we need to store all the harmonica tones
+
+### AC
+- A tone loaded
+- B tone loaded 
+- C tone loaded
+- D tone loaded 
+- E tone loaded
+- F tone loaded 
+- G tone loaded 
+
+### Utils
+- [Harmonica notes for each entonation](https://www.harmonica.com/bending-tool/)
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h3>Some surprise</h3>
+<ul>
+<li class="fragment">Do I need this right now?</li>
+<li class="fragment">It’s more important to advance with the features thatn the data</li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2>Issue 5</h2>
+<pre><code class="language-md">## Showing the harmonica
+In this POC we are gonna start by showing the harmonica in plain text.
+This would be upgraded on a future version to be more phone friendly.
+
+This function should take a note in american notation and return the object with all the notes.
+
+### AC
+- A way to print harmonica with all the notes
+- Functionality connected to a telegram bot command
+
+### Utils
+- [Example of a conversation bot](https://docs.python-telegram-bot.org/en/v21.4/examples.conversationbot.html)
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h3>Some surprise</h3>
+<ul>
+<li class="fragment">How can I show this thing?</li>
+<li class="fragment">Would be equaly shown on console that on telegram?</li>
+<li class="fragment">How this would work?</li>
+<li class="fragment">Wasn’t perfect, but acceptable for v0.1</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <ul>
+<li><a href="https://github.com/galloramiro/armonibot/pull/14">PR</a></li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2>Issue 6</h2>
+<pre><code class="language-md">## Getting the correct harmonica for the base tone of a song
+Given a song tone in american notation we should return the harmonica tone, in american notation, that we should use to play that song.
+
+### AC
+- Given a tone return the correct harmonica tone to use 
+
+### Utils
+- [Harmonica theory, the circle of 5](https://www.harmonica.com/harmonica-keys-for-beginners/) 
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h3>Some surprise</h3>
+<ul>
+<li class="fragment">How do I translate the theory to code?</li>
+<li class="fragment">How do I test this if it’s on a command and need telegram objects?</li>
+<li class="fragment">Do I wanna mock all the things right now?</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <ul>
+<li><a href="https://github.com/galloramiro/armonibot/pull/17">PR</a></li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>What are the benefits of working like this?</h3>
+<ul>
+<li class="fragment">You cand reproduce this in a no brainer way</li>
+<li class="fragment">lot’s of small easy and rewarding steps</li>
+<li class="fragment">Felxibility to change in the middle</li>
+<li class="fragment">Dealing with only one problem at a time</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <img src="/img/thank-you.gif" width="80%" style="display: block; margin: 0 auto;">
+<div style="text-align: center; margin-top: 20px;">
+  <a href="https://github.com/galloramiro" style="margin-right: 10px;">
+    <img class="r-frame" src="/img/github.svg" width="25" style="background-color:white;" />
+  </a>
+  <a href="https://www.linkedin.com/in/ramirogallo/" style="margin-right: 10px;">
+    <img class="r-frame" src="/img/linked-in.svg" width="25" style="background-color:white;" />
+  </a>
+  <a href="https://www.eurekalabs.io/">
+    <img class="r-frame" src="/img/eurekalabs.svg" width="25" style="background-color:white;" />
+  </a>
+</div>
+            </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  <div class="line top"></div>
+  <div class="line bottom"></div>
+  <div class="line left"></div>
+  <div class="line right"></div>
+
+  <script src="libs/reveal.js/4.3.1/reveal.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/notes/notes.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/markdown/markdown.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/highlight/highlight.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/math/math.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/fullscreen/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/animate/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/animate/svg.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/Chart.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3/d3.v3.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3.patch.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3/queue.v1.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3/topojson.v1.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/function-plot.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/customcontrols/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/embed-tweet/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/chart/chart.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/chart/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/verticator/verticator.js"></script>
+
+<script src="libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/search/search.js"></script>
+
+<script src="libs/reveal.js/4.3.1/plugin/chalkboard/plugin.js"></script>
+
+<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+  
+
+<script>
+  const printPlugins = [
+      RevealNotes,
+      RevealHighlight,
+      RevealMath.MathJax3,
+      RevealAnimate,
+      RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				
+				// poll
+				// question
+				// seminar
+				Verticator 
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+      controlsTutorial: true,
+      controlsLayout: 'bottom-right',
+      controlsBackArrows: 'faded',
+      progress: true,
+      slideNumber: false,
+      //#showSlideNumber "all" "print" "speaker"
+      hash: true, //# hash: false,
+      //# respondToHashChanges: true,
+      //# history: false,
+      keyboard: true,
+      //#keyboardCondition: null,
+      overview: true,
+      center: true,
+      touch: true,
+      loop: false,
+      rtl: false,
+      //#navigationMode: 'default', linear grid
+      shuffle: false,
+      fragments: true,
+      fragmentInURL: false,
+      embedded: false,
+      help: true,
+      //#pause: true
+      showNotes: false,
+      autoPlayMedia: false, // TODO fix this to a nullable value
+      //#preloadIframes: null. true false
+      //#autoAnimate: true
+      //#autoAnimateMatcher: null,
+      //#autoAnimateEasing: 'ease',
+      //autoAnimateDuration: 1.0,
+      //#autoAnimateUnmatched: true
+      //#autoAnimateStyles: []
+      autoSlide: 0, // TODO fix this to a falseable value
+      autoSlideStoppable: true,
+      autoSlideMethod: '0',
+      defaultTiming: 120,
+      mouseWheel: false,
+      //#previewLinks: false
+      //#postMessage: true, // TODO : this can cause issues with the vscode api ???
+      //#postMessageEvents: false,
+      //#focusBodyOnPageVisibilityChange: true,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      //#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+      //#pdfSeparateFragments: true,
+      //#pdfPageHeightOffset: -1,
+      viewDistance: 3,
+      //#mobileViewDistance: 2,
+      display: 'block',
+      //#hideInactiveCursor: true,
+      //#hideCursorTime: 5000
+
+      // Parallax Background
+      parallaxBackgroundImage: '',
+      parallaxBackgroundSize: '',
+      parallaxBackgroundHorizontal: 0,
+      parallaxBackgroundVertical: 0,
+
+      //Presentation Size
+      width: 960,
+			height: 700,
+			margin: 0.04,
+      minScale: 0.2,
+      maxScale: 2,
+      disableLayout: false,
+
+      audio: {
+        prefix: 'audio/', // audio files are stored in the "audio" folder
+        suffix: '.ogg', // audio files have the ".ogg" ending
+        textToSpeechURL: null, // the URL to the text to speech converter
+        defaultNotes: false, // use slide notes as default for the text to speech converter
+        defaultText: false, // use slide text as default for the text to speech converter
+        advance: 0, // advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+        autoplay: false, // automatically start slideshow
+        defaultDuration: 5, // default duration in seconds if no audio is available
+        defaultAudios: true, // try to play audios with names such as audio/1.2.ogg
+        playerOpacity: 0.05, // opacity value of audio player if unfocused
+        playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+        startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+      },
+      
+      chalkboard: { // font-awesome.min.css must be available
+        //src: "chalkboard/chalkboard.json",
+        storage: "chalkboard-demo",
+      },
+      
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+      {
+        icon: '<i class="fa fa-pen-square"></i>',
+        title: 'Toggle chalkboard (B)',
+        action: 'RevealChalkboard.toggleChalkboard();'
+      },
+      {
+        icon: '<i class="fa fa-pen"></i>',
+        title: 'Toggle notes canvas (C)',
+        action: 'RevealChalkboard.toggleNotesCanvas();'
+      }
+      
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+</script>
+
+</body>
+
+</html>
