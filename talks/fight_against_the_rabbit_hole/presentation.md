@@ -5,7 +5,7 @@ author: Ramiro Gallo
 ---
 
 
-<img src="/img/rabbit_hole.gif" width="70%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/rabbit_hole.gif?raw=true" width="70%">
 
 ### Hello hello and welcome to
 ## Fight against the rabit hole {class="fragment"}
@@ -28,7 +28,7 @@ The rabbit hole could be several things, but mostly it's what happen when you ar
 
 --
 
-<img src="/img/who_are_you_caterpiller.gif" width="70%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/who_are_you_caterpiller.gif?raw=true" width="70%">
 
 ### Where I ussually find rabbit holes? 
 
@@ -94,7 +94,7 @@ No... you we are just humans, but we could see this way before it happens, and t
 
 ---
 
-<img src="/img/twins.gif" width="70%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/twins.gif?raw=true" width="70%">
 
 ### Ticket Refinement
 This would become one of your best friends
@@ -119,7 +119,7 @@ This would become one of your best friends
 
 ---
 
-<img src="/img/caterpiller_what_will_i_do.gif" width="70%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/caterpiller_what_will_i_do.gif?raw=true" width="70%">
 
 #### Yep... I know... I know..
 
@@ -155,18 +155,18 @@ But, with time, the tickets would start coming more completed and the time would
 
 --
 
-<img src="/img/mad_hatter_smile.gif" width="70%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/mad_hatter_smile.gif?raw=true" width="70%">
 
 ---
 
-<img src="/img/alice_vs_jabberwocky.gif" width="70%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/alice_vs_jabberwocky.gif?raw=true" width="70%">
 
 
 ## The in the sh$1t hole way
 
 --
 
-<img src="/img/unclear_ticket_appear.gif" width="70%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/unclear_ticket_appear.gif?raw=true" width="70%">
 
 ### Unclear ticket appear... {class="fragment"}
 
@@ -182,7 +182,7 @@ No.. There is no need to do any of that hahah {class="fragment"}
 
 ---
 
-<img src="/img/caterpiller_questions.gif" width="70%"> 
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/caterpiller_questions.gif?raw=true" width="70%"> 
 
 
 ### The power of questions
@@ -211,7 +211,7 @@ No.. There is no need to do any of that hahah {class="fragment"}
 
 #### And one day I had to implement some of this
 
-<img src="/img/questions_on_implementing_ticket.png" width="80%"> {class="fragment"}
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/questions_on_implementing_ticket.png?raw=true" width="80%"> {class="fragment"}
 
 --
 
@@ -224,7 +224,7 @@ No.. There is no need to do any of that hahah {class="fragment"}
 
 ---
 
-<img src="/img/slay_thejabberwocky.gif" width="80%"> 
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/slay_thejabberwocky.gif?raw=true" width="80%"> 
 
 
 ### slay the jabberwocky
@@ -252,7 +252,7 @@ Let's read that, sometimes we just lost focus {class="fragment"}
 
 --
 
-<img src="/img/mad_hatter_im_fine.gif" width="80%"> 
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/mad_hatter_im_fine.gif?raw=true" width="80%"> 
 
 --
 
@@ -265,7 +265,7 @@ You would not belive how many times the solution would come from just talking ou
 
 --
 
-<img src="/img/tea_party.gif" width="80%">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/tea_party.gif?raw=true" width="80%">
 
 --
 
@@ -291,16 +291,16 @@ But when I do I work happier and spent more time in the flow {class="fragment"}
 ---
 
 
-<img src="/img/thank-you.gif" width="80%" style="display: block; margin: 0 auto;">
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/thank-you.gif?raw=true" width="80%" style="display: block; margin: 0 auto;">
 
 <div style="text-align: center; margin-top: 20px;">
   <a href="https://github.com/galloramiro" style="margin-right: 10px;">
-    <img class="r-frame" src="/img/github.svg" width="25" style="background-color:white;" />
+    <img class="r-frame" src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/github.svg?raw=true" width="25" style="background-color:white;" />
   </a>
   <a href="https://www.linkedin.com/in/ramirogallo/" style="margin-right: 10px;">
-    <img class="r-frame" src="/img/linked-in.svg" width="25" style="background-color:white;" />
+    <img class="r-frame" src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/linked-in.svg?raw=true" width="25" style="background-color:white;" />
   </a>
   <a href="https://www.eurekalabs.io/">
-    <img class="r-frame" src="/img/eurekalabs.svg" width="25" style="background-color:white;" />
+    <img class="r-frame" src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/eurekalabs.svg?raw=true" width="25" style="background-color:white;" />
   </a>
 </div>
