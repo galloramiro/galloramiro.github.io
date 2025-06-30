@@ -1,99 +1,113 @@
 # Client
-# Client | Create base class with basic configurations around paths and so on
-## Description
-This would be the class in charge of retriving the data from the jrnl.
-In this case we would need a class that can access to a configurable route on the machine using this script. This variable need to be on the config file and imported on this class, and needs to be a private attribute.
-Also this class must have the name of the methods to develop and the first method implemented that it's gonna be the one used to find the correct folder by month of the current year and will return all the files absoluthe paths.
+## Client | Create Base Class with Basic Configurations Around Paths and So On
+### Description
+This class is responsible for retrieving data from the journal. It should access a configurable route on the machine using this script. This variable needs to be in the config file and imported into this class as a private attribute. The class must include method names to be developed and the first method implemented, which will find the correct folder by month of the current year and return all the files' absolute paths.
 
-## Acceptance Criteria
-- LocalClient class
-- Configurable `_JRNL_DIR` private variable
-- `_get_file_path_by_month` implemented and tested
-- `get_jrnl_files_path_by_month` with NotImplementd error
-- `get_monthly_habits_by_month` with NotImplementd error
-- `get_monthly_habits_files_paths_by_year` with NotImplemented error
-- `get_monthly_titles_by_month` with NotImplementd error
-- `get_monthly_titles_files_paths_by_year` with NotImplementd error
+### Acceptance Criteria
+- `LocalClient` class created.
+- Configurable `_JRNL_DIR` private variable added.
+- `_get_file_path_by_month` method implemented and tested.
+- `get_jrnl_files_path_by_month` method with `NotImplemented` error.
+- `get_monthly_habits_by_month` method with `NotImplemented` error.
+- `get_monthly_habits_files_paths_by_year` method with `NotImplemented` error.
+- `get_monthly_titles_by_month` method with `NotImplemented` error.
+- `get_monthly_titles_files_paths_by_year` method with `NotImplemented` error.
 
-## Info and Links
-- [Gateway documentation]()
-- [example data]()
+- [Place to Work On](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/client)
+- [Example Data](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/jrnl-dir)
+- [Example Scripts](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/scripts)
 
-# Client | Create function that retrieves files path by month // TODO FIX TITLE ON GITHUB
-## Description
-This function would be the one retriving all the absolute path for only the jrnl files, no monthly titles, no monthly habits.
-This files would be .txt files, so you can laverage that. If you wanna go above and beyond you can play with the naming convention that jrnls has to avoid having some extra txt that's not what you want.
+### Dependencies
+- #2
 
-In this case we would not retreive all the files open at the same time because would not make sense, instead we are gonna delegate this to the services that would choose how to handle this in convination with the other tools.
+## Client | Implement get_jrnl_files_path_by_month
+### Description
+This function retrieves all the absolute paths for journal files, excluding monthly titles and habits. The files are `.txt` files, and naming conventions can be used to filter out irrelevant files. The function should not open all files at once but delegate this to services that handle it in combination with other tools.
 
-## Acceptance Criteria
-- `get_jrnl_files_path_by_month` implemented 
-- test cases of happy path
-- custom error for not being able to find  any files
-- test for the raising of the error
+### Acceptance Criteria
+- `get_jrnl_files_path_by_month` function implemented.
+- Test cases for the happy path.
+- Custom error for not finding any files.
+- Tests for raising the custom error.
 
-## Info and Links
-- [example data]()
-- [place to work on]()
+### Info and Links
+- [Place to Work On](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/client)
+- [Example Data](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/jrnl-dir)
+- [Example Scripts](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/scripts)
 
-# Client | Create function that retrieves the monthly habits by month
-## Description
-Here we are gona brint the monthly_habits.csv for the given month.
-This is a pretty slim function and with no big intricacies.
+### Dependencies
+- #4 
 
-## Acceptance Criteria
-- `get_monthly_habits_by_month` implementend
-- unit tests 
-- Custom error for not finding any file
-- test for the error raising
+## Client | Implement get_monthly_habits_by_month
+### Description
+This function retrieves the `monthly_habits.csv` file for the given month. It is a straightforward function with no significant complexities.
 
-## Info and Links
-- [example data]()
-- [place to work on]()
+### Acceptance Criteria
+- `get_monthly_habits_by_month` function implemented.
+- Unit tests written.
+- Custom error for not finding any file.
+- Tests for raising the custom error.
 
-# Client | Create function that retrieves all the monthly habits by year
-## Description
-In this case we are gonna follow a similar approach to the `get_jrnl_file_path_by_month` where we are gona only return the absolute path for each file.
-Does not make sense to return 12 files full of data on memory, it's better to leave the service to know how to implement and use this.
+### Info and Links
+- [Place to Work On](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/client)
+- [Example Data](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/jrnl-dir)
+- [Example Scripts](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/scripts)
 
-## Acceptance Criteria
-- `get_monthly_habits_files_paths_by_year` implemented
-- Test cases for this on happy path
-- Test cases for this missing files
-- Custom error for not finding any files
-- Test on the error raising
+### Dependencies
+- #4 
 
-## Info and Links
-- [example data]()
-- [place to work on]()
+## Client | Implement get_monthly_habits_files_paths_by_year
+### Description
+This function returns the absolute paths for each `monthly_habits.csv` file for the year. It should not return all files' data in memory but leave it to the service to handle.
 
-# Client | Create function that retrieves the monthly titles by month 
-## Description
-Here we are gona brint the monthly_titles.csv for the given month.
-This is a pretty slim function and with no big intricacies.
+### Acceptance Criteria
+- `get_monthly_habits_files_paths_by_year` function implemented.
+- Test cases for the happy path.
+- Test cases for missing files.
+- Custom error for not finding any files.
+- Tests for raising the custom error.
 
-## Acceptance Criteria
-- `get_monthly_titles_by_month` implementend
-- unit tests 
-- Custom error for not finding any file
-- test for the error raising
+### Info and Links
+- [Place to Work On](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/client)
+- [Example Data](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/jrnl-dir)
+- [Example Scripts](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/scripts)
 
-## Info and Links
-- [example data]()
-- [place to work on]()
+### Dependencies
+- #4 
 
-# Client | Create function that retrieves all the monthly titles by year
-## Description
-In this case we are gonna follow a similar approach to the `get_jrnl_file_path_by_month` where we are gona only return the absolute path for each file.
-Does not make sense to return 12 files full of data on memory, it's better to leave the service to know how to implement and use this.
+## Client | Implement get_monthly_titles_by_month
+### Description
+This function retrieves the `monthly_titles.csv` file for the given month. It is a straightforward function with no significant complexities.
 
-## Acceptance Criteria
-- `get_monthly_titles_files_paths_by_year` implemented
-- Test cases for this on happy path
-- Test cases for this missing files
-- Custom error for not finding any files
-- Test on the error raising
+### Acceptance Criteria
+- `get_monthly_titles_by_month` function implemented.
+- Unit tests written.
+- Custom error for not finding any file.
+- Tests for raising the custom error.
 
-## Info and Links
-- [example data]()
-- [place to work on]()
+### Info and Links
+- [Place to Work On](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/client)
+- [Example Data](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/jrnl-dir)
+- [Example Scripts](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/scripts)
+
+### Dependencies
+- #4
+
+## Client | Implement get_monthly_titles_files_paths_by_year
+### Description
+This function returns the absolute paths for each `monthly_titles.csv` file for the year. It should not return all files' data in memory but leave it to the service to handle.
+
+### Acceptance Criteria
+- `get_monthly_titles_files_paths_by_year` function implemented.
+- Test cases for the happy path.
+- Test cases for missing files.
+- Custom error for not finding any files.
+- Tests for raising the custom error.
+
+### Info and Links
+- [Place to Work On](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/client)
+- [Example Data](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/jrnl-dir)
+- [Example Scripts](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/scripts)
+
+### Dependencies
+- #4

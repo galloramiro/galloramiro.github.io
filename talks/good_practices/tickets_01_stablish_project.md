@@ -1,63 +1,63 @@
 # Project 
-# Create project using template
-## Description
-Create a project using the python template project form Ramiro Gallo repo.
-Update all the necesary data inside the project, like base dependencies, names and references, and update the readme.
+## Create Project Using Template
+### Description
+Create a project using the Python template project from Ramiro Gallo's repository. Update all necessary data inside the project, such as base dependencies, names, and references. Also, update the README file.
 
-## Acceptance Criteria
-- Project created with working commands
-- Readme updated
-- References of name updated
-- Tweek the config if necessary 
+### Acceptance Criteria
+- Project created with working commands.
+- README file updated.
+- References and names updated.
+- Configuration tweaked if necessary.
 
-## Info and Links
-- [python-template]()
-- [Documentation]()
+### Info and Links
+- [Python Template](#)
+- [Documentation](#)
 
-# Create structure
-## Description
-Create the base structure for the project, this would include:
-- Base files that would be worked on
-- Testing folders 
-- Adding commands to the makefile to run the different type of tests
+## Create Structure
+### Description
+Create the base structure for the project, including:
+- Base files to be worked on.
+- Testing folders.
+- Commands in the Makefile to run different types of tests.
 
-## Acceptance Criteria
-- client folder with a init with a brief documentaiton on it
-- data_processor folder with a init with a brief documentation on it
-- repository folder with a init with a brief documentation on it
-- graphic_tool folder with a init with a brief documentation on it
-- service folder with a init with a brief documentation on it
-- unit test folder 
-- integration test folder
+### Acceptance Criteria
+- `client` folder with an `__init__.py` file and brief documentation.
+- `data_processor` folder with an `__init__.py` file and brief documentation.
+- `repository` folder with an `__init__.py` file and brief documentation.
+- `graphic_tool` folder with an `__init__.py` file and brief documentation.
+- `service` folder with an `__init__.py` file and brief documentation.
+- `unit_test` folder.
+- `integration_test` folder.
 
-## Info and Links
-- [github repository]()
-- [Documentation]()
+### Info and Links
+- [GitHub Repository](#)
+- [Documentation](#)
 
-# Add examples of files to use
-## Description
-In order to quickly develop this project and being able to give certanty to the people that it's working we need to provide a lot of data to test this.
-Each class should have files that help them develop, and understand the inputs and outputs.
-To accomplish that we would need the following things
+## Add Examples of Files to Use
+### Description
+Provide data examples to facilitate quick development and ensure the project is working correctly. Each class should have files that help developers understand the inputs and outputs.
 
-## Acceptance Criteria
-- 30 different examples of regular day jrnls 
-    - Day as title
-    - Contain PositiveHabits with multiple entries
-    - Contain NegativeHabits with multiple entries
-    - Conaint Health with multiple entries 
-    - Contain ConvicConditioning with multiple entries
-    - Contain DailyTasks with multiple items
-    - Contain Journaling with multiple entries 
-- MontlyHabits
-    - One month of data
-    - Multiple entries for negative habits
-    - Multiple entries for positive habits
-    - Multiple netries for convict conditioning
-    - multiple entries for health 
-- MonthlyTitles
-    - One month of data
-    - multiple timestamp for each day
-    - multiple titles for each day
+### Steps
+1. Create 30 different examples of regular day journals:
+    - Day as title.
+    - Contain `PositiveHabits` with multiple entries.
+    - Contain `NegativeHabits` with multiple entries.
+    - Contain `Health` with multiple entries.
+    - Contain `ConvictConditioning` with multiple entries.
+    - Contain `DailyTasks` with multiple items.
+    - Contain `Journaling` with multiple entries.
+2. Create `MonthlyHabits`:
+    - One month of data.
+    - Multiple entries for negative habits.
+    - Multiple entries for positive habits.
+    - Multiple entries for convict conditioning.
+    - Multiple entries for health.
+3. Create `MonthlyTitles`:
+    - One month of data.
+    - Multiple timestamps for each day.
+    - Multiple titles for each day.
 
-
+### Acceptance Criteria
+- 30 different examples of regular day journals.
+- `MonthlyHabits` with one month of data and multiple entries for each category.
+- `MonthlyTitles` with one month of data, multiple timestamps, and titles for each day.

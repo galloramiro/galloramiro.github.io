@@ -1,52 +1,59 @@
 # Repository
-# Repository | Install dependencies  // TODO: REMOVE THIS TICKET FROM PROJECT, WONT DO
 
-# Repository | Create, configure and document CsvRepository class  // TODO: FIX TITLE ON GITHUB
-## Description
-This would be the class incharge of geting the datacalss that we create and store it as csv files.
-The files should live in the folder of the month that the data belongs to. 
-The LocalClient class would have a similar implementation on the path laveraging a variable from the config file, you can take inspiration on that.
+## Repository | Create, configure and document CsvRepository class
+### Description
+This would be the class in charge of getting the dataclass that we create and store it as CSV files. The files should live in the folder of the month that the data belongs to. The `LocalClient` class would have a similar implementation on the path leveraging a variable from the config file, you can take inspiration on that.
 
-## Acceptance Criteria
-- Class created with some documentation on the porpuse
+### Acceptance Criteria
+- Class created with some documentation on the purpose
 - `save_monthly_habits_rows` with a `NotImplementedError`
 - `save_monthly_titles_rows` with a `NotImplementedError`
 
-## Info and Links
-- [LocalClient]()
-- [Output files]()
+### Info and Links
+- [Place to Work On](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/repository)
+- [Example Data](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/jrnl-dir)
+- [Example Scripts](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/scripts)
+- [LocalClient](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/client)
 
-# Repository | Implement save_monthly_habits_rows // TODO: FIX TITLE ON GITHUB
-## Description
-We need receive a list of MonthlyHabitsRow and we need to save the data into a CSV file.
-For this we can laverage the built in libraty of python, it's a quick save.
+## Repository | Implement save_monthly_habits_rows
+### Description
+We need to receive a list of MonthlyHabitsRow and we need to save the data into a CSV file. For this, we can leverage the built-in library of Python, it's a quick save.
 
-The particularity of this function would be holding the poroper naming for the file, and the proper place.
-The name should be `monthly_habits_data.csv` and should be saved on the folder that the data comming belongs.
+The particularity of this function would be holding the proper naming for the file, and the proper place. The name should be `monthly_habits_data.csv` and should be saved in the folder that the data coming belongs.
 
-## Acceptance Criteria
+### Acceptance Criteria
 - `save_monthly_habits_rows` implemented
 - Custom error
 - tests
 
-## Info and Links
-- [Output]()
-- [MonthlyHabitsRow]()
+### Info and Links
+- [Place to Work On](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/repository)
+- [Example Data](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/jrnl-dir)
+- [Example Scripts](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/scripts)
+- [LocalClient](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/client)
 
-# Repository | Implement save_monthly_titles_rows // TODO: FIX TITLE ON GITHUB
-## Description
-We need receive a list of MonthlyTitlesRow and we need to save the data into a CSV file.
-For this we can laverage the built in libraty of python, it's a quick save.
+### Dependencies
+- #14
+- #11
 
-The particularity of this function would be holding the poroper naming for the file, and the proper place.
-The name should be `monthly_titles_data.csv` and should be saved on the folder that the data comming belongs.
+## Repository | Implement save_monthly_titles_rows
+### Description
+We need to receive a list of MonthlyTitlesRow and we need to save the data into a CSV file. For this, we can leverage the built-in library of Python, it's a quick save.
 
-## Acceptance Criteria
+The particularity of this function would be holding the proper naming for the file, and the proper place. The name should be `monthly_titles_data.csv` and should be saved in the folder that the data coming belongs.
+
+### Acceptance Criteria
 - `save_monthly_titles_rows` implemented
 - Custom error
 - tests
 
-## Info and Links
-- [Output]()
-- [MonthlyTitlesRow]()
 
+### Info and Links
+- [Place to Work On](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/repository)
+- [Example Data](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/jrnl-dir)
+- [Example Scripts](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples/scripts)
+- [LocalClient](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/src/client)
+
+### Dependencies
+- #14
+- #11
