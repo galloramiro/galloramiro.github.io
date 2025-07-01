@@ -12,44 +12,78 @@
       padding: 0;
     }
     .container {
+      max-width: 1200px;
       padding: 20px;
+      margin: auto;
+      box-sizing: border-box;
     }
     .about {
       display: flex;
       align-items: center;
-      margin-bottom: 20px;
+      justify-content: space-between;
+      height: 40vh; /* Occupies 40% of the page height */
+      padding: 20px;
+      box-sizing: border-box;
+      gap: 20px;
+    }
+    .about div {
+      flex-basis: 65%; /* Text occupies 65% of the width */
+      padding: 20px;
     }
     .about img {
-      width: 150px;
-      border-radius: 50%;
-      margin-right: 20px;
+      flex-basis: 35%; /* Image occupies 35% of the width */
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* Shrinks the image to fit */
+      border-radius: 10px;
     }
     .talks {
-      margin-bottom: 20px;
-    }
-    .talks a {
-      text-decoration: none;
-      color: #007BFF;
+      height: 40vh; /* Occupies 40% of the page height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
     }
     .connect {
+      height: 10vh; /* Occupies 10% of the page height */
       display: flex;
+      justify-content: center;
+      align-items: center;
       gap: 10px;
+      padding: 20px;
+      box-sizing: border-box;
     }
     .connect a img {
       width: 30px;
+    }
+    @media (max-width: 768px) {
+      .about {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        height: auto;
+      }
+      .about div, .about img {
+        width: 100%; /* Full width for mobile */
+        height: auto;
+      }
+      .talks, .connect {
+        height: auto; /* Adjust height for mobile */
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Ramiro Gallo</h1>
+    <h1 style="text-align: center;">Ramiro Gallo</h1>
     <div class="about">
-      <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/img/padawan.jpg?raw=true" alt="Ramiro Gallo">
       <div>
         <h2>About Me</h2>
         <p>Passionate Python developer with 5+ years of experience building backend systems, data pipelines, and scalable APIs. Currently leading technical teams, designing architectures, and mentoring developers. Skilled in modern Python frameworks (FastAPI, Django), asynchronous programming, and database design. Always seeking ways to improve codebases and team dynamics through patterns, documentation, and clear processes.</p>
         <p>Looking for opportunities to continue growing in architecture, clean code, and high-impact backend systems.</p>
       </div>
+      <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/img/padawan.jpg?raw=true" alt="Ramiro Gallo">
     </div>
 
     <hr>
