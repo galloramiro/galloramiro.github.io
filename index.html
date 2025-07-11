@@ -1,114 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ramiro Gallo</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 1200px;
-      padding: 20px;
-      margin: auto;
-      box-sizing: border-box;
-    }
-    .about {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 40vh; /* Occupies 40% of the page height */
-      padding: 20px;
-      box-sizing: border-box;
-      gap: 20px;
-    }
-    .about div {
-      flex-basis: 65%; /* Text occupies 65% of the width */
-      padding: 20px;
-    }
-    .about img {
-      flex-basis: 35%; /* Image occupies 35% of the width */
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain; /* Shrinks the image to fit */
-      border-radius: 10px;
-    }
-    .talks {
-      height: 40vh; /* Occupies 40% of the page height */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    .connect {
-      height: 10vh; /* Occupies 10% of the page height */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    .connect a img {
-      width: 30px;
-    }
-    @media (max-width: 768px) {
-      .about {
-        flex-direction: column; /* Stack content vertically on smaller screens */
-        height: auto;
-      }
-      .about div, .about img {
-        width: 100%; /* Full width for mobile */
-        height: auto;
-      }
-      .talks, .connect {
-        height: auto; /* Adjust height for mobile */
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1 style="text-align: center;">Ramiro Gallo</h1>
-    <div class="about">
-      <div>
-        <h2>About Me</h2>
-        <p>Passionate Python developer with 5+ years of experience building backend systems, data pipelines, and scalable APIs. Currently leading technical teams, designing architectures, and mentoring developers. Skilled in modern Python frameworks (FastAPI, Django), asynchronous programming, and database design. Always seeking ways to improve codebases and team dynamics through patterns, documentation, and clear processes.</p>
-        <p>Looking for opportunities to continue growing in architecture, clean code, and high-impact backend systems.</p>
-      </div>
-      <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/img/padawan.jpg?raw=true" alt="Ramiro Gallo">
-    </div>
-
-    <hr>
-
-    <div class="talks">
-      <h2>Talks</h2>
-      <p><a href="https://galloramiro.github.io/talks/client_pattern/export/index.html">Client pattern</a><br><small>Why use a Client class to interact with 3rd party services.</small></p>
-      <p><a href="https://galloramiro.github.io/talks/armoni_bot/export/index.html">ArmoniBot</a><br><small>Learn about the automation journey with ArmoniBot.</small></p>
-      <p><a href="https://galloramiro.github.io/talks/fight_against_the_rabbit_hole/export/index.html">Fight Against The Rabbithole</a><br><small>Strategies to stay focused and avoid distractions.</small></p>
-      <p><a href="https://galloramiro.github.io/talks/how_do_i_plan_a_feature/export/index.html">How do I plan features?</a><br><small>A guide to effective feature planning.</small></p>
-    </div>
-
-    <hr>
-
-    <div class="connect">
-      <a href="https://github.com/galloramiro" target="_blank">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub">
-      </a>
-      <a href="https://www.linkedin.com/in/ramirogallo/" target="_blank">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn">
-      </a>
-      <a href="https://www.youtube.com/@ramirogallo6484" target="_blank">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube">
-      </a>
-    </div>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramiro Gallo - Senior Software Engineer Tech Lead</title>
+    <meta name="description" content="Ramiro Gallo - Passionate Python developer with 7+ years of experience building backend systems, data pipelines, and scalable APIs. Currently leading technical teams, designing architectures, and mentoring developers. Skilled in modern Python frameworks (FastAPI, Django), asynchronous programming, and database design. Always seeking ways to improve codebases and team dynamics through patterns, documentation, and clear processes.\nLooking for opportunities to continue growing in architecture, clean code, and high-impact backend systems." />
+    <meta name="keywords" content="software engineer, back-end developer, technical speaker, Python, software architecture, good practices, agile" />
+    <meta name="author" content="Ramiro Gallo" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://galloramiro.github.io/" />
+    <meta property="og:title" content="Ramiro Gallo - Senior Software Engineer Tech Lead" />
+    <meta property="og:description" content="software engineer, back-end developer, technical speaker, Python, software architecture, good practices, agile" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Ramiro Gallo - Senior Software Engineer Tech Lead" />
+    <meta property="twitter:description" content="Passionate Python developer with 7+ years of experience building backend systems, data pipelines, and scalable APIs. Currently leading technical teams, designing architectures, and mentoring developers. Skilled in modern Python frameworks (FastAPI, Django), asynchronous programming, and database design. Always seeking ways to improve codebases and team dynamics through patterns, documentation, and clear processes.\nLooking for opportunities to continue growing in architecture, clean code, and high-impact backend systems." />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

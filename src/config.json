@@ -1,0 +1,126 @@
+{
+  "personalInfo": {
+    "fullName": "Ramiro Gallo",
+    "photo": "https://github.com/galloramiro/galloramiro.github.io/blob/main/img/padawan.jpg?raw=true",
+    "bio": "Passionate Python developer with 7+ years of experience building backend systems, data pipelines, and scalable APIs. Currently leading technical teams, designing architectures, and mentoring developers. Skilled in modern Python frameworks (FastAPI, Django), asynchronous programming, and database design. Always seeking ways to improve codebases and team dynamics through patterns, documentation, and clear processes.\nLooking for opportunities to continue growing in architecture, clean code, and high-impact backend systems.",
+    "title": "Teach Lead & Technical Speaker"
+  },
+  "talks": [
+    {
+      "title": "Best Practices for Planning Features (For Devs & Tech Leads)",
+      "description": "In this video I share my process of planing a feature, how to find the main responsibilities,  how to write tickets, how to avoid bottlenecks and how to provide visibility to business and the team.",
+      "slidesLink": "https://galloramiro.github.io/talks/how_do_i_plan_a_feature/export/index.html",
+      "youtubeLink": "https://youtu.be/T9VZNfmLeyU"
+    },
+    {
+      "title": "Fight agains the Rabbit Hole",
+      "description": "Good practices, some hacks and a bried go trough all the places where you can find rabbit holes as a software developer and how to avoid them.",
+      "slidesLink": "https://galloramiro.github.io/talks/fight_against_the_rabbit_hole/export/index.html",
+      "youtubeLink": null
+    },
+    {
+      "title": "Client Patter",
+      "description": "Why to use the client pattern to connect to 3rd party services, how to test it and implement it",
+      "slidesLink": "https://galloramiro.github.io/talks/client_pattern/export/index.html",
+      "youtubeLink": null
+    }
+  ],
+  "workExperience": [
+    {
+      "company": "Eureka Labs",
+      "companyLogo": "https://github.com/galloramiro/galloramiro.github.io/blob/main/img/logo_eureka_labs.jpg?raw=true",
+      "jobTitle": "Technical Lead",
+      "startDate": "2022-09",
+      "endDate": null,
+      "currentlyWorking": true,
+      "responsibilities": [
+        "Designed backend architectures for new features and helped align tech solutions with business goals",
+        "Created and maintained API contracts and architecture diagrams",
+        "Promoted internal documentation (Confluence), logging practices, and error monitoring dashboards",
+        "Led team initiatives: proposed talks, pair programming sessions, and challenges for growth",
+        "Improved legacy codebases by identifying tech debt and creating refactor tickets."
+      ]
+    },
+    {
+      "company": "Eureka Labs",
+      "companyLogo": "https://github.com/galloramiro/galloramiro.github.io/blob/main/img/logo_eureka_labs.jpg?raw=true",
+      "jobTitle": "Engineering Manager",
+      "startDate": "2022-09",
+      "endDate": "2023-09",
+      "currentlyWorking": false,
+      "responsibilities": [
+        "Conducted 1:1s, mid-year and end-year performance reviews (360°)",
+        "Facilitated team–client alignment and conflict resolution",
+        "Defined career goals and action plans with team members"
+      ]
+    },
+        {
+      "company": "Eureka Labs",
+      "companyLogo": "https://github.com/galloramiro/galloramiro.github.io/blob/main/img/logo_eureka_labs.jpg?raw=true",
+      "jobTitle": "Python Developer",
+      "startDate": "2022-01",
+      "endDate": "2023-09",
+      "currentlyWorking": false,
+      "responsibilities": [
+        "Built REST APIs and backend logic using FastAPI, SQLAlchemy, and PostgreSQL",
+        "Refined and debugged SEVs with internal clients"
+      ]
+    },
+    {
+      "company": "Coorva",
+      "companyLogo": "https://github.com/galloramiro/galloramiro.github.io/blob/main/img/logo_coorva.png?raw=true",
+      "jobTitle": "Python Developer",
+      "startDate": "2020-09",
+      "endDate": "2022-01",
+      "currentlyWorking": false,
+      "responsibilities": [
+        "Maintained over 15 projects with distinct business logic and test suites",
+        "Built ETL pipelines and web scrapers for tax sites and national retailers",
+        "Used Dependency Injection and Clean Architecture principles",
+        "Created interactive dashboards with custom metrics and business logic",
+        "Automated PDF parsing (400+ pages) and web data extraction"
+      ]
+    },
+    {
+      "company": "Kilimo Agtech",
+      "companyLogo": "https://github.com/galloramiro/galloramiro.github.io/blob/main/img/logo_kilimo.png?raw=true",
+      "jobTitle": "Python Developer",
+      "startDate": "2019-06",
+      "endDate": "2020-07",
+      "currentlyWorking": false,
+      "responsibilities": [
+        "Analyzed satellite imagery with Rasterio to improve crop strategies",
+        "Refactored scraper services with pattern-based code and added 300+ tests",
+        "Implemented geospatial endpoints and API services"
+      ]
+    },
+    {
+      "company": "Freelance Projects",
+      "companyLogo": "https://github.com/galloramiro/galloramiro.github.io/blob/main/img/padawan.jpg?raw=true",
+      "jobTitle": "Python Developer",
+      "startDate": "2019-02",
+      "endDate": "2019-06",
+      "currentlyWorking": false,
+      "responsibilities": [
+        "Developed TDD-based web apps for social media and genomic data analysis",
+        "Created data visualizations and APIs for MongoDB integrations."
+      ]
+    },
+    {
+      "company": "Swiss Medical Group & Others",
+      "companyLogo": "https://github.com/galloramiro/galloramiro.github.io/blob/main/img/logo_swiss_medical.png?raw=true",
+      "jobTitle": "Python Developer",
+      "startDate": "2019-02",
+      "endDate": "2019-06",
+      "currentlyWorking": false,
+      "responsibilities": [
+        "Automated internal processes with Python and Excel",
+        "Built dashboards, performed client portfolio analysis, and implemented prospecting strategies"
+      ]
+    }
+  ],
+  "contact": {
+    "linkedinUrl": "https://www.linkedin.com/in/ramirogallo",
+    "youtubeUrl": "https://www.youtube.com/@ramirogallo6484"
+  }
+}
