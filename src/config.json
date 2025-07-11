@@ -13,15 +13,27 @@
       "youtubeLink": "https://youtu.be/T9VZNfmLeyU"
     },
     {
-      "title": "Fight agains the Rabbit Hole",
-      "description": "Good practices, some hacks and a bried go trough all the places where you can find rabbit holes as a software developer and how to avoid them.",
+      "title": "Fight Against the Rabbit Hole",
+      "description": "Good practices, some hacks and a brief go through all the places where you can find rabbit holes as a software developer and how to avoid them.",
       "slidesLink": "https://galloramiro.github.io/talks/fight_against_the_rabbit_hole/export/index.html",
       "youtubeLink": null
     },
     {
-      "title": "Client Patter",
+      "title": "Client Pattern",
       "description": "Why to use the client pattern to connect to 3rd party services, how to test it and implement it",
       "slidesLink": "https://galloramiro.github.io/talks/client_pattern/export/index.html",
+      "youtubeLink": null
+    },
+    {
+      "title": "Service Pattern - A Good Place to Put Business Logic",
+      "description": "Learn about the service pattern, its advantages, how to implement it, and best practices for organizing business logic in your applications.",
+      "slidesLink": "https://galloramiro.github.io/talks/servce_pattern/export/index.html",
+      "youtubeLink": null
+    },
+    {
+      "title": "ArmoniBot - Building Something for Myself, But in a Sustainable Way",
+      "description": "A journey of building ArmoniBot - how it was born, how I organized the work, and the problems I encountered along the way.",
+      "slidesLink": "https://galloramiro.github.io/talks/armoni_bot/export/index.html",
       "youtubeLink": null
     }
   ],
