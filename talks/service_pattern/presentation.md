@@ -1,6 +1,6 @@
 ---
 enableMenu: false
-title: Service class: A good play to put the bussiness logic
+title: Service class A good play to put the bussiness logic
 author: Ramiro Gallo
 ---
 
@@ -52,217 +52,325 @@ author: Ramiro Gallo
 - DB interactions
 - Error handling
 - Logging everything
-- All separate in functions all over the code!  {class="fragment"} 
+- All separate in functions all over the code!  {class="fragment"}
 
 ---
 
-### What are the advantages of using it
-- Group logic to interact with the service {class="fragment"}
-- Clear separation of the business logic to this 3rd party service interaction logic {class="fragment"}
-- Capacity to be moved into another project quickly and without pain {class="fragment"}
-- Capacity to transform this into a package {class="fragment"}
-- Be easily replace in case it is needed {class="fragment"}
-- Maintainable with only 2 files: the class and the contract test one {class="fragment"}
+### What are the difficulties with this kind of approaches?
+- No single approach, no consistency in code {class="fragment"}
+- Working on each service feels like a different way of riding a bike {class="fragment"}
+- Difficult to test specific logic without a mix of dependencies involve {class="fragment"}
+- Easely find, isolate and understand the business logic being applied {class="fragment"}
 
 --
 
-#### More advantages
-- Easy to mock {class="fragment"}
-- Secrets and env variables in one place only {class="fragment"}
-- One place, and one way of logging the interaction {class="fragment"}
-- Move all the calls from sync to async? change the base gateway and some little things and its solved {class="fragment"}
-- Specific error handling {class="fragment"}
+#### This turns into difficulties on
+- Onboarding new people on the team {class="fragment"}
+- Debug on SEV's {class="fragment"}
+- Work if we are not familiar with the specific code {class="fragment"}
 
---
-
-#### Remember
-If you manage to fulfill all, or some of the points up there, you would be able to enjoy some of the following things:
 
 ---
 
-### What are the disadvantages of not using it
-- Lonely functions in different places and in utils files {class="fragment"}
-- Mix business logic with service interaction logic {class="fragment"}
-- Not easy to move {class="fragment"}
-- Repeated variables and code {class="fragment"}
-- Move all calls from sync to async? find all the usage of request and be prepared to get your hands dirty {class="fragment"}
-- Lovely to maintain {class="fragment"}
-
----
-
-### How this looks like?
-- Base class {class="fragment"}
-- One implementation {class="fragment"}
-- Unit tests {class="fragment"}
-- Contract tests {class="fragment"}
+#### What would be the proposal? 
 
 --
 
-### Base class
+#### Separate the code on different classes with different purposes
+- One class to interact with each database object {class="fragment"}
+- One class per 3rd party service we need to interact with {class="fragment"}
+- Use Single responsibility pattern {class="fragment"}
+- One class to group them all and to hold the business logic {class="fragment"}
+
+--
+
+#### Use design patterns
+- Dependencies injection {class="fragment"}
+- Single responsibility pattern {class="fragment"}
+- Client pattern {class="fragment"}
+- Repository pattern {class="fragment"}
+- Write understandable names for functions {class="fragment"}
+
+--
+
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/service_pattern/img/one_ring_to_rule_them_all.gif?raw=true" width="100%">
+
+--
+
+#### Some extra tips
+- Use single public function for the principal action {class="fragment"}
+- If the build of the class is too complex use a factory method  {class="fragment"}
+- Delegate complexity in sub private functions {class="fragment"}
+- Each class should have their own unit test file {class="fragment"}
+- Use test as a way of documenting the code {class="fragment"}
+- Don’t abuse the patterns they are no silver bullet {class="fragment"}
+- Be happy! {class="fragment"}
+
+--
+
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/service_pattern/img/minions_yay.gif?raw=true" width="80%">
+
+---
+
+### Code examples 
+
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/service_pattern/img/classes_interaction.png?raw=true" width="80%">
+
+--
+
+### Service
 ```python
-import time
-from typing import Any, Tuple, Union
-
-import aiohttp
-from aiohttp import ClientTimeout, ContentTypeError
-
-from .config import LOGGER
+from src.speed_test_client import SpeedTestClient, Server
+from src.speed_test_parser import SpeedTestParser
+from src.config import LOGGER
+from src.speed_test_json_repository import SpeedTestJsonRepository
 
 
-class BaseClient:  # pragma: no cover
-    """
-    Base Client class to be extended by all other API client
-    """
+class InternetConnectionLogService:
+    def __init__(self, client: SpeedTestClient, parser: SpeedTestParser, repository: SpeedTestJsonRepository):
+        self.client = client
+        self.parser = parser
+        self.repository = repository
+
+    def log_internet_connection_for_single_server(self, server: Server) -> None:
+        speed_test_output = self.client.get_speed_test_result(server.server_id)
+        parsed_output = self.parser.parse_output(json_output=speed_test_output)
+        LOGGER.debug(
+            f"Speed test results: {server.server_name}",
+            extra=parsed_output.to_dict(),
+        )
+        self.repository.save_speed_test_output(speed_test_output=parsed_output)
+
+    def log_internet_connection_for_multiple_servers(self, servers: list[Server]) -> None:
+        for server in servers:
+            self.log_internet_connection_for_single_server(server=server)
 
     @staticmethod
-    async def _make_request(method, headers, url, **kwargs: Any) -> Tuple[int, Union[dict, str]]:
-        """
-        Wrapper to make http request.
-        """
-        start_time = time.time()
-        LOGGER.debug("Sending request", extra={"method": method, "url": url, "params": kwargs})
-        async with aiohttp.ClientSession(timeout=ClientTimeout(total=60)) as session:
-            async with session.request(method=method, headers=headers, url=url, **kwargs) as resp:
-                LOGGER.debug(
-                    'Received response',
-                    extra={
-                        'url': url,
-                        'status code': resp.status,
-                        'durationMs': int((time.time() - start_time) * 1000)
-                    }
-                )
-                try:
-                    return resp.status, await resp.json()
-                except ContentTypeError:
-                    return resp.status, await resp.text()
+    def build():
+        return InternetConnectionLogService(
+            client=SpeedTestClient(),
+            parser=SpeedTestParser(),
+            repository=SpeedTestJsonRepository(),
+        )
+```
 
-    @classmethod
-    async def get(cls, url, headers=None, **kwargs: Any) -> Tuple[int, dict]:
-        return await cls._make_request(method='GET', headers=headers, url=url, **kwargs)
+--
 
-    @classmethod
-    async def post(cls, url, headers=None, **kwargs: Any) -> Tuple[int, dict]:
-        return await cls._make_request(method='POST', headers=headers, url=url, **kwargs)
+### Client
+```python
+import subprocess
+from dataclasses import dataclass
+from typing import Dict
+import json
 
-    @classmethod
-    async def put(cls, url, headers=None, **kwargs: Any) -> Tuple[int, dict]:
-        return await cls._make_request(method='PUT', headers=headers, url=url, **kwargs)
+from src.config import LOGGER
 
+
+@dataclass
+class Server:
+    server_name: str
+    server_id: int
+
+
+class SpeedTestClient:
     @classmethod
-    async def delete(cls, url, headers=None, **kwargs: Any) -> Tuple[int, dict]:
-        return await cls._make_request(method='DELETE', headers=headers, url=url, **kwargs)
+    def get_speed_test_result(cls, server_id: int) -> Dict:
+        command = [
+            "speedtest",
+            "--format=json-pretty",
+            "--progress=no",
+            "--accept-license",
+            "--accept-gdpr",
+            f"--server-id={server_id}",
+        ]
+        try:
+            console_output = subprocess.check_output(command, timeout=180)
+            return cls.parse_json(console_output=console_output)
+        except subprocess.CalledProcessError as exc:
+            LOGGER.error("Process error", extra={"server_id": server_id, "exc": str(exc)})
+        except subprocess.TimeoutExpired:
+            LOGGER.error("Time out error", extra={"server_id": server_id})
+
+    @staticmethod
+    def parse_json(console_output: bytes) -> Dict:
+        try:
+            return json.loads(console_output)
+        except ValueError:
+            raise subprocess.CalledProcessError
 
 ```
 
 --
 
-### Implementation class
+### Parser
 ```python
+import decimal
+from datetime import datetime
+from decimal import Decimal
+from dataclasses import dataclass, asdict
 from typing import Dict
 
-from src.base_client import BaseClient
-from src.config import ALPHA_URL, ALPHA_API_KEY
 
-class AlphaVantageClient(BaseClient):
-    _BASE_URL = f'{ALPHA_URL}query?'
-    _API_KEY = ALPHA_API_KEY
+@dataclass
+class SpeedTestParsedOutput:
+    date: str = ""
+    ping_latency: float = 0
+    ping_latency_low: float = 0
+    ping_latency_high: float = 0
+    download_bandwidth: float = 0
+    download_jitter: float = 0
+    upload_bandwidth: float = 0
+    upload_jitter: float = 0
+    isp: str = ""
+    server_id: int = 0
+    server_host: str = ""
+    server_name: str = ""
+    result_id: str = ""
+    result_url: str = ""
+
+    def to_dict(self) -> Dict:
+        return asdict(self)
+
+
+class SpeedTestParser:
+    @classmethod
+    def parse_output(cls, json_output: Dict) -> SpeedTestParsedOutput:
+        server_info = json_output["server"]
+        result_info = json_output["result"]
+
+        parsed_output = SpeedTestParsedOutput(
+            date=cls._get_current_time(),
+            server_id=server_info["id"],
+            server_host=server_info["host"],
+            server_name=server_info["name"],
+            result_id=result_info["id"],
+            result_url=result_info["url"],
+            isp=json_output["isp"],
+        )
+
+        download_info = json_output["download"]
+        parsed_output.download_bandwidth = cls._from_bytes_to_megabytes(download_info["bandwidth"])
+        parsed_output.download_jitter = download_info["latency"]["jitter"]
+
+        upload_info = json_output["upload"]
+        parsed_output.upload_bandwidth = cls._from_bytes_to_megabytes(upload_info["bandwidth"])
+        parsed_output.upload_jitter = upload_info["latency"]["jitter"]
+
+        ping_info = json_output["ping"]
+        parsed_output.ping_latency = ping_info["latency"]
+        parsed_output.ping_latency_low = ping_info["low"]
+        parsed_output.ping_latency_high = ping_info["high"]
+
+        return parsed_output
+
+    @staticmethod
+    def _from_bytes_to_megabytes(megabits: float) -> float:
+        decimal_bytes = Decimal(str(megabits))
+        decimal_bits = decimal_bytes * Decimal("8")
+        bits_to_megabits_multiplier = Decimal(str((10**-6)))
+        decimal_megabits = decimal_bits * bits_to_megabits_multiplier
+        rounded_megabits = decimal_megabits.quantize(Decimal(".01"), rounding=decimal.ROUND_DOWN)
+        return float(rounded_megabits)
+
+    @staticmethod
+    def _get_current_time() -> str:
+        current_time = datetime.now()
+        str_format = "%Y-%m-%d %H:%M:%S"
+        return current_time.strftime(str_format)
+
+```
+
+--
+
+### Repository
+```python
+import json
+from typing import Dict
+
+from src import SpeedTestParsedOutput
+from src.config import LOGGER, FILES_DIR
+
+
+class SpeedTestJsonRepository:
+    _FILES_PATH = f"{FILES_DIR}/internet_logs.json"
 
     @classmethod
-    async def get_intra_day_values_for_symbol(cls, symbol: str) -> Dict:
-        """Get intra day request for a specific symbol
+    def save_speed_test_output(cls, speed_test_output: SpeedTestParsedOutput) -> bool:
+        try:
+            dict_output = speed_test_output.to_dict()
+            LOGGER.debug("Start saveing process", extra={"speed_test_output": dict_output})
 
-        Args:
-            symbol (str): string representing the active symbol excamples
-            'FB', 'AAPL', 'MSFT', 'GOOGL', 'AMZN'
+            LOGGER.debug("Obtaining current file")
+            current_file = cls._get_current_file()
 
-        Returns:
-            requests.Response: Response with the data for the symbol
-        """
-        params = dict(
-            function='TIME_SERIES_INTRADAY',
-            symbol=symbol,
-            interval='5min',
-            outputsize='compact',
-            apikey=cls._API_KEY,
-        )
-        # TODO: manage error, response code and do proper logging
-        status_code, json_response = await cls.get(cls._BASE_URL, params=params)
-        return json_response
+            LOGGER.debug("Updating current file", extra={"current_file_lenght": len(current_file)})
+            current_file["logs"].append(dict_output)
+
+            LOGGER.debug("Saving new file", extra={"current_file_lenght": len(current_file)})
+            cls._save_dict_to_current_file(current_file)
+            return True
+        except Exception as exc:
+            LOGGER.error(f"Failed to update file {str(exc)}")
+            return False
+
+    @classmethod
+    def _get_current_file(cls) -> Dict:
+        with open(cls._FILES_PATH, "r") as file_to_read:
+            current_file = json.load(file_to_read)
+        return current_file
+
+    @classmethod
+    def _save_dict_to_current_file(cls, dict_to_save: Dict):
+        with open(cls._FILES_PATH, "w") as file_to_update:
+            json.dump(dict_to_save, file_to_update, indent=4)
+        return True
+
 ```
 
 ---
 
-### How do I test things?
+### Let's recap some benefits
+- Easy to understand {class="fragment"}
+- Easy to implement {class="fragment"}
+- Not a lot of layers and layers o code {class="fragment"}
+- Easy to test {class="fragment"}
+- Easy to document {class="fragment"}
+
+---
+
+### How we move on into a magnificent future?
 
 --
 
-### Unit tests
-```python
-Create this ones base on this:
-@pytest.mark.asyncio
-@patch("src.client.base_client.BaseClient.get", new_callable=AsyncMock)
-async def test_get_intra_day_values_for_symbol_happy_path(mock_get):
-    # GIVEN
-    api_response = {
-        "Meta Data": {
-            "1. Information": "Intraday (5min) open, high, low, close prices and volume",
-            "2. Symbol": "IBM",
-            "3. Last Refreshed": "2025-07-03 17:00:00",
-            "4. Interval": "5min",
-            "5. Output Size": "Compact",
-            "6. Time Zone": "US/Eastern"
-        },
-        "Time Series (5min)": {
-            "2025-07-03 17:00:00": {
-                "1. open": "291.9700",
-                "2. high": "291.9700",
-                "3. low": "291.9700",
-                "4. close": "291.9700",
-                "5. volume": "309839"
-            },
-            "2025-07-03 16:55:00": {
-                "1. open": "291.5200",
-                "2. high": "291.9500",
-                "3. low": "291.5100",
-                "4. close": "291.5100",
-                "5. volume": "65"
-            }
-        }
-    }
-    mock_get.return_value = 200, api_response
+### Full refactor
 
-    # WHEN
-    json_response = await AlphaVantageClient.get_intra_day_values_for_symbol(symbol='IBM')
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/service_pattern/img/you_shal_not_pass.gif?raw=true" width="80%">
 
-    # THEN
-    
-    query_params = "function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&outputsize=compact&apikey=MOCK_API_KEY"
-    expected_call = {
-        url=f"https://www.alphavantage.co/query?{query_params}"
-    }
-    assert mock_get.assert_called_once_with(expected_call)
-```
 
 --
 
-### Contract tests
-```python
-@pytest.mark.asyncio
-async def test_alpha_vantage_contract_with_correct_symbol():
-    # WHEN
-    json_response = await AlphaVantageClient.get_intra_day_values_for_symbol(symbol='AMZN')
+### Start by thinking
+- What’s the main responsibilities that this service have? {class="fragment"}
+- How can I separate the code into cohesive classes {class="fragment"}
+- AGREE WITH YOUR TEAM! {class="fragment"}
 
-    # THEN
-    time_series_key = 'Time Series (5min)'
-    expected_keys = ['Meta Data', time_series_key]
-    assert  list(json_response.keys()) == expected_keys
+--
 
-    first_time_series_key = list(json_response[time_series_key].keys())[0]
-    first_time_series = json_response[time_series_key][first_time_series_key]
-    expected_time_series_keys = ['1. open', '2. high', '3. low', '4. close', '5. volume']
+### Start small!
+- Move single and small responsibilities at a time
+- Build your classes along separate PR’s
+- Add unit test to each separate thing that you are doing
+- Add integration tests for the full flow
 
-    assert list(first_time_series.keys()) == expected_time_series_keys
-```
+
+--
+
+
+### And once you realize
+### you would be in a much better place {class="fragment"}
+
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/service_pattern/img/world_without_lawyers.gif?raw=true" width="80%"> {class="fragment"}
+
 
 ---
 
