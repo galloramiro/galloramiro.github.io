@@ -13,10 +13,10 @@ author: Ramiro Gallo
 --
 
 ### What will we cover today?
-- What is a client{class="fragment"}
+- What is a client {class="fragment"}
 - What are the advantages of using it {class="fragment"}
-- What are the disadvantages of not using it{class="fragment"}
-- How is it look's like {class="fragment"}
+- What are the disadvantages of not using it {class="fragment"}
+- How does it look like {class="fragment"}
 - What and how to test it {class="fragment"}
 - What to log {class="fragment"}
 - How to handle errors {class="fragment"}
@@ -28,36 +28,31 @@ The class that would manage all the logic and interactions with a 3rd party serv
 
 --
 
-#### This class idealy should:
-- Receive the less amount of parameters as possible 
+#### This class ideally should:
+- Receive the least amount of parameters as possible 
 {class="fragment"}
 - Return a base python object (list, dict, int, bool, etc) or a pydantic model if we want {class="fragment"}
-- Abstract all the logic that belong to the services, as log in, getting tokens, etc {class="fragment"}
+- Abstract all the logic that belongs to the service, such as logging in, getting tokens, etc {class="fragment"}
 - Have contract testing {class="fragment"}
 
 ---
 
 ### What are the advantages of using it
 - Group logic to interact with the service {class="fragment"}
-- Clear separation of the business logic to this 3rd party service interaction logic {class="fragment"}
+- Clear separation of business logic from 3rd party service interaction logic {class="fragment"}
 - Capacity to be moved into another project quickly and without pain {class="fragment"}
 - Capacity to transform this into a package {class="fragment"}
-- Be easily replace in case it is needed {class="fragment"}
+- Be easily replaced in case it is needed {class="fragment"}
 - Maintainable with only 2 files: the class and the contract test one {class="fragment"}
 
 --
 
 #### More advantages
 - Easy to mock {class="fragment"}
-- Secrets and env variables in one place only {class="fragment"}
+- Secrets and environment variables in one place only {class="fragment"}
 - One place, and one way of logging the interaction {class="fragment"}
-- Move all the calls from sync to async? change the base gateway and some little things and its solved {class="fragment"}
+- Move all the calls from sync to async? Change the base gateway and some little things and it's solved {class="fragment"}
 - Specific error handling {class="fragment"}
-
---
-
-#### Remember
-If you manage to fulfill all, or some of the points up there, you would be able to enjoy some of the following things:
 
 ---
 
@@ -66,12 +61,14 @@ If you manage to fulfill all, or some of the points up there, you would be able 
 - Mix business logic with service interaction logic {class="fragment"}
 - Not easy to move {class="fragment"}
 - Repeated variables and code {class="fragment"}
-- Move all calls from sync to async? find all the usage of request and be prepared to get your hands dirty {class="fragment"}
-- Lovely to maintain {class="fragment"}
+- Move all calls from sync to async?  {class="fragment"}
+- Find all the usages of requests?  {class="fragment"}
+- Be prepared to get your hands dirty {class="fragment"}
+- Difficult to maintain {class="fragment"}
 
 ---
 
-### How this looks like?
+### How does this look like?
 - Base class {class="fragment"}
 - One implementation {class="fragment"}
 - Unit tests {class="fragment"}
@@ -92,13 +89,13 @@ from .config import LOGGER
 
 class BaseClient:  # pragma: no cover
     """
-    Base Client class to be extended by all other API client
+    Base Client class to be extended by all other API clients
     """
 
     @staticmethod
     async def _make_request(method, headers, url, **kwargs: Any) -> Tuple[int, Union[dict, str]]:
         """
-        Wrapper to make http request.
+        Wrapper to make HTTP request.
         """
         start_time = time.time()
         LOGGER.debug("Sending request", extra={"method": method, "url": url, "params": kwargs})
@@ -108,8 +105,8 @@ class BaseClient:  # pragma: no cover
                     'Received response',
                     extra={
                         'url': url,
-                        'status code': resp.status,
-                        'durationMs': int((time.time() - start_time) * 1000)
+                        'status_code': resp.status,
+                        'duration_ms': int((time.time() - start_time) * 1000)
                     }
                 )
                 try:
@@ -150,14 +147,14 @@ class AlphaVantageClient(BaseClient):
 
     @classmethod
     async def get_intra_day_values_for_symbol(cls, symbol: str) -> Dict:
-        """Get intra day request for a specific symbol
+        """Get intraday request for a specific symbol
 
         Args:
-            symbol (str): string representing the active symbol excamples
+            symbol (str): string representing the active symbol examples:
             'FB', 'AAPL', 'MSFT', 'GOOGL', 'AMZN'
 
         Returns:
-            requests.Response: Response with the data for the symbol
+            Dict: Response with the data for the symbol
         """
         params = dict(
             function='TIME_SERIES_INTRADAY',
@@ -179,7 +176,6 @@ class AlphaVantageClient(BaseClient):
 
 ### Unit tests
 ```python
-Create this ones base on this:
 @pytest.mark.asyncio
 @patch("src.client.base_client.BaseClient.get", new_callable=AsyncMock)
 async def test_get_intra_day_values_for_symbol_happy_path(mock_get):
@@ -218,10 +214,8 @@ async def test_get_intra_day_values_for_symbol_happy_path(mock_get):
     # THEN
     
     query_params = "function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&outputsize=compact&apikey=MOCK_API_KEY"
-    expected_call = {
-        url=f"https://www.alphavantage.co/query?{query_params}"
-    }
-    assert mock_get.assert_called_once_with(expected_call)
+    expected_url = f"https://www.alphavantage.co/query?{query_params}"
+    mock_get.assert_called_once_with(expected_url, params=None)
 ```
 
 --
@@ -236,7 +230,7 @@ async def test_alpha_vantage_contract_with_correct_symbol():
     # THEN
     time_series_key = 'Time Series (5min)'
     expected_keys = ['Meta Data', time_series_key]
-    assert  list(json_response.keys()) == expected_keys
+    assert list(json_response.keys()) == expected_keys
 
     first_time_series_key = list(json_response[time_series_key].keys())[0]
     first_time_series = json_response[time_series_key][first_time_series_key]

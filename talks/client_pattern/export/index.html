@@ -80,7 +80,7 @@
 <li class="fragment">What is a client</li>
 <li class="fragment">What are the advantages of using it</li>
 <li class="fragment">What are the disadvantages of not using it</li>
-<li class="fragment">How is it look’s like</li>
+<li class="fragment">How does it look like</li>
 <li class="fragment">What and how to test it</li>
 <li class="fragment">What to log</li>
 <li class="fragment">How to handle errors</li>
@@ -103,11 +103,11 @@
             </section>
         
             <section >
-                <h4>This class idealy should:</h4>
+                <h4>This class ideally should:</h4>
 <ul class="fragment">
-<li>Receive the less amount of parameters as possible</li>
+<li>Receive the least amount of parameters as possible</li>
 <li class="fragment">Return a base python object (list, dict, int, bool, etc) or a pydantic model if we want</li>
-<li class="fragment">Abstract all the logic that belong to the services, as log in, getting tokens, etc</li>
+<li class="fragment">Abstract all the logic that belongs to the service, such as logging in, getting tokens, etc</li>
 <li class="fragment">Have contract testing</li>
 </ul>
 
@@ -125,10 +125,10 @@
             <h3>What are the advantages of using it</h3>
 <ul>
 <li class="fragment">Group logic to interact with the service</li>
-<li class="fragment">Clear separation of the business logic to this 3rd party service interaction logic</li>
+<li class="fragment">Clear separation of business logic from 3rd party service interaction logic</li>
 <li class="fragment">Capacity to be moved into another project quickly and without pain</li>
 <li class="fragment">Capacity to transform this into a package</li>
-<li class="fragment">Be easily replace in case it is needed</li>
+<li class="fragment">Be easily replaced in case it is needed</li>
 <li class="fragment">Maintainable with only 2 files: the class and the contract test one</li>
 </ul>
 
@@ -138,17 +138,11 @@
                 <h4>More advantages</h4>
 <ul>
 <li class="fragment">Easy to mock</li>
-<li class="fragment">Secrets and env variables in one place only</li>
+<li class="fragment">Secrets and environment variables in one place only</li>
 <li class="fragment">One place, and one way of logging the interaction</li>
-<li class="fragment">Move all the calls from sync to async? change the base gateway and some little things and its solved</li>
+<li class="fragment">Move all the calls from sync to async? Change the base gateway and some little things and it’s solved</li>
 <li class="fragment">Specific error handling</li>
 </ul>
-
-            </section>
-        
-            <section >
-                <h4>Remember</h4>
-<p>If you manage to fulfill all, or some of the points up there, you would be able to enjoy some of the following things:</p>
 
             </section>
         
@@ -167,8 +161,10 @@
 <li class="fragment">Mix business logic with service interaction logic</li>
 <li class="fragment">Not easy to move</li>
 <li class="fragment">Repeated variables and code</li>
-<li class="fragment">Move all calls from sync to async? find all the usage of request and be prepared to get your hands dirty</li>
-<li class="fragment">Lovely to maintain</li>
+<li class="fragment">Move all calls from sync to async? </li>
+<li class="fragment">Find all the usages of requests? </li>
+<li class="fragment">Be prepared to get your hands dirty</li>
+<li class="fragment">Difficult to maintain</li>
 </ul>
 
             </section>
@@ -179,7 +175,7 @@
     
     <section>
         <section >
-            <h3>How this looks like?</h3>
+            <h3>How does this look like?</h3>
 <ul>
 <li class="fragment">Base class</li>
 <li class="fragment">One implementation</li>
@@ -202,13 +198,13 @@ from .config import LOGGER
 
 class BaseClient:  # pragma: no cover
     &quot;&quot;&quot;
-    Base Client class to be extended by all other API client
+    Base Client class to be extended by all other API clients
     &quot;&quot;&quot;
 
     @staticmethod
     async def _make_request(method, headers, url, **kwargs: Any) -&gt; Tuple[int, Union[dict, str]]:
         &quot;&quot;&quot;
-        Wrapper to make http request.
+        Wrapper to make HTTP request.
         &quot;&quot;&quot;
         start_time = time.time()
         LOGGER.debug(&quot;Sending request&quot;, extra={&quot;method&quot;: method, &quot;url&quot;: url, &quot;params&quot;: kwargs})
@@ -218,8 +214,8 @@ class BaseClient:  # pragma: no cover
                     'Received response',
                     extra={
                         'url': url,
-                        'status code': resp.status,
-                        'durationMs': int((time.time() - start_time) * 1000)
+                        'status_code': resp.status,
+                        'duration_ms': int((time.time() - start_time) * 1000)
                     }
                 )
                 try:
@@ -260,14 +256,14 @@ class AlphaVantageClient(BaseClient):
 
     @classmethod
     async def get_intra_day_values_for_symbol(cls, symbol: str) -&gt; Dict:
-        &quot;&quot;&quot;Get intra day request for a specific symbol
+        &quot;&quot;&quot;Get intraday request for a specific symbol
 
         Args:
-            symbol (str): string representing the active symbol excamples
+            symbol (str): string representing the active symbol examples:
             'FB', 'AAPL', 'MSFT', 'GOOGL', 'AMZN'
 
         Returns:
-            requests.Response: Response with the data for the symbol
+            Dict: Response with the data for the symbol
         &quot;&quot;&quot;
         params = dict(
             function='TIME_SERIES_INTRADAY',
@@ -298,8 +294,7 @@ class AlphaVantageClient(BaseClient):
         
             <section >
                 <h3>Unit tests</h3>
-<pre><code class="language-python">Create this ones base on this:
-@pytest.mark.asyncio
+<pre><code class="language-python">@pytest.mark.asyncio
 @patch(&quot;src.client.base_client.BaseClient.get&quot;, new_callable=AsyncMock)
 async def test_get_intra_day_values_for_symbol_happy_path(mock_get):
     # GIVEN
@@ -337,10 +332,8 @@ async def test_get_intra_day_values_for_symbol_happy_path(mock_get):
     # THEN
     
     query_params = &quot;function=TIME_SERIES_INTRADAY&amp;symbol=IBM&amp;interval=5min&amp;outputsize=compact&amp;apikey=MOCK_API_KEY&quot;
-    expected_call = {
-        url=f&quot;https://www.alphavantage.co/query?{query_params}&quot;
-    }
-    assert mock_get.assert_called_once_with(expected_call)
+    expected_url = f&quot;https://www.alphavantage.co/query?{query_params}&quot;
+    mock_get.assert_called_once_with(expected_url, params=None)
 </code></pre>
 
             </section>
@@ -355,7 +348,7 @@ async def test_alpha_vantage_contract_with_correct_symbol():
     # THEN
     time_series_key = 'Time Series (5min)'
     expected_keys = ['Meta Data', time_series_key]
-    assert  list(json_response.keys()) == expected_keys
+    assert list(json_response.keys()) == expected_keys
 
     first_time_series_key = list(json_response[time_series_key].keys())[0]
     first_time_series = json_response[time_series_key][first_time_series_key]
