@@ -19,15 +19,15 @@
       "youtubeLink": "https://youtu.be/pN_b3qsLQCo"
     },
     {
-      "title": "Client Pattern",
-      "description": "Why to use the client pattern to connect to 3rd party services, how to test it and implement it",
-      "slidesLink": "https://galloramiro.github.io/talks/client_pattern/export/index.html",
+      "title": "Service Pattern - A Good Place to Put Business Logic",
+      "description": "Learn about the service pattern, its advantages, how to implement it, and best practices for organizing business logic in your applications.",
+      "slidesLink": "https://galloramiro.github.io/talks/service_pattern/export/index.html",
       "youtubeLink": null
     },
     {
-      "title": "Service Pattern - A Good Place to Put Business Logic",
-      "description": "Learn about the service pattern, its advantages, how to implement it, and best practices for organizing business logic in your applications.",
-      "slidesLink": "https://galloramiro.github.io/talks/servce_pattern/export/index.html",
+      "title": "Client Pattern",
+      "description": "Why to use the client pattern to connect to 3rd party services, how to test it and implement it",
+      "slidesLink": "https://galloramiro.github.io/talks/client_pattern/export/index.html",
       "youtubeLink": null
     },
     {
