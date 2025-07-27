@@ -1,0 +1,1276 @@
+1
+00:00:00,880 --> 00:00:08,240
+Hello and welcome to the fight against
+
+2
+00:00:04,799 --> 00:00:10,080
+the rabbit hole.
+
+3
+00:00:08,240 --> 00:00:12,800
+Okay, let's see. What are we going to
+
+4
+00:00:10,080 --> 00:00:15,200
+cover today? Today uh we're going to
+
+5
+00:00:12,800 --> 00:00:18,720
+cover what's the rabbit hole for me,
+
+6
+00:00:15,200 --> 00:00:21,439
+where do I usually find rabbit holes, h
+
+7
+00:00:18,720 --> 00:00:25,680
+a prep way uh to fight those rabbit
+
+8
+00:00:21,439 --> 00:00:30,240
+holes, and an ins way to fight those.
+
+9
+00:00:25,680 --> 00:00:32,800
+Okay, so let's start. What is the rabbit
+
+10
+00:00:30,240 --> 00:00:35,600
+hole? For me, the rabbit hole could be
+
+11
+00:00:32,800 --> 00:00:38,079
+several things, but mostly it it's what
+
+12
+00:00:35,600 --> 00:00:39,600
+happen when you're falling into a
+
+13
+00:00:38,079 --> 00:00:43,600
+situation and you don't have the
+
+14
+00:00:39,600 --> 00:00:45,840
+control. Okay, so where do I usually
+
+15
+00:00:43,600 --> 00:00:49,039
+find rabbit holes?
+
+16
+00:00:45,840 --> 00:00:54,320
+Trying to fix something.
+
+17
+00:00:49,039 --> 00:00:56,960
+Yes, those plus 99 uh tabs open. Uh
+
+18
+00:00:54,320 --> 00:00:59,039
+trying to understand some code. Yes.
+
+19
+00:00:56,960 --> 00:01:01,120
+Clicking into endless functions to
+
+20
+00:00:59,039 --> 00:01:03,680
+functions from class to class. Going
+
+21
+00:01:01,120 --> 00:01:06,799
+deeper and deeper and deeper and not
+
+22
+00:01:03,680 --> 00:01:08,880
+being able to understand anything.
+
+23
+00:01:06,799 --> 00:01:12,560
+Trying to understand an unclear ticket.
+
+24
+00:01:08,880 --> 00:01:14,640
+Trying to see what they were trying to
+
+25
+00:01:12,560 --> 00:01:16,640
+say at the moment that they create that
+
+26
+00:01:14,640 --> 00:01:18,880
+ticket.
+
+27
+00:01:16,640 --> 00:01:22,720
+Trying to find a solution in a group
+
+28
+00:01:18,880 --> 00:01:25,200
+meeting. O that's an important one. Yes,
+
+29
+00:01:22,720 --> 00:01:28,159
+those endless meetings jumping to one
+
+30
+00:01:25,200 --> 00:01:32,000
+point to the other. H
+
+31
+00:01:28,159 --> 00:01:36,079
+this is normal of course, but those take
+
+32
+00:01:32,000 --> 00:01:38,479
+me through the rabbit hole and
+
+33
+00:01:36,079 --> 00:01:42,320
+I bet that you can find a lot more
+
+34
+00:01:38,479 --> 00:01:46,000
+examples in your daily work life. Okay,
+
+35
+00:01:42,320 --> 00:01:49,040
+so a little bit disclaimer. This is
+
+36
+00:01:46,000 --> 00:01:52,079
+okay. Yes, this is completely normal. is
+
+37
+00:01:49,040 --> 00:01:54,000
+part of your of the work that we do and
+
+38
+00:01:52,079 --> 00:01:56,399
+it's part of the learning process of
+
+39
+00:01:54,000 --> 00:01:58,479
+each person. Okay? So this is an
+
+40
+00:01:56,399 --> 00:02:02,000
+important disclaimer.
+
+41
+00:01:58,479 --> 00:02:03,600
+H so don't be afraid if you feel more
+
+42
+00:02:02,000 --> 00:02:07,200
+than related with all the situations
+
+43
+00:02:03,600 --> 00:02:10,080
+that I'm saying right now.
+
+44
+00:02:07,200 --> 00:02:12,720
+So let's talk about some solutions.
+
+45
+00:02:10,080 --> 00:02:16,959
+Usually I find two ways to fight against
+
+46
+00:02:12,720 --> 00:02:20,560
+the rabbit holes. Okay? A preventive way
+
+47
+00:02:16,959 --> 00:02:23,360
+and an easy to way. Okay, let's start by
+
+48
+00:02:20,560 --> 00:02:26,560
+the preventive way.
+
+49
+00:02:23,360 --> 00:02:29,840
+So the first thing that we need to do is
+
+50
+00:02:26,560 --> 00:02:33,599
+to start by doing good questions. Okay.
+
+51
+00:02:29,840 --> 00:02:37,599
+So do we have the power to see the
+
+52
+00:02:33,599 --> 00:02:43,440
+future and predict a rabbit hole? No.
+
+53
+00:02:37,599 --> 00:02:47,200
+Are we geniuses and we didn't know? No.
+
+54
+00:02:43,440 --> 00:02:52,080
+H do we have super powers and we didn't
+
+55
+00:02:47,200 --> 00:02:55,280
+know again the answer is no
+
+56
+00:02:52,080 --> 00:02:57,680
+we are only humans h but we can see this
+
+57
+00:02:55,280 --> 00:03:01,920
+before it start happening and this is
+
+58
+00:02:57,680 --> 00:03:05,040
+the way I try to fix it so
+
+59
+00:03:01,920 --> 00:03:09,200
+first tool ticket refinement this will
+
+60
+00:03:05,040 --> 00:03:11,360
+become one of your best friends so ask
+
+61
+00:03:09,200 --> 00:03:13,360
+for clear acceptance criteria the
+
+62
+00:03:11,360 --> 00:03:16,080
+acceptance criteria
+
+63
+00:03:13,360 --> 00:03:19,040
+needs needs to be useful to create a
+
+64
+00:03:16,080 --> 00:03:22,319
+test to understand if the ticket is 100%
+
+65
+00:03:19,040 --> 00:03:24,640
+complete. Ask for dev resources. What is
+
+66
+00:03:22,319 --> 00:03:28,000
+this? For example,
+
+67
+00:03:24,640 --> 00:03:29,920
+where these implementations belongs to
+
+68
+00:03:28,000 --> 00:03:34,799
+what of the several microser that we are
+
+69
+00:03:29,920 --> 00:03:38,879
+working. H this belongs to what function
+
+70
+00:03:34,799 --> 00:03:42,560
+to what class? H do we have similar pers
+
+71
+00:03:38,879 --> 00:03:47,200
+with things that we did? Erh, this
+
+72
+00:03:42,560 --> 00:03:49,599
+feature has a flow diagram or doesn't.
+
+73
+00:03:47,200 --> 00:03:52,480
+This feature have a document or it
+
+74
+00:03:49,599 --> 00:03:54,720
+doesn't. This feature have a test plan
+
+75
+00:03:52,480 --> 00:03:57,840
+or it doesn't.
+
+76
+00:03:54,720 --> 00:03:59,920
+What are the upstream service h impacted
+
+77
+00:03:57,840 --> 00:04:03,439
+by this? And what are the downstream
+
+78
+00:03:59,920 --> 00:04:05,599
+service impacted by this?
+
+79
+00:04:03,439 --> 00:04:09,519
+This maybe seems a pretty obvious
+
+80
+00:04:05,599 --> 00:04:12,080
+question, but we don't always have the
+
+81
+00:04:09,519 --> 00:04:14,080
+answer for these ones. Okay? So, it's
+
+82
+00:04:12,080 --> 00:04:16,160
+important to make these questions on the
+
+83
+00:04:14,080 --> 00:04:18,639
+ticket refinement to try to understand,
+
+84
+00:04:16,160 --> 00:04:23,040
+to try to have a better view. And you
+
+85
+00:04:18,639 --> 00:04:26,160
+may say, hey, I'm working here since
+
+86
+00:04:23,040 --> 00:04:30,000
+like two or three years ago. So, I have
+
+87
+00:04:26,160 --> 00:04:33,040
+this thought. Maybe you have that. Maybe
+
+88
+00:04:30,000 --> 00:04:35,120
+other people's don't maybe other people
+
+89
+00:04:33,040 --> 00:04:37,040
+start working on the micros service that
+
+90
+00:04:35,120 --> 00:04:39,600
+you were working and they start chasing
+
+91
+00:04:37,040 --> 00:04:42,560
+things and now you're going to start
+
+92
+00:04:39,600 --> 00:04:45,360
+failing into this rabbit hole. So it's
+
+93
+00:04:42,560 --> 00:04:50,240
+good to have this information there just
+
+94
+00:04:45,360 --> 00:04:52,720
+as a resource. Okay. Just to be able to
+
+95
+00:04:50,240 --> 00:04:55,120
+make the things easier for us in the
+
+96
+00:04:52,720 --> 00:04:56,880
+future. Okay.
+
+97
+00:04:55,120 --> 00:05:00,240
+Yeah,
+
+98
+00:04:56,880 --> 00:05:02,800
+I know. But Ramito, I'm a shy person. I
+
+99
+00:05:00,240 --> 00:05:05,600
+don't like to speak in public.
+
+100
+00:05:02,800 --> 00:05:07,440
+So, we can always ask uh for the ticket
+
+101
+00:05:05,600 --> 00:05:09,199
+beforehand and leave the question there.
+
+102
+00:05:07,440 --> 00:05:11,680
+That's a pretty good practice. You can
+
+103
+00:05:09,199 --> 00:05:14,560
+say to your PM, to your technical lead,
+
+104
+00:05:11,680 --> 00:05:16,880
+to whoever is running the refinement.
+
+105
+00:05:14,560 --> 00:05:20,000
+Hey, can you give me the list of ticket
+
+106
+00:05:16,880 --> 00:05:22,080
+that we are going to refine in this
+
+107
+00:05:20,000 --> 00:05:23,840
+session? So, you can read those ticket
+
+108
+00:05:22,080 --> 00:05:26,080
+and leave questions right there. That
+
+109
+00:05:23,840 --> 00:05:28,400
+would be good.
+
+110
+00:05:26,080 --> 00:05:31,680
+But Romero, I don't like to leave a lot
+
+111
+00:05:28,400 --> 00:05:33,919
+of comments here and there. So, you can
+
+112
+00:05:31,680 --> 00:05:36,000
+always use the PC of a coworker that
+
+113
+00:05:33,919 --> 00:05:37,759
+left unblocked when he went to the
+
+114
+00:05:36,000 --> 00:05:39,840
+bathroom.
+
+115
+00:05:37,759 --> 00:05:43,600
+Maybe this is not feasible right now due
+
+116
+00:05:39,840 --> 00:05:46,080
+to the home office. But it's just a
+
+117
+00:05:43,600 --> 00:05:48,160
+shock. H
+
+118
+00:05:46,080 --> 00:05:50,479
+But Romeo, if I make all of these
+
+119
+00:05:48,160 --> 00:05:53,759
+questions, the team is going to hate me.
+
+120
+00:05:50,479 --> 00:05:56,240
+Yes and no. The team will maybe hate you
+
+121
+00:05:53,759 --> 00:05:58,880
+at first, but they will love you after
+
+122
+00:05:56,240 --> 00:06:01,120
+they work on ticket like this. We all
+
+123
+00:05:58,880 --> 00:06:03,759
+need those kind of things that make us
+
+124
+00:06:01,120 --> 00:06:06,960
+easy to start getting into the flow and
+
+125
+00:06:03,759 --> 00:06:09,840
+then be able to uh flow without any
+
+126
+00:06:06,960 --> 00:06:13,280
+problems instead of instead of getting
+
+127
+00:06:09,840 --> 00:06:15,919
+stuck in the middle of the flow. Okay,
+
+128
+00:06:13,280 --> 00:06:17,680
+but Romero, if I ask all these
+
+129
+00:06:15,919 --> 00:06:19,680
+questions, the refinement will never
+
+130
+00:06:17,680 --> 00:06:22,800
+finish.
+
+131
+00:06:19,680 --> 00:06:26,000
+Okay, maybe you will need to reschedule
+
+132
+00:06:22,800 --> 00:06:28,560
+the refinement at first time. Maybe the
+
+133
+00:06:26,000 --> 00:06:32,000
+team will be able to refine less tickets
+
+134
+00:06:28,560 --> 00:06:33,919
+at first time. But with time, I can
+
+135
+00:06:32,000 --> 00:06:37,440
+assure you that the ticket will start
+
+136
+00:06:33,919 --> 00:06:40,479
+coming very refined. You will start
+
+137
+00:06:37,440 --> 00:06:42,479
+needing to make less work.
+
+138
+00:06:40,479 --> 00:06:45,440
+And of course, this is a long process
+
+139
+00:06:42,479 --> 00:06:48,680
+from a team to learn and to get these
+
+140
+00:06:45,440 --> 00:06:48,680
+good practices.
+
+141
+00:06:50,560 --> 00:06:56,440
+Okay, now let's go to in the [ __ ]
+
+142
+00:06:53,440 --> 00:06:56,440
+hallway
+
+143
+00:06:58,000 --> 00:07:04,400
+and clear ticket appear. What should I
+
+144
+00:07:00,960 --> 00:07:07,599
+do? Destroy the computer.
+
+145
+00:07:04,400 --> 00:07:10,319
+Shout. No, there is no need to do
+
+146
+00:07:07,599 --> 00:07:13,599
+anything of that.
+
+147
+00:07:10,319 --> 00:07:16,560
+The power of making questions.
+
+148
+00:07:13,599 --> 00:07:19,280
+Use the ticket comments to make a list
+
+149
+00:07:16,560 --> 00:07:22,400
+of questions that you don't understand.
+
+150
+00:07:19,280 --> 00:07:25,120
+Try to answer those questions. Write who
+
+151
+00:07:22,400 --> 00:07:29,120
+can answer those questions. Write the
+
+152
+00:07:25,120 --> 00:07:32,639
+steps you think will take to solve this.
+
+153
+00:07:29,120 --> 00:07:35,759
+Write the person that can validate that.
+
+154
+00:07:32,639 --> 00:07:37,759
+Do a planet 15 meeting with the correct
+
+155
+00:07:35,759 --> 00:07:39,759
+people.
+
+156
+00:07:37,759 --> 00:07:42,080
+Send the comments with these questions
+
+157
+00:07:39,759 --> 00:07:44,800
+before the meeting. Follow the questions
+
+158
+00:07:42,080 --> 00:07:47,919
+to improve your thinking and take note
+
+159
+00:07:44,800 --> 00:07:49,440
+and confirm with them before leaving the
+
+160
+00:07:47,919 --> 00:07:51,280
+meeting.
+
+161
+00:07:49,440 --> 00:07:55,560
+Post this comment and the answer and
+
+162
+00:07:51,280 --> 00:07:55,560
+always ask for a thumbs up.
+
+163
+00:07:56,800 --> 00:08:03,599
+I know this seems a lot but again we are
+
+164
+00:08:00,560 --> 00:08:05,599
+going to come back to the same concept.
+
+165
+00:08:03,599 --> 00:08:09,520
+These are good practices that are going
+
+166
+00:08:05,599 --> 00:08:11,599
+to be built in you and on the team
+
+167
+00:08:09,520 --> 00:08:13,680
+through the years. This is not going to
+
+168
+00:08:11,599 --> 00:08:15,440
+be a one day process. This is not going
+
+169
+00:08:13,680 --> 00:08:18,160
+to be I see this talk and I imple
+
+170
+00:08:15,440 --> 00:08:21,599
+managed to implement these old things.
+
+171
+00:08:18,160 --> 00:08:24,319
+Neither will be I see this talk and I
+
+172
+00:08:21,599 --> 00:08:26,479
+see the benefit of this at the moment.
+
+173
+00:08:24,319 --> 00:08:29,280
+This is going to be a long-term thing,
+
+174
+00:08:26,479 --> 00:08:33,039
+but you're going to end up working much
+
+175
+00:08:29,280 --> 00:08:35,279
+better. And you may say, are you really
+
+176
+00:08:33,039 --> 00:08:38,560
+doing this? And one day I had to
+
+177
+00:08:35,279 --> 00:08:42,159
+implement some of these. And these are
+
+178
+00:08:38,560 --> 00:08:44,800
+the questions that I have when I get
+
+179
+00:08:42,159 --> 00:08:47,040
+asked to help a team that have a pretty
+
+180
+00:08:44,800 --> 00:08:50,560
+complex things. And this is how we did
+
+181
+00:08:47,040 --> 00:08:52,720
+it. I start creating the questions. I
+
+182
+00:08:50,560 --> 00:08:54,880
+create the meeting. I put the click on
+
+183
+00:08:52,720 --> 00:08:57,120
+all the things that I was right. And I
+
+184
+00:08:54,880 --> 00:08:59,519
+the questions and I ask for the thumb
+
+185
+00:08:57,120 --> 00:09:02,160
+ups. These are a lot of questions. I
+
+186
+00:08:59,519 --> 00:09:05,839
+don't want you to read this. There is no
+
+187
+00:09:02,160 --> 00:09:10,000
+need. But this is visible and it's easy
+
+188
+00:09:05,839 --> 00:09:13,040
+to do once you get used to it.
+
+189
+00:09:10,000 --> 00:09:15,200
+Questions for other teams. Do you have a
+
+190
+00:09:13,040 --> 00:09:18,000
+help channels to post clear and concise
+
+191
+00:09:15,200 --> 00:09:21,440
+questions? That will be the way to go.
+
+192
+00:09:18,000 --> 00:09:23,680
+Try to do the third the things first in
+
+193
+00:09:21,440 --> 00:09:27,120
+a channel for those specific teams and
+
+194
+00:09:23,680 --> 00:09:30,080
+not go to specific persons just to be
+
+195
+00:09:27,120 --> 00:09:32,320
+able to have h more answers and more
+
+196
+00:09:30,080 --> 00:09:35,120
+people visualizing that and maybe giving
+
+197
+00:09:32,320 --> 00:09:37,839
+you ideas that the other people that you
+
+198
+00:09:35,120 --> 00:09:39,760
+already know doesn't have.
+
+199
+00:09:37,839 --> 00:09:42,000
+uh
+
+200
+00:09:39,760 --> 00:09:44,160
+you uh use the ticket to link those
+
+201
+00:09:42,000 --> 00:09:47,200
+threads there to have the documentation
+
+202
+00:09:44,160 --> 00:09:50,320
+and an easy way uh to go back to those
+
+203
+00:09:47,200 --> 00:09:53,120
+that discussion instead of being
+
+204
+00:09:50,320 --> 00:09:55,040
+searching for all over Slack or Teams or
+
+205
+00:09:53,120 --> 00:09:56,640
+whatever tool are you using to
+
+206
+00:09:55,040 --> 00:10:00,480
+understand where was that discussion
+
+207
+00:09:56,640 --> 00:10:02,800
+that you did. erh bother people. If
+
+208
+00:10:00,480 --> 00:10:05,440
+there is no answer, leverage your
+
+209
+00:10:02,800 --> 00:10:08,720
+amazing manager, okay?
+
+210
+00:10:05,440 --> 00:10:10,959
+They are there to help you and you are
+
+211
+00:10:08,720 --> 00:10:14,000
+not going to be bothered people if you
+
+212
+00:10:10,959 --> 00:10:17,000
+always ask the things nice and in a good
+
+213
+00:10:14,000 --> 00:10:17,000
+way.
+
+214
+00:10:17,040 --> 00:10:22,160
+So, let's slide the shoe.
+
+215
+00:10:20,160 --> 00:10:23,920
+Did you write the list of steps to solve
+
+216
+00:10:22,160 --> 00:10:26,480
+this?
+
+217
+00:10:23,920 --> 00:10:29,680
+Let's read that again. Sometimes we only
+
+218
+00:10:26,480 --> 00:10:32,720
+lost focus. Okay, it's pretty normal to
+
+219
+00:10:29,680 --> 00:10:35,360
+start getting into a thing. Okay, and
+
+220
+00:10:32,720 --> 00:10:37,920
+getting lost in the middle of the
+
+221
+00:10:35,360 --> 00:10:41,360
+problem or getting derailed to some
+
+222
+00:10:37,920 --> 00:10:44,399
+other minor problem, we need to go back
+
+223
+00:10:41,360 --> 00:10:47,600
+to the main focus. And if you have to
+
+224
+00:10:44,399 --> 00:10:50,560
+solve something that suddenly appear,
+
+225
+00:10:47,600 --> 00:10:52,800
+try to create a back ticket and move
+
+226
+00:10:50,560 --> 00:10:55,279
+forward with your work and then you can
+
+227
+00:10:52,800 --> 00:10:57,120
+come back to that. Don't try to solve
+
+228
+00:10:55,279 --> 00:11:01,120
+all the problems at the same time.
+
+229
+00:10:57,120 --> 00:11:05,440
+That's not a good thing to do.
+
+230
+00:11:01,120 --> 00:11:08,640
+Use TDD baby steps and test those steps.
+
+231
+00:11:05,440 --> 00:11:10,480
+This will help you a lot to have little
+
+232
+00:11:08,640 --> 00:11:13,440
+confirmations that the things that you
+
+233
+00:11:10,480 --> 00:11:15,920
+are doing are in the right way. This
+
+234
+00:11:13,440 --> 00:11:18,000
+should be also with the single
+
+235
+00:11:15,920 --> 00:11:20,480
+responsibility pattern and with a lot of
+
+236
+00:11:18,000 --> 00:11:25,040
+good practice that will help you write a
+
+237
+00:11:20,480 --> 00:11:27,600
+small code, easily tested, no not in a
+
+238
+00:11:25,040 --> 00:11:30,320
+very complex way or needed a lot of
+
+239
+00:11:27,600 --> 00:11:34,880
+mocking and a lot of those things. So
+
+240
+00:11:30,320 --> 00:11:36,720
+try to fight one battle at a time. You
+
+241
+00:11:34,880 --> 00:11:39,040
+did all of this and you are still
+
+242
+00:11:36,720 --> 00:11:41,279
+falling to the rabbit hole. Left
+
+243
+00:11:39,040 --> 00:11:42,800
+comments on the code with what you
+
+244
+00:11:41,279 --> 00:11:45,519
+tried.
+
+245
+00:11:42,800 --> 00:11:47,600
+Comment the code and say I tried moving
+
+246
+00:11:45,519 --> 00:11:50,399
+this variable to blah. I tried doing
+
+247
+00:11:47,600 --> 00:11:53,040
+blah example one, example two, blah blah
+
+248
+00:11:50,399 --> 00:11:55,920
+blah blah blah. So when you have a
+
+249
+00:11:53,040 --> 00:11:57,920
+meeting with someone to help you, it
+
+250
+00:11:55,920 --> 00:12:00,720
+will be easier to explain what did you
+
+251
+00:11:57,920 --> 00:12:04,399
+did. Sometimes we start trying a lot of
+
+252
+00:12:00,720 --> 00:12:06,639
+things and suddenly we just forgot or we
+
+253
+00:12:04,399 --> 00:12:08,880
+have all the things so messed up in your
+
+254
+00:12:06,639 --> 00:12:10,800
+mind that we don't know what are all the
+
+255
+00:12:08,880 --> 00:12:14,240
+things that we trying. Okay. So it's
+
+256
+00:12:10,800 --> 00:12:17,200
+good to leave their crumbers I think it
+
+257
+00:12:14,240 --> 00:12:20,399
+is the word. H but it's good to leave
+
+258
+00:12:17,200 --> 00:12:22,880
+the comments there. Here is an example.
+
+259
+00:12:20,399 --> 00:12:24,880
+Try to filter by using the date column
+
+260
+00:12:22,880 --> 00:12:28,079
+and don't get what I expected. Try to
+
+261
+00:12:24,880 --> 00:12:31,040
+filter by combining the date and the
+
+262
+00:12:28,079 --> 00:12:33,040
+value and I didn't get what I expected.
+
+263
+00:12:31,040 --> 00:12:35,519
+Uh realize that we were missing some
+
+264
+00:12:33,040 --> 00:12:37,839
+index and we don't get what we expect
+
+265
+00:12:35,519 --> 00:12:40,639
+either.
+
+266
+00:12:37,839 --> 00:12:43,600
+I'm completely lost. Nothing works.
+
+267
+00:12:40,639 --> 00:12:47,600
+Yeah, the the final comment maybe it's a
+
+268
+00:12:43,600 --> 00:12:49,200
+lot. But h you see here you will be able
+
+269
+00:12:47,600 --> 00:12:50,800
+to say hey I tried this. I tried this. I
+
+270
+00:12:49,200 --> 00:12:52,399
+try this and I also find this other
+
+271
+00:12:50,800 --> 00:12:56,240
+problem that could be a back ticket that
+
+272
+00:12:52,399 --> 00:12:58,800
+we solve later. Okay, pair up my friend.
+
+273
+00:12:56,240 --> 00:13:01,680
+Pair up. This is a great advice. Never
+
+274
+00:12:58,800 --> 00:13:03,680
+underestimate the power of pairing with
+
+275
+00:13:01,680 --> 00:13:05,920
+other people.
+
+276
+00:13:03,680 --> 00:13:08,240
+Explain the problem to someone else. Use
+
+277
+00:13:05,920 --> 00:13:12,240
+your knowledge. You don't need to know
+
+278
+00:13:08,240 --> 00:13:14,720
+it all. We, for me at least, our work is
+
+279
+00:13:12,240 --> 00:13:17,519
+to learn things and to try to do things
+
+280
+00:13:14,720 --> 00:13:19,600
+that we don't know how to do. So make
+
+281
+00:13:17,519 --> 00:13:22,480
+the peace with that. You don't need to
+
+282
+00:13:19,600 --> 00:13:25,120
+know any everything. You will not
+
+283
+00:13:22,480 --> 00:13:27,600
+believe how many times the solution just
+
+284
+00:13:25,120 --> 00:13:31,839
+came to your mind once you are trying to
+
+285
+00:13:27,600 --> 00:13:34,160
+explain the problem to someone else.
+
+286
+00:13:31,839 --> 00:13:38,000
+Let's have some tea.
+
+287
+00:13:34,160 --> 00:13:41,200
+Endless meetings. First, be active to
+
+288
+00:13:38,000 --> 00:13:43,760
+take notes. Ask questions to clarify
+
+289
+00:13:41,200 --> 00:13:46,880
+what you are not understanding. If
+
+290
+00:13:43,760 --> 00:13:49,279
+needed, repeat what you understand in
+
+291
+00:13:46,880 --> 00:13:51,600
+order to make sure that we are talking
+
+292
+00:13:49,279 --> 00:13:53,839
+about the same things.
+
+293
+00:13:51,600 --> 00:13:57,199
+This sound pretty silly, but it's a
+
+294
+00:13:53,839 --> 00:13:59,040
+powerful tool to use to really be sure
+
+295
+00:13:57,199 --> 00:14:01,680
+that we are talking about the same
+
+296
+00:13:59,040 --> 00:14:04,800
+things. When you have five minutes, read
+
+297
+00:14:01,680 --> 00:14:07,920
+the notes, confirm mutual understanding,
+
+298
+00:14:04,800 --> 00:14:11,199
+and write new questions and offer to
+
+299
+00:14:07,920 --> 00:14:14,000
+schedule a new meeting. Those endless
+
+300
+00:14:11,199 --> 00:14:18,639
+meetings drain your mind or at least
+
+301
+00:14:14,000 --> 00:14:22,160
+mine and end up going like backwards in
+
+302
+00:14:18,639 --> 00:14:24,160
+the process. So say hey
+
+303
+00:14:22,160 --> 00:14:26,959
+we complete the time for this meeting
+
+304
+00:14:24,160 --> 00:14:30,480
+let's reschedule and this will be the
+
+305
+00:14:26,959 --> 00:14:33,519
+topics for the next meeting.
+
+306
+00:14:30,480 --> 00:14:36,480
+So do I manage to implement each of
+
+307
+00:14:33,519 --> 00:14:41,120
+these things every day?
+
+308
+00:14:36,480 --> 00:14:43,600
+No. But when I do, I work happier h and
+
+309
+00:14:41,120 --> 00:14:46,959
+I spend more time in the flow that uh
+
+310
+00:14:43,600 --> 00:14:49,920
+dealing with unnecessary things.
+
+311
+00:14:46,959 --> 00:14:53,360
+Thank you. If you have any comments,
+
+312
+00:14:49,920 --> 00:14:54,959
+ideas, suggestions, let me know. I know
+
+313
+00:14:53,360 --> 00:14:57,920
+this is not the perfect way, but these
+
+314
+00:14:54,959 --> 00:15:00,480
+are some tips that really help me h and
+
+315
+00:14:57,920 --> 00:15:02,320
+help the people that I work with. So, if
+
+316
+00:15:00,480 --> 00:15:04,320
+you have better ideas, let me know. We
+
+317
+00:15:02,320 --> 00:15:07,360
+can discuss it and I maybe could add it
+
+318
+00:15:04,320 --> 00:15:10,160
+to this or another video. So, have a
+
+319
+00:15:07,360 --> 00:15:10,160
+good day and thanks
+
