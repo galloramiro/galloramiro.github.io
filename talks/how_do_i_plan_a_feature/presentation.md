@@ -24,7 +24,7 @@ author: Ramiro Gallo
 ---
 
 ### Quick overview of the project/feature
-- [private_repo](https://github.com/galloramiro/jrnl-scripts) {class="fragment"}
+- [Private repo](https://github.com/galloramiro/jrnl-scripts) {class="fragment"}
 - 3 scripts {class="fragment"}
 - Base configuration {class="fragment"}
 - Runs with `__name__ == "__main__"` {class="fragment"}
@@ -40,7 +40,7 @@ author: Ramiro Gallo
 
 --
 
-#### What do we want from this now
+#### What do we want from this now?
 - Scalability {class="fragment"}
 - Modularity {class="fragment"}
 - Comprehensive testing {class="fragment"}
@@ -59,34 +59,35 @@ author: Ramiro Gallo
 - 1 Client class {class="fragment"}
 - 1 DataProcessor class {class="fragment"}
 - 1 Repository class {class="fragment"}
-- 1 Graphic console data {class="fragment"}
+- 1 Graphic console tool {class="fragment"}
 - 1 Service class to rule them all {class="fragment"}
 
 --
 
 #### Some keys
-- Displaying data {class="fragment"}
+- Parallel development {class="fragment"}
 - Identify dependencies {class="fragment"}
 - [Explore examples](https://github.com/users/galloramiro/projects/2) {class="fragment"}
 
 ---
 
 ### Writing effective tickets
-- Concise yet informative descriptions  {class="fragment"}context
+- Concise yet informative descriptions {class="fragment"}
 - Clear acceptance criteria {class="fragment"}
 - Relevant additional details {class="fragment"}
 - Explicit dependencies between tickets {class="fragment"}
 
 --
 
-- [Base class ticket](https://github.com/galloramiro/jrnl-habits-tracker/issues/4)
+#### Examples of good tickets
+- [Base class ticket](https://github.com/galloramiro/jrnl-habits-tracker/issues/4) {class="fragment"}
 - [Well-documented ticket](https://github.com/galloramiro/jrnl-habits-tracker/issues/17) {class="fragment"}
 - [Ticket with examples](https://github.com/galloramiro/jrnl-habits-tracker/issues/21) {class="fragment"}
 
 ---
 
 ### Laying the groundwork
-- [Milestone to set up the project](https://github.com/galloramiro/jrnl-habits-tracker/milestone/7?closed=1)
+- [Milestone to set up the project](https://github.com/galloramiro/jrnl-habits-tracker/milestone/7?closed=1) {class="fragment"}
 - [Base classes implemented](https://github.com/galloramiro/jrnl-habits-tracker/pulls?q=is%3Apr+is%3Aclosed++create) {class="fragment"}
 - [Test data prepared](https://github.com/galloramiro/jrnl-habits-tracker/tree/main/examples) {class="fragment"}
 - Well-documented tickets {class="fragment"}
@@ -98,5 +99,28 @@ author: Ramiro Gallo
 
 ---
 
+### Key Takeaways
+- Break down features into clear responsibilities {class="fragment"}
+- Structure work to enable parallel development {class="fragment"}
+- Write tickets that tell a story {class="fragment"}
+- Build foundational pieces first {class="fragment"}
+- Provide regular visibility to stakeholders {class="fragment"}
+
+---
+
+<img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/thank-you.gif?raw=true" width="80%" style="display: block; margin: 0 auto;">
+
 ### Thank you!
+
+<div style="text-align: center; margin-top: 20px;">
+  <a href="https://github.com/galloramiro" style="margin-right: 10px;">
+    <img class="r-frame" src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/github.svg?raw=true" width="25" style="background-color:white;" />
+  </a>
+  <a href="https://www.linkedin.com/in/ramirogallo/" style="margin-right: 10px;">
+    <img class="r-frame" src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/linked-in.svg?raw=true" width="25" style="background-color:white;" />
+  </a>
+  <a href="https://www.eurekalabs.io/">
+    <img class="r-frame" src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/eurekalabs.svg?raw=true" width="25" style="background-color:white;" />
+  </a>
+</div>
 
