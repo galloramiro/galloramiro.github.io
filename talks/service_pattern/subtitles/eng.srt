@@ -1,0 +1,2128 @@
+1
+00:00:00,640 --> 00:00:07,440
+Hello. Today we're going to try to find
+
+2
+00:00:03,840 --> 00:00:10,000
+out if the service class is a good place
+
+3
+00:00:07,440 --> 00:00:13,120
+to put and hold the business logic.
+
+4
+00:00:10,000 --> 00:00:15,360
+Okay. So let's start by seeing what are
+
+5
+00:00:13,120 --> 00:00:18,880
+we going to cover today. We're going to
+
+6
+00:00:15,360 --> 00:00:21,600
+start by seeing some real life examples
+
+7
+00:00:18,880 --> 00:00:23,359
+of ways that I saw
+
+8
+00:00:21,600 --> 00:00:25,760
+implementing business logic into
+
+9
+00:00:23,359 --> 00:00:28,240
+different places. Okay. After that we
+
+10
+00:00:25,760 --> 00:00:30,880
+are going to try to see and understand
+
+11
+00:00:28,240 --> 00:00:32,880
+what are the difficulties which these
+
+12
+00:00:30,880 --> 00:00:35,440
+kind of approaches.
+
+13
+00:00:32,880 --> 00:00:37,600
+Before that because I'm not here only to
+
+14
+00:00:35,440 --> 00:00:39,680
+blame. We're going to see what would be
+
+15
+00:00:37,600 --> 00:00:41,520
+my proposal to approach these kind of
+
+16
+00:00:39,680 --> 00:00:43,040
+things. Okay.
+
+17
+00:00:41,520 --> 00:00:45,600
+After that we're going to see some code
+
+18
+00:00:43,040 --> 00:00:47,680
+examples on how do I implement this.
+
+19
+00:00:45,600 --> 00:00:50,000
+Okay.
+
+20
+00:00:47,680 --> 00:00:52,559
+After that we are going to recap some of
+
+21
+00:00:50,000 --> 00:00:55,360
+the benefits that this approach brings
+
+22
+00:00:52,559 --> 00:00:58,079
+to the table. Finally, we're going to
+
+23
+00:00:55,360 --> 00:01:00,480
+see how we can move into a magnificent
+
+24
+00:00:58,079 --> 00:01:02,399
+future.
+
+25
+00:01:00,480 --> 00:01:04,479
+Okay,
+
+26
+00:01:02,399 --> 00:01:07,680
+enough chitchat.
+
+27
+00:01:04,479 --> 00:01:09,439
+Let's start by seeing some real life
+
+28
+00:01:07,680 --> 00:01:12,640
+example
+
+29
+00:01:09,439 --> 00:01:14,560
+on managing business logic.
+
+30
+00:01:12,640 --> 00:01:16,799
+First of all, and I think you all will
+
+31
+00:01:14,560 --> 00:01:19,360
+be pretty familiarized with this is
+
+32
+00:01:16,799 --> 00:01:22,320
+oversized rotors. These will be
+
+33
+00:01:19,360 --> 00:01:24,880
+functions with a lot of mixed things
+
+34
+00:01:22,320 --> 00:01:27,360
+between them like business logic,
+
+35
+00:01:24,880 --> 00:01:30,799
+thirdparty services, deep interactions,
+
+36
+00:01:27,360 --> 00:01:32,880
+error handling and a bunch of logging.
+
+37
+00:01:30,799 --> 00:01:36,000
+Okay.
+
+38
+00:01:32,880 --> 00:01:39,280
+Second example, single single class with
+
+39
+00:01:36,000 --> 00:01:41,360
+the same thing, a single class with a
+
+40
+00:01:39,280 --> 00:01:45,040
+bunch of different responsibilities all
+
+41
+00:01:41,360 --> 00:01:48,720
+over the place. H it's maybe a better
+
+42
+00:01:45,040 --> 00:01:51,040
+step. It's easier to move a single class
+
+43
+00:01:48,720 --> 00:01:53,200
+into another project than move the
+
+44
+00:01:51,040 --> 00:01:55,680
+routers with all the things that are
+
+45
+00:01:53,200 --> 00:01:58,640
+pretty tight to the implementation of
+
+46
+00:01:55,680 --> 00:02:02,159
+the framework that you are using. So,
+
+47
+00:01:58,640 --> 00:02:05,520
+and lastly, the functional approach all
+
+48
+00:02:02,159 --> 00:02:08,080
+the same things but all separate
+
+49
+00:02:05,520 --> 00:02:10,800
+functions scatter all over the place.
+
+50
+00:02:08,080 --> 00:02:12,640
+This is the one that is most difficult
+
+51
+00:02:10,800 --> 00:02:15,440
+for me. I'm not saying functional
+
+52
+00:02:12,640 --> 00:02:18,800
+approach to the things are bad but
+
+53
+00:02:15,440 --> 00:02:21,920
+usually tend to make a lot of of mess
+
+54
+00:02:18,800 --> 00:02:23,840
+when you are start creating
+
+55
+00:02:21,920 --> 00:02:28,000
+util function here another function
+
+56
+00:02:23,840 --> 00:02:30,239
+there h it's a mess. Now let's move to
+
+57
+00:02:28,000 --> 00:02:33,040
+start seeing what are the difficulties
+
+58
+00:02:30,239 --> 00:02:35,760
+with these kind of approaches. Okay,
+
+59
+00:02:33,040 --> 00:02:38,319
+first of all, no single approach, no
+
+60
+00:02:35,760 --> 00:02:41,599
+consistency on code. Working on each
+
+61
+00:02:38,319 --> 00:02:44,319
+service feels like riding a bike in a
+
+62
+00:02:41,599 --> 00:02:47,360
+totally different way. Okay, it's pretty
+
+63
+00:02:44,319 --> 00:02:49,680
+difficult to test the business logic
+
+64
+00:02:47,360 --> 00:02:52,480
+without getting a mix of dependencies
+
+65
+00:02:49,680 --> 00:02:55,680
+involved and running into a lot of
+
+66
+00:02:52,480 --> 00:02:59,120
+rabbit holes through that. Okay. Also,
+
+67
+00:02:55,680 --> 00:03:01,040
+this tends to make pretty hard to find
+
+68
+00:02:59,120 --> 00:03:04,319
+and isolate the business logic that we
+
+69
+00:03:01,040 --> 00:03:06,319
+are trying to put on the code. As you
+
+70
+00:03:04,319 --> 00:03:07,840
+can imagine, this turns into difficult
+
+71
+00:03:06,319 --> 00:03:10,400
+situations when we are trying to on
+
+72
+00:03:07,840 --> 00:03:13,200
+board new people to the team when we are
+
+73
+00:03:10,400 --> 00:03:15,440
+trying to debug under a severity or when
+
+74
+00:03:13,200 --> 00:03:17,280
+you are trying to work with some code
+
+75
+00:03:15,440 --> 00:03:20,800
+that you are not familiarized with.
+
+76
+00:03:17,280 --> 00:03:23,200
+Okay, I know that same things it's
+
+77
+00:03:20,800 --> 00:03:25,519
+easier to implement them. I know that
+
+78
+00:03:23,200 --> 00:03:27,599
+you're gonna make the goat thinking that
+
+79
+00:03:25,519 --> 00:03:29,599
+it's going to go to one place and be
+
+80
+00:03:27,599 --> 00:03:33,599
+used in one way and there it's going to
+
+81
+00:03:29,599 --> 00:03:36,239
+evolve into different ways.
+
+82
+00:03:33,599 --> 00:03:39,440
+But there is a lot of things that we can
+
+83
+00:03:36,239 --> 00:03:41,680
+do in order to make our life easier when
+
+84
+00:03:39,440 --> 00:03:43,840
+those kind of things happen. So this is
+
+85
+00:03:41,680 --> 00:03:48,080
+trying to help you go around those
+
+86
+00:03:43,840 --> 00:03:50,879
+things in an easier way. So let's start
+
+87
+00:03:48,080 --> 00:03:53,360
+by seeing what will be my proposal.
+
+88
+00:03:50,879 --> 00:03:55,440
+We're going to need to start by
+
+89
+00:03:53,360 --> 00:03:58,319
+separating the code into different
+
+90
+00:03:55,440 --> 00:04:00,640
+classes with different purposes.
+
+91
+00:03:58,319 --> 00:04:02,959
+Again, let's try to understand what is
+
+92
+00:04:00,640 --> 00:04:06,959
+the main function. What is the main
+
+93
+00:04:02,959 --> 00:04:10,560
+thing that a class has to do? if it's
+
+94
+00:04:06,959 --> 00:04:12,879
+going to take advantage or of a specific
+
+95
+00:04:10,560 --> 00:04:15,360
+library to do things like interacting
+
+96
+00:04:12,879 --> 00:04:19,440
+with database like interacting with API
+
+97
+00:04:15,360 --> 00:04:22,560
+services like parsing some data like
+
+98
+00:04:19,440 --> 00:04:24,560
+doing some business analysis
+
+99
+00:04:22,560 --> 00:04:27,919
+like scrapping things we need to
+
+100
+00:04:24,560 --> 00:04:30,000
+understand what are the main languages
+
+101
+00:04:27,919 --> 00:04:31,919
+that they are going to use what are the
+
+102
+00:04:30,000 --> 00:04:34,639
+things that are related with them and we
+
+103
+00:04:31,919 --> 00:04:38,720
+need to separate those in order to have
+
+104
+00:04:34,639 --> 00:04:40,800
+classes that just one thing and that is
+
+105
+00:04:38,720 --> 00:04:43,199
+easier to understand. If we have all the
+
+106
+00:04:40,800 --> 00:04:45,680
+things mix it, we're going to end up
+
+107
+00:04:43,199 --> 00:04:50,080
+losing the trail to that and the testing
+
+108
+00:04:45,680 --> 00:04:53,120
+will be pretty heavier. Okay, so
+
+109
+00:04:50,080 --> 00:04:55,280
+one class to interact with each database
+
+110
+00:04:53,120 --> 00:04:57,280
+object. This will be an example. We're
+
+111
+00:04:55,280 --> 00:04:59,600
+going to have one class that is going to
+
+112
+00:04:57,280 --> 00:05:02,240
+talk with the client
+
+113
+00:04:59,600 --> 00:05:04,639
+table that it's going to have the all
+
+114
+00:05:02,240 --> 00:05:07,440
+workounds. Okay, it's going to use SQL
+
+115
+00:05:04,639 --> 00:05:09,680
+Alchemy, Django or RM or whatever you
+
+116
+00:05:07,440 --> 00:05:11,919
+are using, but it's going to have some
+
+117
+00:05:09,680 --> 00:05:15,840
+things tied there to that specific
+
+118
+00:05:11,919 --> 00:05:18,400
+table. One class per third party service
+
+119
+00:05:15,840 --> 00:05:21,600
+that we are interacting with. If we are
+
+120
+00:05:18,400 --> 00:05:23,520
+talking with let's say four or five
+
+121
+00:05:21,600 --> 00:05:25,840
+different APIs because we need to get
+
+122
+00:05:23,520 --> 00:05:29,440
+data from a lot of places or do a lot of
+
+123
+00:05:25,840 --> 00:05:32,639
+things, each separate API should have
+
+124
+00:05:29,440 --> 00:05:34,320
+their own class. Okay, why? because they
+
+125
+00:05:32,639 --> 00:05:36,720
+will
+
+126
+00:05:34,320 --> 00:05:39,199
+um because they will maybe ask different
+
+127
+00:05:36,720 --> 00:05:41,120
+login, they will have different headers,
+
+128
+00:05:39,199 --> 00:05:44,320
+they will have different kind of
+
+129
+00:05:41,120 --> 00:05:46,960
+responding for to errors. So we are
+
+130
+00:05:44,320 --> 00:05:49,280
+going to need to prepare the things and
+
+131
+00:05:46,960 --> 00:05:52,560
+talk the same language into each
+
+132
+00:05:49,280 --> 00:05:54,880
+separate class. This will allow us to
+
+133
+00:05:52,560 --> 00:05:57,840
+make contract testing to have the field
+
+134
+00:05:54,880 --> 00:06:00,880
+separate to also mock the things in a
+
+135
+00:05:57,840 --> 00:06:03,520
+nice way when we need to do test and to
+
+136
+00:06:00,880 --> 00:06:05,360
+have all the things into one place.
+
+137
+00:06:03,520 --> 00:06:07,120
+Okay.
+
+138
+00:06:05,360 --> 00:06:09,759
+Try to use the single responsibility
+
+139
+00:06:07,120 --> 00:06:13,600
+principle. This is more or less what I
+
+140
+00:06:09,759 --> 00:06:16,639
+was trying to say h before.
+
+141
+00:06:13,600 --> 00:06:18,880
+Finally, I like to have one class to
+
+142
+00:06:16,639 --> 00:06:23,600
+group them all and hold the business
+
+143
+00:06:18,880 --> 00:06:28,880
+logic. Okay, this will mean like how do
+
+144
+00:06:23,600 --> 00:06:32,639
+I I what do we I expect when I call to
+
+145
+00:06:28,880 --> 00:06:35,280
+uh this API? What do I do when I call
+
+146
+00:06:32,639 --> 00:06:37,680
+this API? How do I process the data? How
+
+147
+00:06:35,280 --> 00:06:41,520
+do I save the data? What do I do with
+
+148
+00:06:37,680 --> 00:06:44,639
+that data? This class should use the
+
+149
+00:06:41,520 --> 00:06:46,560
+other classes to give orders and give
+
+150
+00:06:44,639 --> 00:06:48,720
+and say how we are going to do the
+
+151
+00:06:46,560 --> 00:06:50,960
+things and you're going to read this fun
+
+152
+00:06:48,720 --> 00:06:53,120
+the functions from this class like a
+
+153
+00:06:50,960 --> 00:06:54,960
+textbook and you are going to understand
+
+154
+00:06:53,120 --> 00:06:57,520
+hopefully
+
+155
+00:06:54,960 --> 00:06:59,199
+how the business logic is implemented.
+
+156
+00:06:57,520 --> 00:07:01,599
+Okay.
+
+157
+00:06:59,199 --> 00:07:04,080
+So some good practices use dependency
+
+158
+00:07:01,599 --> 00:07:06,800
+injection single responsibility
+
+159
+00:07:04,080 --> 00:07:10,160
+principle client pattern repository
+
+160
+00:07:06,800 --> 00:07:12,400
+pattern write understandables names for
+
+161
+00:07:10,160 --> 00:07:15,199
+functions. This is a pretty spicy topic
+
+162
+00:07:12,400 --> 00:07:17,280
+but please please try to do that. I want
+
+163
+00:07:15,199 --> 00:07:19,440
+to understand what this function is
+
+164
+00:07:17,280 --> 00:07:22,160
+doing and then if I want to know more I
+
+165
+00:07:19,440 --> 00:07:27,280
+can go inside that. If I go to a
+
+166
+00:07:22,160 --> 00:07:30,319
+function that says get client or get
+
+167
+00:07:27,280 --> 00:07:33,919
+prices and I go up there and it return
+
+168
+00:07:30,319 --> 00:07:36,080
+prices, client
+
+169
+00:07:33,919 --> 00:07:37,840
+amount of sales,
+
+170
+00:07:36,080 --> 00:07:41,120
+those are different things and should
+
+171
+00:07:37,840 --> 00:07:44,319
+have their own place.
+
+172
+00:07:41,120 --> 00:07:48,240
+And finally, we will need one ring to
+
+173
+00:07:44,319 --> 00:07:50,400
+room them all. As I say earlier,
+
+174
+00:07:48,240 --> 00:07:53,360
+some extra tips,
+
+175
+00:07:50,400 --> 00:07:57,039
+use single public functions for the
+
+176
+00:07:53,360 --> 00:07:58,960
+principle action. What is this? This is
+
+177
+00:07:57,039 --> 00:08:02,000
+if you have a class that is pretty
+
+178
+00:07:58,960 --> 00:08:04,720
+complex and is use a lot of functions to
+
+179
+00:08:02,000 --> 00:08:09,280
+build the functionality that you have.
+
+180
+00:08:04,720 --> 00:08:12,400
+Try to use sub functions and only expose
+
+181
+00:08:09,280 --> 00:08:14,400
+as a public or without underscore at the
+
+182
+00:08:12,400 --> 00:08:16,400
+starting Python.
+
+183
+00:08:14,400 --> 00:08:19,759
+the main function that the people is
+
+184
+00:08:16,400 --> 00:08:22,800
+going to be needing or that it's going
+
+185
+00:08:19,759 --> 00:08:24,639
+to be using. Okay,
+
+186
+00:08:22,800 --> 00:08:27,360
+if you build a class that is pretty
+
+187
+00:08:24,639 --> 00:08:29,280
+complex to use, use a factory method.
+
+188
+00:08:27,360 --> 00:08:30,879
+We're going to see an example of this uh
+
+189
+00:08:29,280 --> 00:08:33,599
+after
+
+190
+00:08:30,879 --> 00:08:37,120
+delegate complexity into subprivate
+
+191
+00:08:33,599 --> 00:08:39,360
+method. But again, don't go too deep.
+
+192
+00:08:37,120 --> 00:08:41,360
+Let's make an example. You have the
+
+193
+00:08:39,360 --> 00:08:43,839
+service class that it's the one that is
+
+194
+00:08:41,360 --> 00:08:45,680
+going to use the client that is one for
+
+195
+00:08:43,839 --> 00:08:48,720
+the API that is the one that is going to
+
+196
+00:08:45,680 --> 00:08:51,360
+use the repository to save the data that
+
+197
+00:08:48,720 --> 00:08:55,519
+is going to use another class to parse
+
+198
+00:08:51,360 --> 00:08:59,200
+and process the information. Okay, good.
+
+199
+00:08:55,519 --> 00:09:00,720
+You are going to have on that class one
+
+200
+00:08:59,200 --> 00:09:03,519
+function that is going to be the one
+
+201
+00:09:00,720 --> 00:09:05,920
+exposing the functionality and then that
+
+202
+00:09:03,519 --> 00:09:08,720
+function is going to have the usage of
+
+203
+00:09:05,920 --> 00:09:11,360
+the different functions of the class.
+
+204
+00:09:08,720 --> 00:09:15,120
+If you go into
+
+205
+00:09:11,360 --> 00:09:18,320
+those classes, you could find one more
+
+206
+00:09:15,120 --> 00:09:22,160
+layer of deepness. Okay? Only one sub
+
+207
+00:09:18,320 --> 00:09:26,000
+method could be multiple, but with no
+
+208
+00:09:22,160 --> 00:09:28,080
+sub method inside of those methods. Why?
+
+209
+00:09:26,000 --> 00:09:29,680
+Because if you start going deeper and
+
+210
+00:09:28,080 --> 00:09:31,680
+deeper and deeper, you're going to
+
+211
+00:09:29,680 --> 00:09:34,640
+become crazy going from function into
+
+212
+00:09:31,680 --> 00:09:37,279
+function. And this is not good. Try to
+
+213
+00:09:34,640 --> 00:09:41,200
+do it. It's not always possible but try
+
+214
+00:09:37,279 --> 00:09:44,000
+to leave all in the first layer. Okay,
+
+215
+00:09:41,200 --> 00:09:46,160
+in the service class and all the other
+
+216
+00:09:44,000 --> 00:09:49,200
+classes that you are trying to build.
+
+217
+00:09:46,160 --> 00:09:52,720
+Also, each class should have their own
+
+218
+00:09:49,200 --> 00:09:55,680
+separate test file. This could be used
+
+219
+00:09:52,720 --> 00:09:58,080
+as I say here as a way of documenting
+
+220
+00:09:55,680 --> 00:10:00,480
+the class. How is it worked? What are
+
+221
+00:09:58,080 --> 00:10:04,240
+the things that are dependent on? How
+
+222
+00:10:00,480 --> 00:10:06,000
+these sub functions works? what is doing
+
+223
+00:10:04,240 --> 00:10:08,480
+specifically this function? What is the
+
+224
+00:10:06,000 --> 00:10:10,480
+input and the output? This is pretty
+
+225
+00:10:08,480 --> 00:10:13,279
+important.
+
+226
+00:10:10,480 --> 00:10:15,600
+Also, try to not abuse patterns or
+
+227
+00:10:13,279 --> 00:10:17,120
+principles. There are no silver ballots.
+
+228
+00:10:15,600 --> 00:10:22,160
+Okay.
+
+229
+00:10:17,120 --> 00:10:26,320
+Lastly, be happy. Yay.
+
+230
+00:10:22,160 --> 00:10:29,920
+Let's go and see some real code. This is
+
+231
+00:10:26,320 --> 00:10:33,200
+the code that I make to make an audit
+
+232
+00:10:29,920 --> 00:10:35,760
+into my internet service provider. Okay.
+
+233
+00:10:33,200 --> 00:10:39,680
+So, first of all, we're going to have
+
+234
+00:10:35,760 --> 00:10:41,279
+the internal connection log service.
+
+235
+00:10:39,680 --> 00:10:43,839
+This is going to be the class that
+
+236
+00:10:41,279 --> 00:10:46,560
+expose the whole functionality. This
+
+237
+00:10:43,839 --> 00:10:48,399
+class is going to have two functions.
+
+238
+00:10:46,560 --> 00:10:51,040
+Lock the internet connection for single
+
+239
+00:10:48,399 --> 00:10:53,839
+servers and log the internet connection
+
+240
+00:10:51,040 --> 00:10:56,399
+for multiple servers. Okay.
+
+241
+00:10:53,839 --> 00:10:59,040
+This class is going to be composed by
+
+242
+00:10:56,399 --> 00:11:01,120
+the parser, the gateway and the
+
+243
+00:10:59,040 --> 00:11:03,200
+repository.
+
+244
+00:11:01,120 --> 00:11:06,399
+The gateway is the one that is going to
+
+245
+00:11:03,200 --> 00:11:08,800
+be in charge to go and get me the
+
+246
+00:11:06,399 --> 00:11:11,040
+information. Okay.
+
+247
+00:11:08,800 --> 00:11:14,959
+The parser is going to be the one in
+
+248
+00:11:11,040 --> 00:11:17,120
+charge of transform that information.
+
+249
+00:11:14,959 --> 00:11:21,200
+And finally, the repository is going to
+
+250
+00:11:17,120 --> 00:11:23,680
+be the one in charge of saving that
+
+251
+00:11:21,200 --> 00:11:26,000
+information. What are some of the things
+
+252
+00:11:23,680 --> 00:11:28,560
+that this approach brings to the table?
+
+253
+00:11:26,000 --> 00:11:31,120
+Let's put for example the speed test
+
+254
+00:11:28,560 --> 00:11:33,360
+JSON repository. Right now I'm using a
+
+255
+00:11:31,120 --> 00:11:36,079
+JSON. I don't need to use a database. I
+
+256
+00:11:33,360 --> 00:11:38,240
+don't need to use I could use a CSV
+
+257
+00:11:36,079 --> 00:11:40,160
+whatever I want to save that
+
+258
+00:11:38,240 --> 00:11:42,320
+information. I'm going to give one
+
+259
+00:11:40,160 --> 00:11:44,880
+object to these things to this
+
+260
+00:11:42,320 --> 00:11:47,040
+repository and I want that repository to
+
+261
+00:11:44,880 --> 00:11:48,959
+save that information. Today it's going
+
+262
+00:11:47,040 --> 00:11:54,160
+to be a JSON. Tomorrow could be a
+
+263
+00:11:48,959 --> 00:11:56,240
+database. But all the logic on how do I
+
+264
+00:11:54,160 --> 00:11:58,560
+save the information?
+
+265
+00:11:56,240 --> 00:12:00,720
+It's up to the repository. I don't care.
+
+266
+00:11:58,560 --> 00:12:03,279
+I as a service don't care. The only
+
+267
+00:12:00,720 --> 00:12:06,720
+thing that I care is that it saves my
+
+268
+00:12:03,279 --> 00:12:09,600
+information. So I could change that to a
+
+269
+00:12:06,720 --> 00:12:15,120
+separate s service that have the name
+
+270
+00:12:09,600 --> 00:12:17,279
+the same uh functions exposed and
+
+271
+00:12:15,120 --> 00:12:19,040
+gets the same information and returns
+
+272
+00:12:17,279 --> 00:12:21,040
+the same information. All the
+
+273
+00:12:19,040 --> 00:12:23,440
+implementation is down to the
+
+274
+00:12:21,040 --> 00:12:26,079
+repository. Okay.
+
+275
+00:12:23,440 --> 00:12:29,360
+Now let's see another example. Let's say
+
+276
+00:12:26,079 --> 00:12:32,880
+we have the speed test getway. Right now
+
+277
+00:12:29,360 --> 00:12:35,120
+I'm getting the information with um
+
+278
+00:12:32,880 --> 00:12:36,880
+library that get this information. I
+
+279
+00:12:35,120 --> 00:12:39,279
+could get it in another way. I can do it
+
+280
+00:12:36,880 --> 00:12:43,120
+in another way. It doesn't matter for
+
+281
+00:12:39,279 --> 00:12:45,920
+me. The only thing that I want is that I
+
+282
+00:12:43,120 --> 00:12:48,480
+could be sure that I will get the same
+
+283
+00:12:45,920 --> 00:12:51,040
+information and I could then parse this
+
+284
+00:12:48,480 --> 00:12:54,320
+information. Okay, that's our important
+
+285
+00:12:51,040 --> 00:12:58,639
+thing. So in this way I could switch
+
+286
+00:12:54,320 --> 00:13:01,680
+these parts from the main class and make
+
+287
+00:12:58,639 --> 00:13:04,560
+it work in the same way but with
+
+288
+00:13:01,680 --> 00:13:06,079
+different things. Okay.
+
+289
+00:13:04,560 --> 00:13:08,399
+Now
+
+290
+00:13:06,079 --> 00:13:11,040
+let's take a look to the service here.
+
+291
+00:13:08,399 --> 00:13:14,399
+As you may see I'm importing all the
+
+292
+00:13:11,040 --> 00:13:16,000
+things. I'm using this to inject the
+
+293
+00:13:14,399 --> 00:13:19,600
+dependencies.
+
+294
+00:13:16,000 --> 00:13:22,320
+Okay. And I have the log internet
+
+295
+00:13:19,600 --> 00:13:24,959
+connection for single server. I don't
+
+296
+00:13:22,320 --> 00:13:28,320
+return anything because I don't need to.
+
+297
+00:13:24,959 --> 00:13:31,519
+But what do I do? I get the speed test
+
+298
+00:13:28,320 --> 00:13:34,000
+output. Output. How do I do that? By
+
+299
+00:13:31,519 --> 00:13:36,560
+calling the client to get the speed test
+
+300
+00:13:34,000 --> 00:13:39,200
+result. I want to know I need to know
+
+301
+00:13:36,560 --> 00:13:43,200
+right now what do I do with that? How do
+
+302
+00:13:39,200 --> 00:13:46,800
+I do that? No, I afterwards need to know
+
+303
+00:13:43,200 --> 00:13:49,360
+that I parse that output. Okay, I log
+
+304
+00:13:46,800 --> 00:13:52,720
+the things and finally I save this. This
+
+305
+00:13:49,360 --> 00:13:55,120
+is pretty simple thing. After that, I
+
+306
+00:13:52,720 --> 00:13:57,519
+have another function to do this for
+
+307
+00:13:55,120 --> 00:14:00,639
+multiple servers and it's an easy a PC
+
+308
+00:13:57,519 --> 00:14:03,360
+implementation. Okay, but here I know
+
+309
+00:14:00,639 --> 00:14:05,760
+that this doesn't have a pretty complex
+
+310
+00:14:03,360 --> 00:14:09,600
+business logic.
+
+311
+00:14:05,760 --> 00:14:11,680
+But if this were more complex, I will be
+
+312
+00:14:09,600 --> 00:14:15,600
+able to see this and read this in an
+
+313
+00:14:11,680 --> 00:14:17,920
+easy way. Finally, as I say, if this
+
+314
+00:14:15,600 --> 00:14:19,680
+class turns to complex, and in this
+
+315
+00:14:17,920 --> 00:14:21,199
+case, we have three different classes
+
+316
+00:14:19,680 --> 00:14:23,680
+that compose this. For me, that is
+
+317
+00:14:21,199 --> 00:14:26,320
+complex. I can just have a build
+
+318
+00:14:23,680 --> 00:14:31,040
+function that returns an instance for
+
+319
+00:14:26,320 --> 00:14:34,560
+this. Okay, this is this is easy. So,
+
+320
+00:14:31,040 --> 00:14:37,600
+let's go one layer deeper. Let's see the
+
+321
+00:14:34,560 --> 00:14:40,720
+client. What does the client? I use the
+
+322
+00:14:37,600 --> 00:14:44,079
+sub process. I use some things here. I
+
+323
+00:14:40,720 --> 00:14:46,000
+create a data class so I could do some
+
+324
+00:14:44,079 --> 00:14:47,519
+things and use these servers in another
+
+325
+00:14:46,000 --> 00:14:50,160
+places.
+
+326
+00:14:47,519 --> 00:14:54,720
+I need the server ID and then I have the
+
+327
+00:14:50,160 --> 00:14:57,920
+command that is pretty clear. I try to
+
+328
+00:14:54,720 --> 00:15:00,639
+check the process with this command and
+
+329
+00:14:57,920 --> 00:15:03,600
+then I try to parse this association.
+
+330
+00:15:00,639 --> 00:15:07,120
+Here is the other function.
+
+331
+00:15:03,600 --> 00:15:10,160
+Finally, if I get any error, I just
+
+332
+00:15:07,120 --> 00:15:11,760
+catch it and login. It doesn't matter. I
+
+333
+00:15:10,160 --> 00:15:14,160
+don't need to raise anything here
+
+334
+00:15:11,760 --> 00:15:17,440
+because I could continue doing this and
+
+335
+00:15:14,160 --> 00:15:20,880
+it's just one one error and that doesn't
+
+336
+00:15:17,440 --> 00:15:22,880
+impact in a highway the output that I
+
+337
+00:15:20,880 --> 00:15:25,600
+need. Okay,
+
+338
+00:15:22,880 --> 00:15:28,560
+then let's try to see the parser. Maybe
+
+339
+00:15:25,600 --> 00:15:31,519
+this is the more complex. Okay, again
+
+340
+00:15:28,560 --> 00:15:33,760
+here we have a data class with all the
+
+341
+00:15:31,519 --> 00:15:35,360
+informations that I need. This is to be
+
+342
+00:15:33,760 --> 00:15:37,199
+clear what are the things that we are
+
+343
+00:15:35,360 --> 00:15:39,680
+going to return. the download of the
+
+344
+00:15:37,199 --> 00:15:42,160
+speed, the shooter, the bandwidth, all
+
+345
+00:15:39,680 --> 00:15:46,240
+the things. Okay. And I have a way to do
+
+346
+00:15:42,160 --> 00:15:50,320
+this as I did. And then you see that I
+
+347
+00:15:46,240 --> 00:15:54,079
+use a JSON and I return a speed test
+
+348
+00:15:50,320 --> 00:15:56,880
+paret output. This is important if I
+
+349
+00:15:54,079 --> 00:15:59,759
+want to change the repository. Okay, why
+
+350
+00:15:56,880 --> 00:16:03,040
+this is important? Because if I want to
+
+351
+00:15:59,759 --> 00:16:07,040
+change the repository, I will need to be
+
+352
+00:16:03,040 --> 00:16:10,000
+able to process this into the SQL
+
+353
+00:16:07,040 --> 00:16:11,839
+database, the CSP or whatever. But I
+
+354
+00:16:10,000 --> 00:16:13,759
+will be working with this. This will be
+
+355
+00:16:11,839 --> 00:16:16,639
+like the contract that we have between
+
+356
+00:16:13,759 --> 00:16:19,759
+classes. Okay.
+
+357
+00:16:16,639 --> 00:16:21,920
+Well, first here is how we parse the
+
+358
+00:16:19,759 --> 00:16:24,639
+output. We have the server info. We have
+
+359
+00:16:21,920 --> 00:16:28,959
+the result info, the resulting phone.
+
+360
+00:16:24,639 --> 00:16:31,199
+And we parse this here.
+
+361
+00:16:28,959 --> 00:16:33,600
+And then we just start to download the
+
+362
+00:16:31,199 --> 00:16:36,480
+things and do all the things that we
+
+363
+00:16:33,600 --> 00:16:40,399
+need. We transform the D data. We go
+
+364
+00:16:36,480 --> 00:16:43,839
+from bytes to megabytes here. H we also
+
+365
+00:16:40,399 --> 00:16:46,240
+do that here. We do with the ping. We
+
+366
+00:16:43,839 --> 00:16:48,160
+don't do that. And we start getting all
+
+367
+00:16:46,240 --> 00:16:50,480
+the information that we have here. As
+
+368
+00:16:48,160 --> 00:16:53,360
+you may see, we have some helper
+
+369
+00:16:50,480 --> 00:16:56,560
+functions or sub functions that are here
+
+370
+00:16:53,360 --> 00:17:00,079
+to do some complex things that I use
+
+371
+00:16:56,560 --> 00:17:02,800
+more than once in this main loop. Okay,
+
+372
+00:17:00,079 --> 00:17:04,720
+so for me it was good to put this here
+
+373
+00:17:02,800 --> 00:17:07,439
+and don't expose this to the service
+
+374
+00:17:04,720 --> 00:17:10,959
+because the service doesn't care on how
+
+375
+00:17:07,439 --> 00:17:15,039
+do I go from bytes to megabytes.
+
+376
+00:17:10,959 --> 00:17:18,000
+This thing only cares about I give the
+
+377
+00:17:15,039 --> 00:17:20,720
+things on megabytes. Okay. And also I
+
+378
+00:17:18,000 --> 00:17:22,559
+get this erh on another place because I
+
+379
+00:17:20,720 --> 00:17:24,880
+get this current time and I'm using this
+
+380
+00:17:22,559 --> 00:17:26,640
+a lot in different places and it's
+
+381
+00:17:24,880 --> 00:17:30,160
+pretty tight to the kind of information
+
+382
+00:17:26,640 --> 00:17:31,919
+that I get but it doesn't care to the
+
+383
+00:17:30,160 --> 00:17:34,400
+service that is the class that is using
+
+384
+00:17:31,919 --> 00:17:37,440
+the only thing that those service want
+
+385
+00:17:34,400 --> 00:17:40,799
+is the parse output
+
+386
+00:17:37,440 --> 00:17:43,679
+to be more clear let's say that I could
+
+387
+00:17:40,799 --> 00:17:46,880
+put this some of this on the service and
+
+388
+00:17:43,679 --> 00:17:48,480
+start calling functions here that will
+
+389
+00:17:46,880 --> 00:17:50,320
+be doing those kind of things. For
+
+390
+00:17:48,480 --> 00:17:54,880
+example, I could say a function that
+
+391
+00:17:50,320 --> 00:17:57,360
+says, hey, parse the uh download, parse
+
+392
+00:17:54,880 --> 00:17:59,039
+the upload, parse the ping, and putting
+
+393
+00:17:57,360 --> 00:18:01,760
+that that would be a different approach
+
+394
+00:17:59,039 --> 00:18:04,480
+is a valid approach. I took this one
+
+395
+00:18:01,760 --> 00:18:06,799
+that is maybe obscuring a little bit
+
+396
+00:18:04,480 --> 00:18:11,360
+more the things, but it's only one layer
+
+397
+00:18:06,799 --> 00:18:14,400
+deep. So for me it's not a big thing but
+
+398
+00:18:11,360 --> 00:18:16,000
+it's that is h for your team and the
+
+399
+00:18:14,400 --> 00:18:19,280
+people we are you are coding with to
+
+400
+00:18:16,000 --> 00:18:21,760
+discuss. Okay
+
+401
+00:18:19,280 --> 00:18:24,799
+nice. Now we are getting to the
+
+402
+00:18:21,760 --> 00:18:28,240
+repository. This is pretty simple. We
+
+403
+00:18:24,799 --> 00:18:31,600
+are using the internet log json. We are
+
+404
+00:18:28,240 --> 00:18:34,480
+saving this. We are getting the output.
+
+405
+00:18:31,600 --> 00:18:36,160
+We transform it into a dict and we are
+
+406
+00:18:34,480 --> 00:18:38,240
+just saving this. We are obtaining the
+
+407
+00:18:36,160 --> 00:18:43,120
+current file. We are updating the things
+
+408
+00:18:38,240 --> 00:18:46,160
+and we are returning true and if we find
+
+409
+00:18:43,120 --> 00:18:49,120
+some error in this case we return files
+
+410
+00:18:46,160 --> 00:18:51,440
+because again
+
+411
+00:18:49,120 --> 00:18:55,360
+not being able to save one time these
+
+412
+00:18:51,440 --> 00:18:58,960
+things is not a problem and this is just
+
+413
+00:18:55,360 --> 00:19:01,039
+a personal use case. Maybe if it was a
+
+414
+00:18:58,960 --> 00:19:03,600
+thing that we were doing for a company,
+
+415
+00:19:01,039 --> 00:19:05,919
+the error handling will be different.
+
+416
+00:19:03,600 --> 00:19:07,919
+But in this case, I just log an error
+
+417
+00:19:05,919 --> 00:19:11,760
+and whatever. Then I could check the
+
+418
+00:19:07,919 --> 00:19:14,160
+logs. Okay, here we have some helper
+
+419
+00:19:11,760 --> 00:19:17,840
+functions that is get the current file
+
+420
+00:19:14,160 --> 00:19:19,679
+and save this to a file. What? Why do I
+
+421
+00:19:17,840 --> 00:19:23,360
+did this in this way? I could put that
+
+422
+00:19:19,679 --> 00:19:26,000
+in the same in the first function. Yes,
+
+423
+00:19:23,360 --> 00:19:30,480
+but I like to do it in this way. it was
+
+424
+00:19:26,000 --> 00:19:34,240
+more clean and easier to read. Okay,
+
+425
+00:19:30,480 --> 00:19:37,600
+good. I hope this is somewhere clear to
+
+426
+00:19:34,240 --> 00:19:39,760
+you. I hope I really hope it is. And if
+
+427
+00:19:37,600 --> 00:19:42,000
+it's not, I invite you to check check
+
+428
+00:19:39,760 --> 00:19:44,960
+out the GitHub repository or contact me
+
+429
+00:19:42,000 --> 00:19:48,400
+and we can talk more about it.
+
+430
+00:19:44,960 --> 00:19:52,640
+Now, let's recap some of the benefits
+
+431
+00:19:48,400 --> 00:19:55,120
+that this approach brings to the table.
+
+432
+00:19:52,640 --> 00:19:57,039
+First of all, is easy to understand.
+
+433
+00:19:55,120 --> 00:19:59,440
+It's easy to read. It's easy to
+
+434
+00:19:57,039 --> 00:20:02,559
+understand how you are interacting with
+
+435
+00:19:59,440 --> 00:20:06,400
+each part of the logic with the
+
+436
+00:20:02,559 --> 00:20:08,880
+database, with the APIs, with the whole
+
+437
+00:20:06,400 --> 00:20:11,280
+combination of both
+
+438
+00:20:08,880 --> 00:20:13,600
+how you are parsing the information.
+
+439
+00:20:11,280 --> 00:20:17,840
+It's easy to read and it's all grouped
+
+440
+00:20:13,600 --> 00:20:20,320
+by separate responsibility. Okay,
+
+441
+00:20:17,840 --> 00:20:23,840
+it's easy to implement.
+
+442
+00:20:20,320 --> 00:20:25,679
+If you manage to make an agreement on
+
+443
+00:20:23,840 --> 00:20:28,080
+what are the things that one class is
+
+444
+00:20:25,679 --> 00:20:31,919
+going to pass to the other, you can
+
+445
+00:20:28,080 --> 00:20:34,400
+create test data. You can start building
+
+446
+00:20:31,919 --> 00:20:37,520
+all at the same time. You could have one
+
+447
+00:20:34,400 --> 00:20:39,919
+developer on each thing. one building
+
+448
+00:20:37,520 --> 00:20:43,200
+the interaction with the third party
+
+449
+00:20:39,919 --> 00:20:45,280
+service with the APIs, other saving the
+
+450
+00:20:43,200 --> 00:20:47,679
+data and another parsing the data
+
+451
+00:20:45,280 --> 00:20:50,400
+because you will have examples to use
+
+452
+00:20:47,679 --> 00:20:54,000
+and you could work freely at the same
+
+453
+00:20:50,400 --> 00:20:56,880
+time without tossing each other foots. H
+
+454
+00:20:54,000 --> 00:20:59,360
+there is not a lot of layers of code.
+
+455
+00:20:56,880 --> 00:21:00,799
+It's not that you are having things
+
+456
+00:20:59,360 --> 00:21:03,440
+under things under things. You are
+
+457
+00:21:00,799 --> 00:21:06,880
+trying to do the things in a concise way
+
+458
+00:21:03,440 --> 00:21:09,440
+and an explicit way. It's pretty easy to
+
+459
+00:21:06,880 --> 00:21:12,159
+test. Right here, I didn't show the
+
+460
+00:21:09,440 --> 00:21:14,799
+test, but you will have test for each
+
+461
+00:21:12,159 --> 00:21:17,360
+things and you will not need to mock a
+
+462
+00:21:14,799 --> 00:21:19,200
+lot of things unless you are testing the
+
+463
+00:21:17,360 --> 00:21:20,960
+service. And in that case, you should
+
+464
+00:21:19,200 --> 00:21:23,520
+have examples for all the other things
+
+465
+00:21:20,960 --> 00:21:26,000
+and you have a pretty clear
+
+466
+00:21:23,520 --> 00:21:27,760
+understanding on how those are working.
+
+467
+00:21:26,000 --> 00:21:30,240
+So, it's going to be easier for you to
+
+468
+00:21:27,760 --> 00:21:32,960
+test the things and you can develop in a
+
+469
+00:21:30,240 --> 00:21:35,200
+more confident way. Okay.
+
+470
+00:21:32,960 --> 00:21:37,280
+It's pretty easy to document. Also you
+
+471
+00:21:35,200 --> 00:21:39,679
+can have doctrine in the classes. You
+
+472
+00:21:37,280 --> 00:21:43,679
+can have things that talk about the same
+
+473
+00:21:39,679 --> 00:21:45,919
+thing. And if this is not enough,
+
+474
+00:21:43,679 --> 00:21:50,000
+let's see how we can move into a
+
+475
+00:21:45,919 --> 00:21:53,280
+magnificent future of code.
+
+476
+00:21:50,000 --> 00:21:57,280
+Full refactor you shall not pass. We are
+
+477
+00:21:53,280 --> 00:21:59,600
+going to make as we were Gandalf and we
+
+478
+00:21:57,280 --> 00:22:02,400
+are trying to avoid doing full refactors
+
+479
+00:21:59,600 --> 00:22:04,240
+to the thing. Okay, we're going to start
+
+480
+00:22:02,400 --> 00:22:06,320
+by thinking
+
+481
+00:22:04,240 --> 00:22:08,880
+what's the main responsibility that this
+
+482
+00:22:06,320 --> 00:22:11,200
+service have. First, good questions to
+
+483
+00:22:08,880 --> 00:22:13,360
+make. How can I separate the code into
+
+484
+00:22:11,200 --> 00:22:16,080
+quasive places?
+
+485
+00:22:13,360 --> 00:22:19,039
+Finally, agree with your team. If you
+
+486
+00:22:16,080 --> 00:22:21,520
+are trying to move from one kind of code
+
+487
+00:22:19,039 --> 00:22:23,280
+to the other or to do a refactor, you
+
+488
+00:22:21,520 --> 00:22:25,440
+need to agree with your team. You need
+
+489
+00:22:23,280 --> 00:22:27,919
+to understand that you are all going to
+
+490
+00:22:25,440 --> 00:22:30,000
+the same place because if not you are
+
+491
+00:22:27,919 --> 00:22:31,840
+going to write with the right hand and
+
+492
+00:22:30,000 --> 00:22:35,679
+you are going to erase that with the
+
+493
+00:22:31,840 --> 00:22:37,039
+left hand as we say here in Argentina.
+
+494
+00:22:35,679 --> 00:22:38,880
+You are going to start working in
+
+495
+00:22:37,039 --> 00:22:40,559
+something then someone is going to come
+
+496
+00:22:38,880 --> 00:22:42,720
+and going to start doing another thing
+
+497
+00:22:40,559 --> 00:22:45,280
+and this is okay. This is part of the
+
+498
+00:22:42,720 --> 00:22:47,200
+process from a team to consolidate the
+
+499
+00:22:45,280 --> 00:22:49,840
+practices that they have together. Okay.
+
+500
+00:22:47,200 --> 00:22:52,559
+But agree with your team.
+
+501
+00:22:49,840 --> 00:22:54,960
+Start small. move single and small
+
+502
+00:22:52,559 --> 00:22:59,280
+responsibilities at a time. Okay, let's
+
+503
+00:22:54,960 --> 00:23:02,080
+say we enter into a code mess. We are
+
+504
+00:22:59,280 --> 00:23:05,679
+going to do some things. We extract that
+
+505
+00:23:02,080 --> 00:23:08,880
+and we start moving one at a time. We
+
+506
+00:23:05,679 --> 00:23:11,360
+build classes along separate PRs. We add
+
+507
+00:23:08,880 --> 00:23:13,679
+unit test into each separate thing that
+
+508
+00:23:11,360 --> 00:23:15,760
+you are doing. This is one of the most
+
+509
+00:23:13,679 --> 00:23:17,440
+important things. If you don't have
+
+510
+00:23:15,760 --> 00:23:20,240
+test, you need to make the test to make
+
+511
+00:23:17,440 --> 00:23:21,760
+sure that the behavior that you used to
+
+512
+00:23:20,240 --> 00:23:25,600
+have is the same that you have right
+
+513
+00:23:21,760 --> 00:23:27,919
+now. Usually in the migrations or in the
+
+514
+00:23:25,600 --> 00:23:32,080
+refactors or however you want to call
+
+515
+00:23:27,919 --> 00:23:34,159
+it, the most difficult part is to
+
+516
+00:23:32,080 --> 00:23:36,480
+maintain the same functionality because
+
+517
+00:23:34,159 --> 00:23:38,240
+you end up doing things thinking you are
+
+518
+00:23:36,480 --> 00:23:41,280
+fixing things but you are changing the
+
+519
+00:23:38,240 --> 00:23:44,240
+functionality and that's bad. Okay. add
+
+520
+00:23:41,280 --> 00:23:46,080
+integration test to the full flow of
+
+521
+00:23:44,240 --> 00:23:48,559
+your code. This is another pretty
+
+522
+00:23:46,080 --> 00:23:51,600
+important thing
+
+523
+00:23:48,559 --> 00:23:55,559
+and once you realize you will be in a
+
+524
+00:23:51,600 --> 00:23:55,559
+much better place.
+
+525
+00:23:56,400 --> 00:24:01,679
+Thank you. Thanks. I really appreciate
+
+526
+00:23:59,440 --> 00:24:03,679
+you taking the time to hear me talking
+
+527
+00:24:01,679 --> 00:24:05,520
+about the things. Hope this really
+
+528
+00:24:03,679 --> 00:24:07,280
+helped you in some way. If you have
+
+529
+00:24:05,520 --> 00:24:09,039
+better ways to do this, just let me
+
+530
+00:24:07,280 --> 00:24:11,600
+know. We could talk about it and we
+
+531
+00:24:09,039 --> 00:24:14,559
+could all learn. Thank you and see you
+
+532
+00:24:11,600 --> 00:24:14,559
+in the next video.
+
