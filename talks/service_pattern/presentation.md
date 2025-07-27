@@ -1,39 +1,58 @@
 ---
 enableMenu: false
-title: A good play to put the bussiness logic
+title: Service class: A good play to put the bussiness logic
 author: Ramiro Gallo
 ---
 
 
 <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/service_pattern/img/orchestra.gif?raw=true" width="80%">
 
-### A good play to put the bussiness logic
+### Service class: A good place to put the bussiness logic?
 
 
 --
 
 ### What will we cover today?
-- What is a client{class="fragment"}
-- What are the advantages of using it {class="fragment"}
-- What are the disadvantages of not using it{class="fragment"}
-- How is it look's like {class="fragment"}
-- What and how to test it {class="fragment"}
-- What to log {class="fragment"}
-- How to handle errors {class="fragment"}
+- Some real life examples of managing business logic {class="fragment"}
+- What are the difficulties with this approaches? {class="fragment"}
+- What would be the proposal? {class="fragment"}
+- Code examples {class="fragment"}
+- Let’s recap some benefits {class="fragment"}
+- How we move on into a magnificent future? :O {class="fragment"}
+
 
 ---
 
-### What is a client
-The class that would manage all the logic and interactions with a 3rd party service.
+### Some real life examples of managing business logic
 
 --
 
-#### This class idealy should:
-- Receive the less amount of parameters as possible 
-{class="fragment"}
-- Return a base python object (list, dict, int, bool, etc) or a pydantic model if we want {class="fragment"}
-- Abstract all the logic that belong to the services, as log in, getting tokens, etc {class="fragment"}
-- Have contract testing {class="fragment"}
+#### Oversized routes
+- Business logic {class="fragment"}
+- 3rd party services {class="fragment"}
+- DB interactions {class="fragment"}
+- Error handling {class="fragment"}
+- Logging everything {class="fragment"}
+ 
+
+--
+
+#### Single class
+- Business logic
+- 3rd party services
+- DB interactions
+- Error handling
+- Logging everything
+
+--
+
+#### Functional approach
+- Business logic
+- 3rd party services
+- DB interactions
+- Error handling
+- Logging everything
+- All separate in functions all over the code!  {class="fragment"} 
 
 ---
 
