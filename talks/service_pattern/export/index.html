@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Service class A good play to put the bussiness logic</title>
+  <title>Service class A good place to put the bussiness logic</title>
 
   <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
   <meta name="author" content="Hakim El Hattab">
@@ -70,7 +70,7 @@
     <section>
         <section >
             <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/service_pattern/img/orchestra.gif?raw=true" width="80%">
-<h3>Service class: A good place to put the bussiness logic?</h3>
+<h3>Service class: A good place to put the business logic?</h3>
 
             </section>
         
@@ -132,7 +132,7 @@
 <li>DB interactions</li>
 <li>Error handling</li>
 <li>Logging everything</li>
-<li class="fragment">All separate in functions all over the code! </li>
+<li class="fragment">All separated in functions scattered all over the place!</li>
 </ul>
 
             </section>
@@ -146,22 +146,22 @@
     
     <section>
         <section >
-            <h3>What are the difficulties with this kind of approaches?</h3>
+            <h3>What are the difficulties with these kinds of approaches?</h3>
 <ul>
 <li class="fragment">No single approach, no consistency in code</li>
 <li class="fragment">Working on each service feels like a different way of riding a bike</li>
-<li class="fragment">Difficult to test specific logic without a mix of dependencies involve</li>
-<li class="fragment">Easely find, isolate and understand the business logic being applied</li>
+<li class="fragment">Difficult to test specific logic without a mix of dependencies involved</li>
+<li class="fragment">Hard to find, isolate and understand the business logic being applied</li>
 </ul>
 
             </section>
         
             <section >
-                <h4>This turns into difficulties on</h4>
+                <h4>This turns into difficulties when</h4>
 <ul>
 <li class="fragment">Onboarding new people on the team</li>
-<li class="fragment">Debug on SEV’s</li>
-<li class="fragment">Work if we are not familiar with the specific code</li>
+<li class="fragment">Debugging during SEVs</li>
+<li class="fragment">Working when we are not familiar with the specific code</li>
 </ul>
 
             </section>
@@ -180,21 +180,21 @@
             </section>
         
             <section >
-                <h4>Separate the code on different classes with different purposes</h4>
+                <h4>Separate the code into different classes with different purposes</h4>
 <ul>
 <li class="fragment">One class to interact with each database object</li>
 <li class="fragment">One class per 3rd party service we need to interact with</li>
-<li class="fragment">Use Single responsibility pattern</li>
+<li class="fragment">Use Single responsibility principle</li>
 <li class="fragment">One class to group them all and to hold the business logic</li>
 </ul>
 
             </section>
         
             <section >
-                <h4>Use design patterns</h4>
+                <h4>Use good practices</h4>
 <ul>
-<li class="fragment">Dependencies injection</li>
-<li class="fragment">Single responsibility pattern</li>
+<li class="fragment">Dependency injection</li>
+<li class="fragment">Single responsibility principle</li>
 <li class="fragment">Client pattern</li>
 <li class="fragment">Repository pattern</li>
 <li class="fragment">Write understandable names for functions</li>
@@ -461,7 +461,7 @@ class SpeedTestJsonRepository:
 <ul>
 <li class="fragment">Easy to understand</li>
 <li class="fragment">Easy to implement</li>
-<li class="fragment">Not a lot of layers and layers o code</li>
+<li class="fragment">Not a lot of layers and layers of code</li>
 <li class="fragment">Easy to test</li>
 <li class="fragment">Easy to document</li>
 </ul>
@@ -474,7 +474,7 @@ class SpeedTestJsonRepository:
     
     <section>
         <section >
-            <h3>How we move on into a magnificent future?</h3>
+            <h3>How do we move on into a magnificent future?</h3>
 
             </section>
         
@@ -506,8 +506,8 @@ class SpeedTestJsonRepository:
             </section>
         
             <section >
-                <h3>And once you realize</h3>
-<h3 class="fragment">you would be in a much better place</h3>
+                <h3>And once you realize it,</h3>
+<h3 class="fragment">you will be in a much better place</h3>
 <p class="fragment"><img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/service_pattern/img/world_without_lawyers.gif?raw=true" width="80%"></p>
 
             </section>

@@ -1,13 +1,13 @@
 ---
 enableMenu: false
-title: Service class A good play to put the bussiness logic
+title: Service class A good place to put the bussiness logic
 author: Ramiro Gallo
 ---
 
 
 <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/service_pattern/img/orchestra.gif?raw=true" width="80%">
 
-### Service class: A good place to put the bussiness logic?
+### Service class: A good place to put the business logic?
 
 
 --
@@ -52,22 +52,22 @@ author: Ramiro Gallo
 - DB interactions
 - Error handling
 - Logging everything
-- All separate in functions all over the code!  {class="fragment"}
+- All separated in functions scattered all over the place! {class="fragment"}
 
 ---
 
-### What are the difficulties with this kind of approaches?
+### What are the difficulties with these kinds of approaches?
 - No single approach, no consistency in code {class="fragment"}
 - Working on each service feels like a different way of riding a bike {class="fragment"}
-- Difficult to test specific logic without a mix of dependencies involve {class="fragment"}
-- Easely find, isolate and understand the business logic being applied {class="fragment"}
+- Difficult to test specific logic without a mix of dependencies involved {class="fragment"}
+- Hard to find, isolate and understand the business logic being applied {class="fragment"}
 
 --
 
-#### This turns into difficulties on
+#### This turns into difficulties when
 - Onboarding new people on the team {class="fragment"}
-- Debug on SEV's {class="fragment"}
-- Work if we are not familiar with the specific code {class="fragment"}
+- Debugging during SEVs {class="fragment"}
+- Working when we are not familiar with the specific code {class="fragment"}
 
 
 ---
@@ -76,17 +76,17 @@ author: Ramiro Gallo
 
 --
 
-#### Separate the code on different classes with different purposes
+#### Separate the code into different classes with different purposes
 - One class to interact with each database object {class="fragment"}
 - One class per 3rd party service we need to interact with {class="fragment"}
-- Use Single responsibility pattern {class="fragment"}
+- Use Single responsibility principle {class="fragment"}
 - One class to group them all and to hold the business logic {class="fragment"}
 
 --
 
-#### Use design patterns
-- Dependencies injection {class="fragment"}
-- Single responsibility pattern {class="fragment"}
+#### Use good practices
+- Dependency injection {class="fragment"}
+- Single responsibility principle {class="fragment"}
 - Client pattern {class="fragment"}
 - Repository pattern {class="fragment"}
 - Write understandable names for functions {class="fragment"}
@@ -332,13 +332,13 @@ class SpeedTestJsonRepository:
 ### Let's recap some benefits
 - Easy to understand {class="fragment"}
 - Easy to implement {class="fragment"}
-- Not a lot of layers and layers o code {class="fragment"}
+- Not a lot of layers and layers of code {class="fragment"}
 - Easy to test {class="fragment"}
 - Easy to document {class="fragment"}
 
 ---
 
-### How we move on into a magnificent future?
+### How do we move on into a magnificent future?
 
 --
 
@@ -366,8 +366,8 @@ class SpeedTestJsonRepository:
 --
 
 
-### And once you realize
-### you would be in a much better place {class="fragment"}
+### And once you realize it,
+### you will be in a much better place {class="fragment"}
 
 <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/service_pattern/img/world_without_lawyers.gif?raw=true" width="80%"> {class="fragment"}
 
