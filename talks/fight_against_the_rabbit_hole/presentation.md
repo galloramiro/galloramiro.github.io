@@ -1,14 +1,13 @@
 ---
 enableMenu: false
-title: Fight against the rabit hole
+title: Fight against the rabbit hole
 author: Ramiro Gallo
 ---
 
 
 <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/rabbit_hole.gif?raw=true" width="70%">
 
-### Hello hello and welcome to
-## Fight against the rabit hole {class="fragment"}
+## Fight against the rabbit hole
 
 
 
@@ -16,21 +15,21 @@ author: Ramiro Gallo
 
 ### What are we gonna cover today?
 - What's the rabbit hole? {class="fragment"}
-- Where I ussually find rabbit holes? {class="fragment"}
+- Where I usually find rabbit holes? {class="fragment"}
 - A preventive way to fight {class="fragment"}
-- A insitu way to fight {class="fragment"}
+- An in-situ way to fight {class="fragment"}
 
 ---
 
 ## What is the rabbit hole? 
 
-The rabbit hole could be several things, but mostly it's what happen when you are falling into a situation with out mutch control.
+The rabbit hole could be several things, but mostly it's what happens when you are falling into a situation without much control.
 
 --
 
 <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/who_are_you_caterpiller.gif?raw=true" width="70%">
 
-### Where I ussually find rabbit holes? 
+### Where I usually find rabbit holes? 
 
 --
 
@@ -42,13 +41,13 @@ yes... the +99 tabs open... {class="fragment"}
 
 ### Trying to understand code 
 
-yes... the endles click from function to function, from class to class {class="fragment"}
+yes... the endless click from function to function, from class to class {class="fragment"}
 
 --
 
 ### Trying to understand an unclear ticket 
 
-yes... decoding what that person mean... {class="fragment"}
+yes... decoding what that person meant... {class="fragment"}
 
 --
 
@@ -66,15 +65,15 @@ yes... the endless meetings that jump from one point to the other... {class="fra
 - This is ok {class="fragment"}
 - This is normal {class="fragment"}
 - This is part of the learning process of each person {class="fragment"}
-- So dont be afraid if you feel more than releated to this situations {class="fragment"}
+- So don't be afraid if you feel more than related to these situations {class="fragment"}
 - I know that I do... {class="fragment"}
 
 ---
 
 ### Let's talk about some solutions
-I usually find 2 ways to fight againts this
+I usually find 2 ways to fight against this
 - A preventive way {class="fragment"}
-- A insitu way {class="fragment"}
+- An in-situ way {class="fragment"}
 
 
 ---
@@ -84,13 +83,13 @@ I usually find 2 ways to fight againts this
 --
 
 ### Let's start by doing some questions
-- Do we have the power to see the future an predict a rabbit hole? {class="fragment"}
-- Are we geniusies and we didn't know? {class="fragment"}
+- Do we have the power to see the future and predict a rabbit hole? {class="fragment"}
+- Are we geniuses and we didn't know? {class="fragment"}
 - Do we have super powers and we didn't know? {class="fragment"}
 
 --
 
-No... you we are just humans, but we could see this way before it happens, and this is how I TRY to doit.
+No... we are just humans, but we could see this way before it happens, and this is how I TRY to do it.
 
 ---
 
@@ -101,20 +100,20 @@ This would become one of your best friends
 
 --
 
-### Ask for acceptance criteras that can be used to
+### Ask for acceptance criteria that can be used to
 - Create a test {class="fragment"}
-- Understand if the ticket if complete {class="fragment"}
+- Understand if the ticket is complete {class="fragment"}
 
 --
 
-### Ask for dev resoruces
-- This belong to... what micro service? {class="fragment"}
-- This belong to... what function, or class? {class="fragment"}
-- Do we have PR's with similar things? {class="fragment"}
-- Do this feature have a flow diagram? {class="fragment"}
-- Do this feature have a document? {class="fragment"}
-- Do this feature have a test plan? {class="fragment"}
-- What are the upstream service impacted? {class="fragment"}
+### Ask for dev resources
+- This belongs to... what micro service? {class="fragment"}
+- This belongs to... what function, or class? {class="fragment"}
+- Do we have PRs with similar things? {class="fragment"}
+- Does this feature have a flow diagram? {class="fragment"}
+- Does this feature have a document? {class="fragment"}
+- Does this feature have a test plan? {class="fragment"}
+- What are the upstream services impacted? {class="fragment"}
 - What are the downstream services involved? {class="fragment"}
 
 ---
@@ -125,31 +124,31 @@ This would become one of your best friends
 
 --
 
-But... Ramiro... Im a shy person, I dont like to speak in public 
+But... Ramiro... I'm a shy person, I don't like to speak in public 
 
-So... we can always ask for the tickets before hand and leave questions right there {class="fragment"}
-
---
-
-But.. Ramiro... I dont like to leave a lot of coment here and there? 
-
-So.. we can always use the PC that a coworker left un-blocked when he went to the bathroom... {class="fragment"}
+So... we can always ask for the tickets beforehand and leave questions right there {class="fragment"}
 
 --
 
-But... Ramiro... if I ask all this questions the team is gonna hate me...
+But... Ramiro... I don't like to leave a lot of comments here and there? 
 
-Yes and no...{class="fragment"}
-
-The team would maby hate you at first, but love to work with tickets like that. {class="fragment"}
+So... we can always use the PC that a coworker left unblocked when he went to the bathroom... {class="fragment"}
 
 --
 
-But... Ramiro... if I ask all this questions the refinement would never finish.
+But... Ramiro... if I ask all these questions the team is gonna hate me...
 
-Maybe you would need to re schedule a new refinement the first times. {class="fragment"}
+Yes and no... {class="fragment"}
 
-Maybe the team would be able to refine less tickets at first time. {class="fragment"}
+The team would maybe hate you at first, but love to work with tickets like that. {class="fragment"}
+
+--
+
+But... Ramiro... if I ask all these questions the refinement would never finish.
+
+Maybe you would need to reschedule a new refinement the first times. {class="fragment"}
+
+Maybe the team would be able to refine fewer tickets at first. {class="fragment"}
 
 But, with time, the tickets would start coming more completed and the time would be less and you would work in a happier way. {class="fragment"}
 
@@ -162,23 +161,23 @@ But, with time, the tickets would start coming more completed and the time would
 <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/alice_vs_jabberwocky.gif?raw=true" width="70%">
 
 
-## The in the sh$1t hole way
+## The in-the-sh$1t-hole way
 
 --
 
 <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/unclear_ticket_appear.gif?raw=true" width="70%">
 
-### Unclear ticket appear... {class="fragment"}
+### Unclear ticket appears... {class="fragment"}
 
 --
 
 ### Should I...
 
-- Destroy de computer!? {class="fragment"}
+- Destroy the computer!? {class="fragment"}
 - Shout {class="fragment"}
 
 
-No.. There is no need to do any of that hahah {class="fragment"}
+No... There is no need to do any of that hahaha {class="fragment"}
 
 ---
 
@@ -190,22 +189,22 @@ No.. There is no need to do any of that hahah {class="fragment"}
 --
 
 ### Use the ticket comments to
-- Make a list of questions of what you dont understand {class="fragment"}
-- Try to answer thoeses questions {class="fragment"}
+- Make a list of questions of what you don't understand {class="fragment"}
+- Try to answer those questions {class="fragment"}
 - Write who can answer the questions {class="fragment"}
 
 --
 
-- Write the steps that you think would take to solve this 
+- Write the steps that you think it would take to solve this 
 - Write the person that can validate this {class="fragment"}
 
 --
 
-### Do planed 15m meetings with the correct people 
-- Send comment with the questions before the meeting {class="fragment"}
+### Do planned 15m meetings with the correct people 
+- Send comments with the questions before the meeting {class="fragment"}
 - Follow the questions to improve your thinking {class="fragment"}
 - Take notes and confirm with them before leaving the meeting {class="fragment"}
-- Post the comment with the answers and ask them for a thumbs up {class="fragment"}
+- Post the comments with the answers and ask them for a thumbs up {class="fragment"}
 
 --
 
@@ -217,17 +216,17 @@ No.. There is no need to do any of that hahah {class="fragment"}
 
 
 ### Questions for other teams? 
-- Use the help channels to post clear an consise questions {class="fragment"}
+- Use the help channels to post clear and concise questions {class="fragment"}
 - Use the ticket to link the threads {class="fragment"}
 - Bother people {class="fragment"}
-- If no answer, laverage your amazing manager {class="fragment"}
+- If no answer, leverage your amazing manager {class="fragment"}
 
 ---
 
 <img src="https://github.com/galloramiro/galloramiro.github.io/blob/main/talks/fight_against_the_rabbit_hole/img/slay_thejabberwocky.gif?raw=true" width="80%"> 
 
 
-### slay the jabberwocky
+### Slay the jabberwocky
 
 --
 
@@ -240,15 +239,15 @@ Let's read that, sometimes we just lost focus {class="fragment"}
 #### Use TDD 
 
 - Baby steps {class="fragment"}
-- And test doeses steps {class="fragment"}
+- And test those steps {class="fragment"}
 
 --
 
-#### Left coments on the code with what you tried 
-1. try to filter by using the date column and I dont get what I expect {class="fragment"}
-2.  try to filter by combining the date and the value and i dont get what I expect {class="fragment"}
-3. realize that we where missing some indexes and we dont get what we expect either {class="fragment"}
-4. Im completly lost nothing works {class="fragment"}
+#### Leave comments on the code with what you tried 
+1. Try to filter by using the date column and I don't get what I expect {class="fragment"}
+2. Try to filter by combining the date and the value and I don't get what I expect {class="fragment"}
+3. Realize that we were missing some indexes and we don't get what we expect either {class="fragment"}
+4. I'm completely lost nothing works {class="fragment"}
 
 --
 
@@ -261,7 +260,7 @@ Let's read that, sometimes we just lost focus {class="fragment"}
 - Use your notes {class="fragment"}
 - You dont need to know it all {class="fragment"}
 
-You would not belive how many times the solution would come from just talking out loud. {class="fragment"}
+You would not believe how many times the solution would come from just talking out loud. {class="fragment"}
 
 --
 
@@ -286,7 +285,7 @@ You would not belive how many times the solution would come from just talking ou
 ### Do I manage to implement each of this things every day?
 NO! {class="fragment"}
 
-But when I do I work happier and spent more time in the flow {class="fragment"}
+But when I do I work happier and spend more time in the flow {class="fragment"}
 
 ---
 
