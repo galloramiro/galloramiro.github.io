@@ -1,0 +1,3219 @@
+1
+00:00:01,199 --> 00:00:09,519
+Hola, mi nombre es Ramiro y hoy vamos a
+
+2
+00:00:04,319 --> 00:00:11,360
+explorar cómo me gusta planificar una funcionalidad.
+
+3
+00:00:09,519 --> 00:00:13,280
+Vamos a empezar haciendo una visión general
+
+4
+00:00:11,360 --> 00:00:15,920
+rápida del proyecto y la funcionalidad que
+
+5
+00:00:13,280 --> 00:00:18,640
+vamos a construir. Después de eso vamos
+
+6
+00:00:15,920 --> 00:00:20,560
+a tratar de identificar todas las
+
+7
+00:00:18,640 --> 00:00:23,840
+responsabilidades clave que necesitan ser
+
+8
+00:00:20,560 --> 00:00:25,840
+cubiertas para construir esta funcionalidad.
+
+9
+00:00:23,840 --> 00:00:27,840
+Una vez que sepamos eso podríamos tratar de
+
+10
+00:00:25,840 --> 00:00:30,840
+estructurar el trabajo para evitar todos los
+
+11
+00:00:27,840 --> 00:00:30,840
+cuellos de botella
+
+12
+00:00:31,279 --> 00:00:35,360
+y una vez que tengamos eso vamos a ir
+
+13
+00:00:33,360 --> 00:00:38,160
+a la parte tímida de la cosa y vamos
+
+14
+00:00:35,360 --> 00:00:40,879
+a empezar a escribir tickets efectivos y
+
+15
+00:00:38,160 --> 00:00:43,680
+increíbles para trabajar en un modo
+
+16
+00:00:40,879 --> 00:00:45,440
+impecable.
+
+17
+00:00:43,680 --> 00:00:47,680
+Después de eso vamos a tratar de ver cómo
+
+18
+00:00:45,440 --> 00:00:52,320
+podríamos sentar todas las bases para
+
+19
+00:00:47,680 --> 00:00:54,160
+trabajar sin ningún cuello de botella.
+
+20
+00:00:52,320 --> 00:00:56,480
+Finalmente, vamos a ver cómo usando
+
+21
+00:00:54,160 --> 00:00:59,680
+esto podemos entregar visibilidad y
+
+22
+00:00:56,480 --> 00:01:01,440
+funcionalidades incrementales al negocio.
+
+23
+00:00:59,680 --> 00:01:05,199
+En este caso, vamos a jugar con un
+
+24
+00:01:01,440 --> 00:01:08,000
+script personalizado que hice hace unos meses o
+
+25
+00:01:05,199 --> 00:01:10,400
+años.
+
+26
+00:01:08,000 --> 00:01:13,200
+Aquí encontraremos el repo. Verán
+
+27
+00:01:10,400 --> 00:01:15,600
+que consta de tres scripts diferentes de Python.
+
+28
+00:01:13,200 --> 00:01:19,200
+Tiene una configuración bastante básica
+
+29
+00:01:15,600 --> 00:01:23,280
+que corre con name equals main
+
+30
+00:01:19,200 --> 00:01:26,479
+y no tiene tests por supuesto porque fue
+
+31
+00:01:23,280 --> 00:01:28,479
+algo que hice solo por diversión y
+
+32
+00:01:26,479 --> 00:01:31,479
+tiene una gran falta de separación de
+
+33
+00:01:28,479 --> 00:01:31,479
+responsabilidades.
+
+34
+00:01:32,000 --> 00:01:36,240
+Revisemos los tres scripts principales que
+
+35
+00:01:34,159 --> 00:01:38,880
+vamos a tratar de refactorizar. Vamos
+
+36
+00:01:36,240 --> 00:01:41,920
+a ver un hábitos mensuales, un títulos
+
+37
+00:01:38,880 --> 00:01:44,880
+mensuales, y un vistas mensuales. verán
+
+38
+00:01:41,920 --> 00:01:48,240
+estos títulos y podrían preguntarse qué
+
+39
+00:01:44,880 --> 00:01:50,880
+estamos haciendo con este tipo de script.
+
+40
+00:01:48,240 --> 00:01:54,720
+Okay, déjenme explicarles. Estos tres
+
+41
+00:01:50,880 --> 00:01:58,159
+scripts me ayudan a obtener mucha información
+
+42
+00:01:54,720 --> 00:02:00,799
+del diario que hago cada día.
+
+43
+00:01:58,159 --> 00:02:03,439
+Aquí puedo rastrear todos los hábitos que estoy
+
+44
+00:02:00,799 --> 00:02:07,040
+siguiendo, los títulos de las cosas que
+
+45
+00:02:03,439 --> 00:02:11,520
+escribo y soy capaz de ver esto en
+
+46
+00:02:07,040 --> 00:02:13,360
+la consola de una manera linda y fácil.
+
+47
+00:02:11,520 --> 00:02:15,360
+Sí, es bastante nerd pero es lo que me
+
+48
+00:02:13,360 --> 00:02:17,599
+gusta.
+
+49
+00:02:15,360 --> 00:02:19,360
+Así que tratemos, empecemos viendo el
+
+50
+00:02:17,599 --> 00:02:23,879
+script.
+
+51
+00:02:19,360 --> 00:02:23,879
+Okay, empecemos viendo los scripts.
+
+52
+00:02:24,160 --> 00:02:30,879
+Aquí tenemos el hábito mensual. Este es
+
+53
+00:02:26,640 --> 00:02:34,160
+el encargado de obtener datos, procesar
+
+54
+00:02:30,879 --> 00:02:36,480
+los datos y mostrar los datos. Okay. Así que
+
+55
+00:02:34,160 --> 00:02:38,000
+aquí podemos tenemos una clase row que es
+
+56
+00:02:36,480 --> 00:02:40,720
+la que usamos para guardar la
+
+57
+00:02:38,000 --> 00:02:44,080
+información. Aquí tenemos todos los
+
+58
+00:02:40,720 --> 00:02:46,640
+diferentes tags que uso para encontrar la
+
+59
+00:02:44,080 --> 00:02:50,080
+información en los datos que escribo
+
+60
+00:02:46,640 --> 00:02:53,120
+todos los días. Y aquí están los scripts
+
+61
+00:02:50,080 --> 00:02:55,280
+básicos. Como verán es largo aquí
+
+62
+00:02:53,120 --> 00:02:58,720
+podríamos empezar a ver algunas buenas prácticas
+
+63
+00:02:55,280 --> 00:03:01,440
+que me gusta implementar. Tratar de no ir
+
+64
+00:02:58,720 --> 00:03:03,760
+más de una capa de profundidad en
+
+65
+00:03:01,440 --> 00:03:06,080
+la complejidad de las funciones y las
+
+66
+00:03:03,760 --> 00:03:09,120
+funciones llamando funciones solo para
+
+67
+00:03:06,080 --> 00:03:11,840
+evitar sobrecarga y dificultad para leer
+
+68
+00:03:09,120 --> 00:03:14,239
+la cosa. Esto está escrito de una manera con
+
+69
+00:03:11,840 --> 00:03:16,159
+variables claras y muchas cosas
+
+70
+00:03:14,239 --> 00:03:18,879
+tratando de ver que puedas leer esto
+
+71
+00:03:16,159 --> 00:03:20,879
+y entender qué estamos haciendo sin
+
+72
+00:03:18,879 --> 00:03:22,640
+obtener mucho impacto de ver el
+
+73
+00:03:20,879 --> 00:03:27,200
+código al tratar de obtener mucha
+
+74
+00:03:22,640 --> 00:03:30,159
+profundidad en eso. Todos nombres de variables
+
+75
+00:03:27,200 --> 00:03:34,879
+claros y así sucesivamente.
+
+76
+00:03:30,159 --> 00:03:39,280
+Tenemos las funciones auxiliares aquí.
+
+77
+00:03:34,879 --> 00:03:42,000
+Y como pueden ver aquí,
+
+78
+00:03:39,280 --> 00:03:44,560
+tenemos el
+
+79
+00:03:42,000 --> 00:03:46,239
+script que solo hace una cosa. Toma
+
+80
+00:03:44,560 --> 00:03:51,840
+el mes
+
+81
+00:03:46,239 --> 00:03:55,599
+y genera los datos por mes. Okay,
+
+82
+00:03:51,840 --> 00:03:57,920
+esto es para los hábitos. Ahora hacemos
+
+83
+00:03:55,599 --> 00:04:02,159
+algo bastante similar pero con una
+
+84
+00:03:57,920 --> 00:04:04,400
+manera diferente de procesar los datos
+
+85
+00:04:02,159 --> 00:04:06,720
+con toda la parte del shell las cosas
+
+86
+00:04:04,400 --> 00:04:09,920
+que escribo día a día. Estamos
+
+87
+00:04:06,720 --> 00:04:12,239
+siguiendo las mismas prácticas pero tenemos
+
+88
+00:04:09,920 --> 00:04:15,280
+todas las cosas en el mismo lugar y
+
+89
+00:04:12,239 --> 00:04:19,120
+de nuevo tenemos la misma función
+
+90
+00:04:15,280 --> 00:04:21,519
+corriendo aquí. Por último,
+
+91
+00:04:19,120 --> 00:04:24,800
+tenemos esto que es la cosa que
+
+92
+00:04:21,519 --> 00:04:27,199
+me ayuda a tomar los datos
+
+93
+00:04:24,800 --> 00:04:30,400
+modificar un poco los datos no mucho
+
+94
+00:04:27,199 --> 00:04:32,880
+y mostrar los datos de diferentes maneras
+
+95
+00:04:30,400 --> 00:04:35,199
+en la consola. Tenemos el show all
+
+96
+00:04:32,880 --> 00:04:37,680
+graph que esto me ayuda a mostrar todas las
+
+97
+00:04:35,199 --> 00:04:41,199
+cosas al mismo tiempo del mismo
+
+98
+00:04:37,680 --> 00:04:44,880
+mes. Puedo ver la línea de vista de salud. Puedo
+
+99
+00:04:41,199 --> 00:04:47,360
+ver la línea del día general. Puedo ver
+
+100
+00:04:44,880 --> 00:04:50,720
+los
+
+101
+00:04:47,360 --> 00:04:52,720
+hábitos por mes. Puedo ver qué días
+
+102
+00:04:50,720 --> 00:04:54,320
+puedo ver muchas cosas. Okay. De
+
+103
+00:04:52,720 --> 00:04:57,919
+los hábitos positivos y de los
+
+104
+00:04:54,320 --> 00:05:01,120
+hábitos negativos. Y aquí podrían ver
+
+105
+00:04:57,919 --> 00:05:03,360
+que tenemos funciones helper divertidas que
+
+106
+00:05:01,120 --> 00:05:08,720
+están aquí haciendo toda la magia que
+
+107
+00:05:03,360 --> 00:05:11,720
+tenemos aquí. Okay. Así que volvamos a la
+
+108
+00:05:08,720 --> 00:05:11,720
+presentación
+
+109
+00:05:12,400 --> 00:05:16,720
+ahora.
+
+110
+00:05:14,400 --> 00:05:19,039
+Podrían decir por qué te tomas el tiempo para
+
+111
+00:05:16,720 --> 00:05:21,280
+refactorizar esto si esto está funcionando. Esto
+
+112
+00:05:19,039 --> 00:05:23,680
+es solo por el bien de hacer esta charla
+
+113
+00:05:21,280 --> 00:05:26,479
+y para compartir el conocimiento que
+
+114
+00:05:23,680 --> 00:05:30,560
+tengo y que me gusta compartir.
+
+115
+00:05:26,479 --> 00:05:33,199
+Una cosa clave de esto es ¿qué queremos
+
+116
+00:05:30,560 --> 00:05:35,520
+de esto ahora? Porque esto es
+
+117
+00:05:33,199 --> 00:05:39,520
+algo que tengo y solo es
+
+118
+00:05:35,520 --> 00:05:42,720
+usable para mí y está realmente atado a
+
+119
+00:05:39,520 --> 00:05:48,080
+las maneras en que hago las cosas. Guardo
+
+120
+00:05:42,720 --> 00:05:49,680
+toda la información en archivos txt
+
+121
+00:05:48,080 --> 00:05:53,280
+tech.
+
+122
+00:05:49,680 --> 00:05:58,639
+Uso una sola manera de hacer las
+
+123
+00:05:53,280 --> 00:06:01,199
+cosas. Uso mis propios tags para
+
+124
+00:05:58,639 --> 00:06:04,000
+buscar la información y guardo todos
+
+125
+00:06:01,199 --> 00:06:05,840
+los datos en CSV y esas son
+
+126
+00:06:04,000 --> 00:06:08,880
+mis elecciones.
+
+127
+00:06:05,840 --> 00:06:12,240
+Pero si queremos modificar eso, si digamos
+
+128
+00:06:08,880 --> 00:06:14,160
+que no quiero hacer esto en mi
+
+129
+00:06:12,240 --> 00:06:16,960
+computadora más o quiero ser capaz de
+
+130
+00:06:14,160 --> 00:06:19,680
+viajar y hacer esto en mi teléfono y
+
+131
+00:06:16,960 --> 00:06:21,360
+generar estos datos y así sucesivamente y quiero
+
+132
+00:06:19,680 --> 00:06:23,120
+conectar y quiero tomar esto de
+
+133
+00:06:21,360 --> 00:06:25,360
+otros lugares y quiero escribir en
+
+134
+00:06:23,120 --> 00:06:26,880
+Google Sheets ahora mismo o lo que sea.
+
+135
+00:06:25,360 --> 00:06:29,440
+Okay,
+
+136
+00:06:26,880 --> 00:06:32,400
+la primera cosa que necesitamos es escalabilidad.
+
+137
+00:06:29,440 --> 00:06:36,400
+Necesitamos una manera
+
+138
+00:06:32,400 --> 00:06:39,120
+de modificar fácilmente este código sin
+
+139
+00:06:36,400 --> 00:06:41,919
+intervenir pisándonos los pies unos a otros
+
+140
+00:06:39,120 --> 00:06:44,080
+cuando estamos escribiendo código. Okay. Y
+
+141
+00:06:41,919 --> 00:06:46,560
+separar las responsabilidades, okay, necesitamos
+
+142
+00:06:44,080 --> 00:06:49,840
+hacer esto modular. Vemos que
+
+143
+00:06:46,560 --> 00:06:53,360
+estamos haciendo en el mismo script. Estamos
+
+144
+00:06:49,840 --> 00:06:55,280
+llenando muchas funciones diferentes
+
+145
+00:06:53,360 --> 00:06:57,440
+y eso no es bueno. Eso no es bueno
+
+146
+00:06:55,280 --> 00:06:59,440
+porque cuando queremos probar la cosa,
+
+147
+00:06:57,440 --> 00:07:01,759
+vamos a entrar en mucho dolor
+
+148
+00:06:59,440 --> 00:07:04,400
+tratando de mockear las cosas no siendo capaces
+
+149
+00:07:01,759 --> 00:07:07,199
+de mockear muchas cosas necesitando ir
+
+150
+00:07:04,400 --> 00:07:11,199
+bastante más profundo para mockear
+
+151
+00:07:07,199 --> 00:07:13,440
+librerías principales y esa no es la mejor manera.
+
+152
+00:07:11,199 --> 00:07:15,199
+Vamos a tener tests que prueban todas
+
+153
+00:07:13,440 --> 00:07:18,560
+las cosas y no vamos a estar
+
+154
+00:07:15,199 --> 00:07:19,919
+seguros si estamos rompiendo o no las cosas.
+
+155
+00:07:18,560 --> 00:07:21,680
+No tenemos ningún test y eso es
+
+156
+00:07:19,919 --> 00:07:25,440
+algo que realmente me gustaría
+
+157
+00:07:21,680 --> 00:07:28,160
+agregar aquí. Y estas son las tres
+
+158
+00:07:25,440 --> 00:07:31,680
+cosas principales en las que nos vamos a enfocar
+
+159
+00:07:28,160 --> 00:07:34,080
+en esta charla. Hacer que estos tres scripts
+
+160
+00:07:31,680 --> 00:07:36,319
+sean algo que podamos escalar, algo
+
+161
+00:07:34,080 --> 00:07:39,199
+que sea bastante modular y algo
+
+162
+00:07:36,319 --> 00:07:41,440
+que tenga tests comprensivos.
+
+163
+00:07:39,199 --> 00:07:42,960
+Si logras hacer esto en cualquiera de las
+
+164
+00:07:41,440 --> 00:07:45,520
+funcionalidades que estás haciendo en tu
+
+165
+00:07:42,960 --> 00:07:48,160
+trabajo, estás yendo un paso adelante de
+
+166
+00:07:45,520 --> 00:07:50,080
+muchos lugares donde estarás trabajando
+
+167
+00:07:48,160 --> 00:07:52,240
+o de muchas cosas porque siempre
+
+168
+00:07:50,080 --> 00:07:54,720
+tendrás mucha deuda técnica y
+
+169
+00:07:52,240 --> 00:07:57,199
+cosas que están en cualquier trabajo y eso es
+
+170
+00:07:54,720 --> 00:08:02,000
+normalmente desarrollo de software.
+
+171
+00:07:57,199 --> 00:08:04,160
+Así que continuemos.
+
+172
+00:08:02,000 --> 00:08:08,000
+Ahora que vieron el script, ¿son
+
+173
+00:08:04,160 --> 00:08:11,280
+capaces de identificar las responsabilidades?
+
+174
+00:08:08,000 --> 00:08:14,000
+Veamos. La primera responsabilidad será
+
+175
+00:08:11,280 --> 00:08:17,520
+leer los datos de la fuente. Tenemos una
+
+176
+00:08:14,000 --> 00:08:21,039
+fuente de datos ahora mismo. Nuestros archivos txt
+
+177
+00:08:17,520 --> 00:08:24,960
+dentro de mi computadora, pero esto podría ser un
+
+178
+00:08:21,039 --> 00:08:29,520
+Google drive, un bucket S3, podría ser
+
+179
+00:08:24,960 --> 00:08:32,000
+lo que sea necesitamos leer para obtener datos
+
+180
+00:08:29,520 --> 00:08:34,479
+de una fuente. Esto podría ser de una API
+
+181
+00:08:32,000 --> 00:08:36,880
+que quiero exponer.
+
+182
+00:08:34,479 --> 00:08:38,800
+Nunca. Nunca voy a hacer eso, pero
+
+183
+00:08:36,880 --> 00:08:42,719
+podría ser. Okay, la
+
+184
+00:08:38,800 --> 00:08:45,040
+responsabilidad principal es obtener los datos.
+
+185
+00:08:42,719 --> 00:08:47,360
+Después de obtener los datos, necesitamos
+
+186
+00:08:45,040 --> 00:08:50,399
+procesar y manipular los datos. Okay,
+
+187
+00:08:47,360 --> 00:08:53,279
+esta es otra responsabilidad completamente diferente.
+
+188
+00:08:50,399 --> 00:08:55,519
+Una vez que obtenemos los datos,
+
+189
+00:08:53,279 --> 00:08:58,880
+no importa de dónde vengan los datos,
+
+190
+00:08:55,519 --> 00:09:01,120
+necesitamos ser capaces de procesar esos datos.
+
+191
+00:08:58,880 --> 00:09:03,600
+Esta es una responsabilidad clave y es una
+
+192
+00:09:01,120 --> 00:09:05,600
+cosa bastante independiente que el script
+
+193
+00:09:03,600 --> 00:09:07,760
+necesita hacer.
+
+194
+00:09:05,600 --> 00:09:10,320
+Después de eso vamos a necesitar almacenar
+
+195
+00:09:07,760 --> 00:09:12,800
+los datos. Ahora mismo estamos almacenando en un
+
+196
+00:09:10,320 --> 00:09:16,160
+formato diferente
+
+197
+00:09:12,800 --> 00:09:20,880
+pero en el mismo lugar. Mañana diremos
+
+198
+00:09:16,160 --> 00:09:24,560
+tal vez puedo almacenar esto en
+
+199
+00:09:20,880 --> 00:09:27,440
+una base de datos SQL en una base de datos no-SQL. Quiero
+
+200
+00:09:24,560 --> 00:09:29,920
+almacenar esto en un bucket S3. Quiero
+
+201
+00:09:27,440 --> 00:09:32,880
+almacenar esto en un Google drive
+
+202
+00:09:29,920 --> 00:09:37,279
+donde sea. Esto es diferente de obtener
+
+203
+00:09:32,880 --> 00:09:40,880
+los datos esto es almacenar los datos.
+
+204
+00:09:37,279 --> 00:09:44,000
+Y finalmente queremos mostrar los datos
+
+205
+00:09:40,880 --> 00:09:46,399
+que tenemos. Okay.
+
+206
+00:09:44,000 --> 00:09:48,399
+La cosa que seguramente se mantendrá
+
+207
+00:09:46,399 --> 00:09:51,040
+igual será el procesamiento y la
+
+208
+00:09:48,399 --> 00:09:53,360
+manipulación de los datos. Pero esa es la
+
+209
+00:09:51,040 --> 00:09:56,880
+parte clave y es la que más tests
+
+210
+00:09:53,360 --> 00:09:59,200
+necesitará. Okay. Pero
+
+211
+00:09:56,880 --> 00:10:00,720
+leer los datos de cualquier lugar podría
+
+212
+00:09:59,200 --> 00:10:04,320
+cambiar y esto es algo que necesitamos
+
+213
+00:10:00,720 --> 00:10:07,600
+cambiar y ser capaces de escalar para
+
+214
+00:10:04,320 --> 00:10:09,920
+sacar para poner y para
+
+215
+00:10:07,600 --> 00:10:13,040
+ser capaces de siempre
+
+216
+00:10:09,920 --> 00:10:15,760
+dar datos sin importar cómo. Así que esa es
+
+217
+00:10:13,040 --> 00:10:19,839
+modularidad. Podríamos cambiar esto tener un
+
+218
+00:10:15,760 --> 00:10:22,320
+script que traiga datos de una
+
+219
+00:10:19,839 --> 00:10:25,279
+computadora uno que haga eso desde un
+
+220
+00:10:22,320 --> 00:10:26,959
+Google drive que bueno pero y si
+
+221
+00:10:25,279 --> 00:10:29,839
+les proporciono el script base serán
+
+222
+00:10:26,959 --> 00:10:32,160
+capaces de empezar a cambiar las
+
+223
+00:10:29,839 --> 00:10:35,519
+cosas para acomodarse a sus
+
+224
+00:10:32,160 --> 00:10:37,600
+necesidades específicas okay procesando los
+
+225
+00:10:35,519 --> 00:10:40,480
+datos okay necesitarán seguir algunas
+
+226
+00:10:37,600 --> 00:10:42,880
+cosas y no cambiará mucho pero
+
+227
+00:10:40,480 --> 00:10:45,680
+está bien pero es un proceso separado
+
+228
+00:10:42,880 --> 00:10:47,040
+y es importante. Almacenar los datos
+
+229
+00:10:45,680 --> 00:10:49,040
+es la misma cosa. Necesitamos la
+
+230
+00:10:47,040 --> 00:10:50,880
+modularidad de ser capaces de decir, hey, quiero
+
+231
+00:10:49,040 --> 00:10:54,320
+cambiar esto de guardar los datos
+
+232
+00:10:50,880 --> 00:10:56,480
+aquí a aquí. Y eso tendrá su
+
+233
+00:10:54,320 --> 00:10:58,959
+propio lenguaje, su propia manera de hacer
+
+234
+00:10:56,480 --> 00:11:02,000
+las cosas, su manera de probar las cosas,
+
+235
+00:10:58,959 --> 00:11:04,000
+sus propias peculiaridades. Okay. Y finalmente,
+
+236
+00:11:02,000 --> 00:11:07,440
+mostrar los datos es exactamente lo mismo.
+
+237
+00:11:04,000 --> 00:11:09,200
+Necesitarán hablar sobre usar
+
+238
+00:11:07,440 --> 00:11:12,560
+diferentes librerías, cosas diferentes.
+
+239
+00:11:09,200 --> 00:11:14,640
+Así que esta es la modularidad que necesitamos
+
+240
+00:11:12,560 --> 00:11:18,480
+y esta es la escalabilidad que necesitamos
+
+241
+00:11:14,640 --> 00:11:21,360
+y pensar las cosas de esta manera
+
+242
+00:11:18,480 --> 00:11:24,240
+les proporcionará maneras más fáciles de cambiar
+
+243
+00:11:21,360 --> 00:11:27,040
+las cosas tanto como necesiten en
+
+244
+00:11:24,240 --> 00:11:30,920
+el proceso. Okay.
+
+245
+00:11:27,040 --> 00:11:30,920
+Ahora continuemos.
+
+246
+00:11:31,600 --> 00:11:36,000
+Empecemos a pensar cómo podemos
+
+247
+00:11:33,920 --> 00:11:38,480
+estructurar el trabajo para evitar los
+
+248
+00:11:36,000 --> 00:11:41,519
+cuellos de botella. Vamos a empezar
+
+249
+00:11:38,480 --> 00:11:45,839
+haciendo una clase cliente. La clase cliente
+
+250
+00:11:41,519 --> 00:11:48,959
+será la clase que irá a obtener
+
+251
+00:11:45,839 --> 00:11:52,480
+los datos donde sea que la clase quiera
+
+252
+00:11:48,959 --> 00:11:55,680
+al lugar que la clase quiera donde sea
+
+253
+00:11:52,480 --> 00:11:57,839
+y retornará un objeto Python para
+
+254
+00:11:55,680 --> 00:12:01,279
+ser usado
+
+255
+00:11:57,839 --> 00:12:02,720
+por la clase de procesamiento de datos que es la
+
+256
+00:12:01,279 --> 00:12:04,560
+siguiente clase que vamos a construir.
+
+257
+00:12:02,720 --> 00:12:07,200
+Vamos a necesitar una clase de procesamiento
+
+258
+00:12:04,560 --> 00:12:12,639
+de datos. Esta clase de procesamiento de datos estará
+
+259
+00:12:07,200 --> 00:12:14,720
+a cargo de crear las diferentes
+
+260
+00:12:12,639 --> 00:12:17,680
+estructuras de datos que necesitamos o
+
+261
+00:12:14,720 --> 00:12:22,399
+extraer todos los datos que necesitamos y
+
+262
+00:12:17,680 --> 00:12:27,279
+retornar un objeto Python que será fácil
+
+263
+00:12:22,399 --> 00:12:29,600
+de guardar en cualquier lugar que queramos. Okay.
+
+264
+00:12:27,279 --> 00:12:31,839
+Pero necesitamos procesar los datos y
+
+265
+00:12:29,600 --> 00:12:36,320
+retornar las diferentes piezas. Ahora mismo
+
+266
+00:12:31,839 --> 00:12:39,279
+tenemos sabemos que tenemos datos para
+
+267
+00:12:36,320 --> 00:12:42,560
+los títulos mensuales. Tenemos datos para la
+
+268
+00:12:39,279 --> 00:12:44,320
+vista de hábitos mensuales. Okay. Así que tenemos dos
+
+269
+00:12:42,560 --> 00:12:48,000
+tipos diferentes de datos que necesitamos
+
+270
+00:12:44,320 --> 00:12:49,519
+procesar y extraer de los archivos.
+
+271
+00:12:48,000 --> 00:12:53,360
+Después de eso vamos a usar la
+
+272
+00:12:49,519 --> 00:12:55,680
+clase repositorio para guardar los datos. Esta
+
+273
+00:12:53,360 --> 00:12:58,480
+clase va a tener la única
+
+274
+00:12:55,680 --> 00:13:00,639
+responsabilidad de guardar los datos. Hoy
+
+275
+00:12:58,480 --> 00:13:02,639
+siempre va a guardar los datos que
+
+276
+00:13:00,639 --> 00:13:04,880
+están siendo proporcionados por el procesador de datos.
+
+277
+00:13:02,639 --> 00:13:08,800
+Okay, los mismos datos. Pero hoy va
+
+278
+00:13:04,880 --> 00:13:11,680
+a guardarlos en un archivo CSV.
+
+279
+00:13:08,800 --> 00:13:13,680
+Mañana podría guardarlos en JSON. El
+
+280
+00:13:11,680 --> 00:13:17,839
+día después podrían ser guardados en un Google
+
+281
+00:13:13,680 --> 00:13:21,440
+Drive. El día después podrían ser guardados en una
+
+282
+00:13:17,839 --> 00:13:24,000
+base de datos SQL. ¿Okay? No
+
+283
+00:13:21,440 --> 00:13:28,000
+importa. Esta clase es la que
+
+284
+00:13:24,000 --> 00:13:31,760
+contendrá toda la lógica que tomará
+
+285
+00:13:28,000 --> 00:13:34,880
+interactuar con el lugar fuente donde
+
+286
+00:13:31,760 --> 00:13:37,200
+vamos a almacenar los datos.
+
+287
+00:13:34,880 --> 00:13:40,639
+Después de eso vamos a hacer una clase
+
+288
+00:13:37,200 --> 00:13:43,440
+que solo hable sobre cosas gráficas. En
+
+289
+00:13:40,639 --> 00:13:47,360
+este caso será una clase de datos
+
+290
+00:13:43,440 --> 00:13:50,079
+de consola gráfica. Un error tipográfico. Okay.
+
+291
+00:13:47,360 --> 00:13:51,839
+Esta será una consola gráfica. Así que
+
+292
+00:13:50,079 --> 00:13:54,079
+vamos a hablar sobre imprimir cosas
+
+293
+00:13:51,839 --> 00:13:56,959
+pero podríamos decir hey quiero hacer esto
+
+294
+00:13:54,079 --> 00:13:59,680
+usando matplotlib o seaborn o quiero
+
+295
+00:13:56,959 --> 00:14:03,440
+hacer esto usando streamlit y
+
+296
+00:13:59,680 --> 00:14:05,680
+poniendo esto en un front end o lo que sea
+
+297
+00:14:03,440 --> 00:14:10,880
+no importa necesitarán tomar
+
+298
+00:14:05,680 --> 00:14:13,600
+algunos datos y después mostrar esos datos
+
+299
+00:14:10,880 --> 00:14:17,199
+y finalmente y la más importante
+
+300
+00:14:13,600 --> 00:14:20,639
+y esta es la que más
+
+301
+00:14:17,199 --> 00:14:23,120
+me gusta es la capa de servicio. La
+
+302
+00:14:20,639 --> 00:14:26,320
+capa de servicio es la que las gobierna
+
+303
+00:14:23,120 --> 00:14:29,040
+a todas. Es la que sabe cómo cambiar
+
+304
+00:14:26,320 --> 00:14:32,079
+las piezas, cómo atar todas las cosas
+
+305
+00:14:29,040 --> 00:14:35,199
+y es donde toda la lógica será
+
+306
+00:14:32,079 --> 00:14:38,240
+deletreada. Okay, tendremos funciones
+
+307
+00:14:35,199 --> 00:14:40,800
+únicas en una de estas clases
+
+308
+00:14:38,240 --> 00:14:43,360
+que dan cosas y el servicio es el
+
+309
+00:14:40,800 --> 00:14:48,320
+que va a decir hey voy
+
+310
+00:14:43,360 --> 00:14:51,040
+a proporcionar este servicio esta creación
+
+311
+00:14:48,320 --> 00:14:52,959
+de datos o esta muestra de estos datos y para
+
+312
+00:14:51,040 --> 00:14:55,279
+hacer eso voy a llamar al
+
+313
+00:14:52,959 --> 00:14:57,920
+cliente y voy a decir hey cliente
+
+314
+00:14:55,279 --> 00:15:00,480
+por favor dame estos datos procesador de datos
+
+315
+00:14:57,920 --> 00:15:04,320
+por favor procesa estos datos de esta
+
+316
+00:15:00,480 --> 00:15:08,720
+manera repositorio guarda esto aquí y luego
+
+317
+00:15:04,320 --> 00:15:11,920
+podría decir a la consola gráfica hey
+
+318
+00:15:08,720 --> 00:15:14,800
+dame estos datos de aquí y déjame
+
+319
+00:15:11,920 --> 00:15:16,399
+mostrar esto de esta manera lo que sea toda
+
+320
+00:15:14,800 --> 00:15:17,600
+la lógica estará ahí y estas van a
+
+321
+00:15:16,399 --> 00:15:20,000
+ser todas las funciones que van a
+
+322
+00:15:17,600 --> 00:15:21,839
+ser usadas por nosotros los usuarios finales
+
+323
+00:15:20,000 --> 00:15:23,519
+okay
+
+324
+00:15:21,839 --> 00:15:25,760
+bien
+
+325
+00:15:23,519 --> 00:15:29,519
+así que veamos algunas claves y déjenme mostrarles
+
+326
+00:15:25,760 --> 00:15:32,000
+un breve ejemplo de lo que vamos
+
+327
+00:15:29,519 --> 00:15:34,160
+a terminar teniendo así que necesitamos
+
+328
+00:15:32,000 --> 00:15:36,240
+mostrar los datos. Necesitamos identificar
+
+329
+00:15:34,160 --> 00:15:38,720
+todas las dependencias.
+
+330
+00:15:36,240 --> 00:15:40,399
+Y déjenme mostrarles cuál será el
+
+331
+00:15:38,720 --> 00:15:45,040
+ejemplo. Este es el roadmap que
+
+332
+00:15:40,399 --> 00:15:48,480
+construí usando el roadmap de GitHub.
+
+333
+00:15:45,040 --> 00:15:50,560
+Tiene muchas más características lindas y pueden
+
+334
+00:15:48,480 --> 00:15:52,160
+hacer la conexión entre todos los
+
+335
+00:15:50,560 --> 00:15:54,880
+tickets.
+
+336
+00:15:52,160 --> 00:16:00,399
+Pero aquí podrán ver que
+
+337
+00:15:54,880 --> 00:16:02,160
+este proyecto tomó 36 tickets. Okay, 36
+
+338
+00:16:00,399 --> 00:16:05,279
+tickets
+
+339
+00:16:02,160 --> 00:16:10,639
+para construir todo desde
+
+340
+00:16:05,279 --> 00:16:13,600
+la base hasta la línea de meta.
+
+341
+00:16:10,639 --> 00:16:17,360
+Aquí podemos ver que hacemos un milestone
+
+342
+00:16:13,600 --> 00:16:20,320
+que es para configurar el proyecto.
+
+343
+00:16:17,360 --> 00:16:22,160
+Pueden ver que separamos todos los
+
+344
+00:16:20,320 --> 00:16:24,240
+tickets entre el cliente, el procesador de
+
+345
+00:16:22,160 --> 00:16:27,920
+datos, el repositorio, la consola
+
+346
+00:16:24,240 --> 00:16:30,480
+gráfica, el servicio. Tenemos un cliente
+
+347
+00:16:27,920 --> 00:16:33,040
+y empezamos a ser capaces de
+
+348
+00:16:30,480 --> 00:16:35,600
+construir todas las cosas.
+
+349
+00:16:33,040 --> 00:16:38,000
+Después de esto vamos a ir más profundo
+
+350
+00:16:35,600 --> 00:16:41,759
+y más profundo en estos. Si
+
+351
+00:16:38,000 --> 00:16:44,320
+quieren tal vez podríamos ver
+
+352
+00:16:41,759 --> 00:16:47,199
+cómo se ve un milestone tenemos los
+
+353
+00:16:44,320 --> 00:16:50,320
+tickets aquí.
+
+354
+00:16:47,199 --> 00:16:52,160
+Veamos un ticket de ejemplo.
+
+355
+00:16:50,320 --> 00:16:54,639
+Podrían ver aquí que pueden ver las
+
+356
+00:16:52,160 --> 00:16:56,959
+dependencias. tienen mucha información pero
+
+357
+00:16:54,639 --> 00:16:58,480
+estoy arruinando las cosas así que vamos a
+
+358
+00:16:56,959 --> 00:17:00,560
+volver y vamos a continuar
+
+359
+00:16:58,480 --> 00:17:03,279
+con la presentación pero esto es solo
+
+360
+00:17:00,560 --> 00:17:08,480
+para mostrarles un poco de cómo se
+
+361
+00:17:03,279 --> 00:17:10,000
+ve esto okay volvamos
+
+362
+00:17:08,480 --> 00:17:12,240
+okay
+
+363
+00:17:10,000 --> 00:17:13,600
+vemos otro error tipográfico aquí y necesito
+
+364
+00:17:12,240 --> 00:17:17,679
+hacer muchas cosas para cambiar
+
+365
+00:17:13,600 --> 00:17:20,640
+esto así que no lo voy a hacer así que ahora
+
+366
+00:17:17,679 --> 00:17:24,079
+vamos a empezar a ver cómo podemos
+
+367
+00:17:20,640 --> 00:17:27,039
+escribir tickets efectivos y una parte clave
+
+368
+00:17:24,079 --> 00:17:30,320
+de esto para mí es hacer descripciones concisas pero
+
+369
+00:17:27,039 --> 00:17:32,960
+aún informativas. Okay, no
+
+370
+00:17:30,320 --> 00:17:35,120
+queremos párrafos interminables de
+
+371
+00:17:32,960 --> 00:17:37,120
+información pero queremos entender un
+
+372
+00:17:35,120 --> 00:17:39,440
+poco qué estamos haciendo, por qué estamos
+
+373
+00:17:37,120 --> 00:17:41,600
+haciendo eso. Okay,
+
+374
+00:17:39,440 --> 00:17:43,679
+necesitamos criterios de aceptación claros. Necesitamos
+
+375
+00:17:41,600 --> 00:17:45,679
+criterios de aceptación que nos ayuden
+
+376
+00:17:43,679 --> 00:17:47,679
+a entender cómo vamos a probar las
+
+377
+00:17:45,679 --> 00:17:50,640
+cosas, cómo vamos a estar seguros de que
+
+378
+00:17:47,679 --> 00:17:54,080
+esto está funcionando como se espera. Este tipo
+
+379
+00:17:50,640 --> 00:17:57,840
+de tickets necesitan ser construidos junto con
+
+380
+00:17:54,080 --> 00:18:01,280
+los PMs o los POs o como sea que los
+
+381
+00:17:57,840 --> 00:18:02,720
+estén llamando en su empresa pero necesitamos
+
+382
+00:18:01,280 --> 00:18:05,520
+tratar de entender que estamos haciendo
+
+383
+00:18:02,720 --> 00:18:07,520
+las cosas como esperamos
+
+384
+00:18:05,520 --> 00:18:09,919
+y esta es una parte que realmente me gusta
+
+385
+00:18:07,520 --> 00:18:12,240
+y es agregar información adicional
+
+386
+00:18:09,919 --> 00:18:14,000
+relevante. ¿Qué es eso?
+
+387
+00:18:12,240 --> 00:18:15,840
+Es el lugar donde vamos a estar
+
+388
+00:18:14,000 --> 00:18:18,880
+trabajando. Imaginen que están en un
+
+389
+00:18:15,840 --> 00:18:22,080
+equipo con más de cinco repositorios
+
+390
+00:18:18,880 --> 00:18:24,320
+de GitHub o cinco microservicios
+
+391
+00:18:22,080 --> 00:18:26,480
+y están empezando a trabajar ahí. Van a
+
+392
+00:18:24,320 --> 00:18:28,880
+necesitar mucha de esta información.
+
+393
+00:18:26,480 --> 00:18:31,360
+Imaginen que han estado trabajando los
+
+394
+00:18:28,880 --> 00:18:32,720
+últimos dos años, tres años y que estuvieron
+
+395
+00:18:31,360 --> 00:18:34,559
+enfocados en dos de esos
+
+396
+00:18:32,720 --> 00:18:35,919
+microservicios cuando necesitan saltar a
+
+397
+00:18:34,559 --> 00:18:38,720
+los otros microservicios. Van a necesitar
+
+398
+00:18:35,919 --> 00:18:41,120
+esta información que les ayudará qué
+
+399
+00:18:38,720 --> 00:18:44,000
+dónde está el lugar que necesitan
+
+400
+00:18:41,120 --> 00:18:45,760
+trabajar. Si tienes cualquier información
+
+401
+00:18:44,000 --> 00:18:49,280
+de negocio,
+
+402
+00:18:45,760 --> 00:18:51,919
+si tienes cualquier información de
+
+403
+00:18:49,280 --> 00:18:54,799
+diseño de sistema, será un lugar bastante bueno
+
+404
+00:18:51,919 --> 00:18:56,480
+para ponerla aquí. Si tienes una
+
+405
+00:18:54,799 --> 00:18:58,240
+implementación similar de algo así,
+
+406
+00:18:56,480 --> 00:19:01,280
+sería un buen lugar para poner eso
+
+407
+00:18:58,240 --> 00:19:03,440
+aquí. Ehm
+
+408
+00:19:01,280 --> 00:19:05,600
+finalmente y esto es lo que para
+
+409
+00:19:03,440 --> 00:19:09,679
+mí es más importante para construir
+
+410
+00:19:05,600 --> 00:19:12,000
+visibilidad tanto para el negocio como para
+
+411
+00:19:09,679 --> 00:19:13,919
+los desarrolladores son las
+
+412
+00:19:12,000 --> 00:19:16,160
+dependencias explícitas entre los tickets. Necesitas
+
+413
+00:19:13,919 --> 00:19:19,280
+saber quién te está bloqueando, quién no
+
+414
+00:19:16,160 --> 00:19:21,840
+te está bloqueando, qué te está bloqueando
+
+415
+00:19:19,280 --> 00:19:23,679
+más que quién.
+
+416
+00:19:21,840 --> 00:19:26,640
+Bien, empecemos a ver algunos tickets
+
+417
+00:19:23,679 --> 00:19:29,600
+y hablemos un poco sobre ellos.
+
+418
+00:19:26,640 --> 00:19:31,919
+Este será un ticket para implementar la
+
+419
+00:19:29,600 --> 00:19:34,640
+clase base. Bien, para hacer esto
+
+420
+00:19:31,919 --> 00:19:37,120
+porque esto era nuestro refactor y sabía
+
+421
+00:19:34,640 --> 00:19:40,640
+cuáles son las cosas que vamos a
+
+422
+00:19:37,120 --> 00:19:42,720
+necesitar de esta clase específica. Dije oye
+
+423
+00:19:40,640 --> 00:19:44,720
+qué tal si tenemos un ticket que cree la
+
+424
+00:19:42,720 --> 00:19:47,919
+clase base, cree la configuración base
+
+425
+00:19:44,720 --> 00:19:49,440
+para esto y cree todas las
+
+426
+00:19:47,919 --> 00:19:52,400
+diferentes funciones que vamos a
+
+427
+00:19:49,440 --> 00:19:55,600
+exponer de esta clase
+
+428
+00:19:52,400 --> 00:19:58,640
+con un error de no implementado. Así que después
+
+429
+00:19:55,600 --> 00:20:01,360
+de eso cada miembro del equipo podría entrar
+
+430
+00:20:58,640 --> 00:20:04,000
+y empezar a trabajar en esas funciones
+
+431
+00:20:01,360 --> 00:20:06,799
+sin tener conflictos de merge y
+
+432
+00:20:04,000 --> 00:20:11,200
+demás. Así es como estructuramos este
+
+433
+00:20:06,799 --> 00:20:14,000
+ticket y todos los tickets aquí. Así que la
+
+434
+00:20:11,200 --> 00:20:16,160
+descripción: esta clase es responsable
+
+435
+00:20:14,000 --> 00:20:18,559
+de recibir datos del mostrador.
+
+436
+00:20:16,160 --> 00:20:20,880
+Bien. Debe acceder a una
+
+437
+00:20:18,559 --> 00:20:23,200
+ruta de configuración en la máquina
+
+438
+00:20:20,880 --> 00:20:25,600
+usando este script.
+
+439
+00:20:23,200 --> 00:20:27,360
+ehm esta variable necesita ser configurable
+
+440
+00:20:25,600 --> 00:20:29,840
+bla bla bla bla bla. Aquí estamos
+
+441
+00:20:27,360 --> 00:20:33,679
+explicando qué necesitamos y por qué
+
+442
+00:20:29,840 --> 00:20:36,400
+lo necesitamos. Criterios de aceptación. Necesitamos
+
+443
+00:20:33,679 --> 00:20:41,520
+una clase de cliente local. Necesitamos un
+
+444
+00:20:36,400 --> 00:20:44,960
+directorio configurable. Bien, necesitamos
+
+445
+00:20:41,520 --> 00:20:49,200
+todas estas funciones con un error de
+
+446
+00:20:44,960 --> 00:20:52,240
+no implementado y esta con ehm
+
+447
+00:20:49,200 --> 00:20:56,400
+implementada y probada. Bien, esto está
+
+448
+00:20:52,240 --> 00:20:58,640
+claro. No hay manera de fallar si
+
+449
+00:20:56,400 --> 00:21:00,640
+tienes este tipo de criterios de aceptación. Perdón
+
+450
+00:20:58,640 --> 00:21:03,200
+por ser así, pero soy un
+
+451
+00:21:00,640 --> 00:21:06,080
+poco apasionado cuando hablo. Eh,
+
+452
+00:21:03,200 --> 00:21:07,760
+y aquí qué tienes? Tienes toda
+
+453
+00:21:06,080 --> 00:21:09,919
+la información y enlaces. Tienes la
+
+454
+00:21:07,760 --> 00:21:13,120
+documentación del gateway de otra charla
+
+455
+00:21:09,919 --> 00:21:15,520
+que hice. Tienes todos los datos
+
+456
+00:21:13,120 --> 00:21:18,000
+de ejemplo. Esto es increíble. Y
+
+457
+00:21:15,520 --> 00:21:21,360
+tienes la pantalla de ejemplo. Eh, y
+
+458
+00:21:18,000 --> 00:21:25,760
+finalmente, tenemos las dependencias. Bien,
+
+459
+00:21:21,360 --> 00:21:27,919
+volvamos a la presentación.
+
+460
+00:21:25,760 --> 00:21:30,720
+Bien, creo que un ticket bien documentado
+
+461
+00:21:27,919 --> 00:21:32,960
+era el que vimos antes. Y
+
+462
+00:21:30,720 --> 00:21:35,760
+aquí hay un ticket más con algunos
+
+463
+00:21:32,960 --> 00:21:38,720
+ejemplos porque estamos hablando de
+
+464
+00:21:35,760 --> 00:21:41,200
+cosas gráficas y para que veas qué
+
+465
+00:21:38,720 --> 00:21:44,320
+queremos mostrar. Este es un ejemplo.
+
+466
+00:21:41,200 --> 00:21:46,640
+Aquí tenemos los criterios y aquí puedes
+
+467
+00:21:44,320 --> 00:21:50,720
+ver qué necesitamos mostrar, qué necesita
+
+468
+00:21:46,640 --> 00:21:53,039
+ser mostrado. Así que podrás
+
+469
+00:21:50,720 --> 00:21:56,000
+tener una vista clara de qué necesitamos
+
+470
+00:21:53,039 --> 00:21:58,400
+desarrollar en este caso. En la mayoría
+
+471
+00:21:56,000 --> 00:22:00,080
+de los casos esto será algo de Figma
+
+472
+00:21:58,400 --> 00:22:03,360
+si tienes frontend o cosas
+
+473
+00:22:00,080 --> 00:22:06,480
+así. Bien. Y otra vez info y enlaces tenemos
+
+474
+00:22:03,360 --> 00:22:09,360
+las dependencias y tenemos todos
+
+475
+00:22:06,480 --> 00:22:11,919
+los criterios de aceptación y la
+
+476
+00:22:09,360 --> 00:22:15,440
+descripción.
+
+477
+00:22:11,919 --> 00:22:17,919
+Bien. Con esto tenemos una vista
+
+478
+00:22:15,440 --> 00:22:21,200
+general rápida. Esto es, podríamos ir
+
+479
+00:22:17,919 --> 00:22:23,120
+más y más profundo en esto pero para mí
+
+480
+00:22:21,200 --> 00:22:24,880
+no va a tener sentido ahora mismo.
+
+481
+00:22:23,120 --> 00:22:26,880
+Es para que empieces a explorar con
+
+482
+00:22:24,880 --> 00:22:28,000
+tu equipo y trates de entender cuáles
+
+483
+00:22:26,880 --> 00:22:30,080
+son las cosas que necesitas en un
+
+484
+00:22:28,000 --> 00:22:32,559
+ticket. Cuáles son las cosas que te permiten
+
+485
+00:22:30,080 --> 00:22:36,159
+desbloquearte fácilmente?
+
+486
+00:22:32,559 --> 00:22:39,440
+Y como también vas a ver aquí,
+
+487
+00:22:36,159 --> 00:22:45,080
+volvamos aquí
+
+488
+00:22:39,440 --> 00:22:45,080
+y vayamos a los proyectos.
+
+489
+00:22:47,440 --> 00:22:53,799
+Aquí tenemos 37 tickets. 36 tickets.
+
+490
+00:22:50,799 --> 00:22:53,799
+Bien,
+
+491
+00:22:54,559 --> 00:22:59,120
+esto no es mucho trabajo. Esto es
+
+492
+00:22:56,559 --> 00:23:02,159
+algo que podríamos hacer
+
+493
+00:22:59,120 --> 00:23:04,640
+no en una semana, no en un sprint, pero
+
+494
+00:23:02,159 --> 00:23:09,039
+realmente podríamos trabajar en esto. Pero el factor
+
+495
+00:23:04,640 --> 00:23:13,679
+clave es crear tickets pequeños,
+
+496
+00:23:09,039 --> 00:23:16,480
+funciones pequeñas. Cada función aquí tiene
+
+497
+00:23:13,679 --> 00:23:18,159
+su propio ticket. No es crear el
+
+498
+00:23:16,480 --> 00:23:20,640
+cliente y construir toda la funcionalidad
+
+499
+00:23:18,159 --> 00:23:23,679
+en el cliente. No, empecemos
+
+500
+00:23:20,640 --> 00:23:25,520
+haciendo esto pequeño y esto se hace para
+
+501
+00:23:23,679 --> 00:23:27,120
+entender, se hace
+
+502
+00:23:25,520 --> 00:23:29,600
+entendiendo las diferentes
+
+503
+00:23:27,120 --> 00:23:32,960
+responsabilidades y cómo podríamos unirlas
+
+504
+00:23:29,600 --> 00:23:35,760
+para ver oye si construyo esta
+
+505
+00:23:32,960 --> 00:23:38,320
+pequeña parte del cliente y si construyo
+
+506
+00:23:35,760 --> 00:23:40,640
+esta pequeña parte del procesador de datos
+
+507
+00:23:38,320 --> 00:23:42,640
+y si construyo esta pequeña parte del
+
+508
+00:23:40,640 --> 00:23:45,679
+repositorio y si construyo esta pequeña
+
+509
+00:23:42,640 --> 00:23:49,600
+parte de la herramienta gráfica de consola bla bla
+
+510
+00:23:45,679 --> 00:23:54,080
+bla bla clase se me olvidó, si
+
+511
+00:23:49,600 --> 00:23:56,799
+pudiese dar una funcionalidad pequeña. Bien, así que
+
+512
+00:23:54,080 --> 00:23:59,919
+estamos haciendo partes pequeñas para cada parte
+
+513
+00:23:56,799 --> 00:24:02,320
+del trabajo. Así que tenemos
+
+514
+00:23:59,919 --> 00:24:05,120
+gratificación instantánea, algo que todos
+
+515
+00:24:02,320 --> 00:24:08,240
+necesitamos. Bien, tenemos cosas pequeñas,
+
+516
+00:24:05,120 --> 00:24:10,240
+vamos a pelear contra un problema a la vez
+
+517
+00:24:08,240 --> 00:24:12,880
+y no estoy hablando de issues de
+
+518
+00:24:10,240 --> 00:24:15,600
+github. Estoy hablando de cosas
+
+519
+00:24:12,880 --> 00:24:19,120
+que necesitamos resolver una a la vez, una
+
+520
+00:24:15,600 --> 00:24:21,440
+parte pequeña. Si vamos, si tratamos de
+
+521
+00:24:19,120 --> 00:24:23,440
+pelear con todo al mismo tiempo vamos
+
+522
+00:24:21,440 --> 00:24:25,919
+a sobrecargarnos, vamos
+
+523
+00:24:23,440 --> 00:24:28,080
+a quemarnos y eso no es
+
+524
+00:24:25,919 --> 00:24:30,880
+algo que queremos. Así que trata de ser
+
+525
+00:24:28,080 --> 00:24:34,720
+inteligente, trata de dividir el trabajo en la
+
+526
+00:24:30,880 --> 00:24:37,440
+parte más pequeña eh que puedas y luego haz
+
+527
+00:24:34,720 --> 00:24:41,120
+muchos tickets, siéntete libre de hacer
+
+528
+00:24:37,440 --> 00:24:44,000
+muchos tickets, muchos tickets pequeños.
+
+529
+00:24:41,120 --> 00:24:46,159
+Eh no es malo. Realmente me gusta trabajar
+
+530
+00:24:44,000 --> 00:24:49,440
+así.
+
+531
+00:24:46,159 --> 00:24:51,440
+Ahora sigamos.
+
+532
+00:24:49,440 --> 00:24:54,400
+Bien, vamos a ver los diferentes
+
+533
+00:24:51,440 --> 00:24:57,840
+hitos que creé. Tuvimos un vistazo
+
+534
+00:24:54,400 --> 00:25:00,080
+de eso antes. Vamos a ver por qué
+
+535
+00:24:57,840 --> 00:25:01,840
+elegí implementar todas las
+
+536
+00:25:00,080 --> 00:25:04,080
+clases base.
+
+537
+00:25:01,840 --> 00:25:07,120
+Vamos a ver todos los datos de prueba
+
+538
+00:25:04,080 --> 00:25:11,600
+que creé y preparé para que esto fuera
+
+539
+00:25:07,120 --> 00:25:13,520
+construido. Y bueno, como viste antes, tenemos
+
+540
+00:25:11,600 --> 00:25:15,679
+tickets muy bien documentados.
+
+541
+00:25:13,520 --> 00:25:19,240
+Bien. Así que empecemos por los hitos
+
+542
+00:25:15,679 --> 00:25:19,240
+que creé.
+
+543
+00:25:19,600 --> 00:25:23,840
+Ups.
+
+544
+00:25:21,200 --> 00:25:26,320
+Como puedes ver aquí,
+
+545
+00:25:23,840 --> 00:25:28,960
+tenemos la configuración, la configuración del
+
+546
+00:25:26,320 --> 00:25:32,159
+proyecto
+
+547
+00:25:28,960 --> 00:25:34,240
+como el primer hito. Este hito
+
+548
+00:25:32,159 --> 00:25:36,640
+consiste en crear la estructura del
+
+549
+00:25:34,240 --> 00:25:38,880
+proyecto. Esto sería usando una plantilla
+
+550
+00:25:36,640 --> 00:25:42,000
+si tienes una plantilla en tu empresa.
+
+551
+00:25:38,880 --> 00:25:44,880
+Modificar los campos de ejemplo
+
+552
+00:25:42,000 --> 00:25:48,400
+a usar. Esto es parte de la configuración. Bien,
+
+553
+00:25:44,880 --> 00:25:50,640
+necesitamos agregar todos los ejemplos o todos
+
+554
+00:25:48,400 --> 00:25:53,679
+los datos de prueba en este caso que
+
+555
+00:25:50,640 --> 00:25:55,600
+tenemos, esto es una parte clave
+
+556
+00:25:53,679 --> 00:25:58,000
+de construir el proyecto para permitir al
+
+557
+00:25:55,600 --> 00:26:01,200
+equipo trabajar después sin
+
+558
+00:25:58,000 --> 00:26:03,919
+problemas. Y después de eso, elijo los
+
+559
+00:26:01,200 --> 00:26:07,039
+tickets base que necesito implementar en
+
+560
+00:26:03,919 --> 00:26:12,559
+cada clase para permitir al equipo
+
+561
+00:26:07,039 --> 00:26:15,039
+ir a modo completo eh después de eso. Así que como puedes
+
+562
+00:26:12,559 --> 00:26:17,520
+ver creé la clase base de la
+
+563
+00:26:15,039 --> 00:26:20,640
+herramienta gráfica de consola. Creé la clase
+
+564
+00:26:17,520 --> 00:26:22,880
+base con una eh función implementada
+
+565
+00:26:20,640 --> 00:26:25,360
+del procesador de datos. Creé el
+
+566
+00:26:22,880 --> 00:26:30,320
+servicio, la clase, el procesador de datos, el
+
+567
+00:26:25,360 --> 00:26:33,279
+repositorio y el cliente. Bien. Eh sí.
+
+568
+00:26:30,320 --> 00:26:36,559
+Bien. Ahora veamos los otros
+
+569
+00:26:33,279 --> 00:26:40,240
+hitos. Qué tengo aquí? Tenemos
+
+570
+00:26:36,559 --> 00:26:44,159
+el cliente con todas las funciones como
+
+571
+00:26:40,240 --> 00:26:46,159
+ves. Así que aquí implemento estos tres como
+
+572
+00:26:44,159 --> 00:26:48,559
+ves, creé, implementé estos tres
+
+573
+00:26:46,159 --> 00:26:52,960
+que son independientes. Quiero obtener los
+
+574
+00:26:48,559 --> 00:26:55,919
+hábitos de campo por mes. Quiero obtener los
+
+575
+00:26:52,960 --> 00:26:58,640
+hábitos mensuales por mes
+
+576
+00:26:55,919 --> 00:27:01,840
+y tengo estos dos que no necesito
+
+577
+00:27:58,640 --> 00:27:06,240
+hacer ahora mismo pero puedo hacerlo
+
+578
+00:27:01,840 --> 00:27:08,880
+después en otro estado. Ahora
+
+579
+00:27:06,240 --> 00:27:12,640
+lo mismo con el procesador de datos.
+
+580
+00:27:08,880 --> 00:27:15,039
+Necesito procesar esos datos en dos
+
+581
+00:27:12,640 --> 00:27:17,200
+formas diferentes y aquí están las
+
+582
+00:27:15,039 --> 00:27:20,159
+funciones para hacer eso. Bastante
+
+583
+00:27:17,200 --> 00:27:22,000
+fácil, muy bien documentado con toda
+
+584
+00:27:20,159 --> 00:27:25,120
+la información, con todos los enlaces,
+
+585
+00:27:22,000 --> 00:27:27,679
+con las dependencias.
+
+586
+00:27:25,120 --> 00:27:31,559
+Cualquiera puede venir aquí y empezar a trabajar
+
+587
+00:27:27,679 --> 00:27:31,559
+en lo que quiera.
+
+588
+00:27:32,000 --> 00:27:39,279
+Aquí tenemos el repositorio.
+
+589
+00:27:35,279 --> 00:27:42,559
+Tengo todas las cosas implementadas aquí.
+
+590
+00:27:39,279 --> 00:27:44,559
+Tenemos la gráfica de consola. Lo mismo.
+
+591
+00:27:42,559 --> 00:27:47,600
+Todas las funciones que están implementadas
+
+592
+00:27:44,559 --> 00:27:50,320
+que necesitan ser usadas. Tienes aquí todas
+
+593
+00:27:47,600 --> 00:27:52,240
+las cosas separadas y es fácil de
+
+594
+00:27:50,320 --> 00:27:56,000
+entender y no vas a pisar
+
+595
+00:27:52,240 --> 00:27:59,600
+el pie de nadie más. E hice este
+
+596
+00:27:56,000 --> 00:28:01,520
+proyecto para el Py Camp de 2025 con la
+
+597
+00:27:59,600 --> 00:28:04,080
+idea de que podría tener gente
+
+598
+00:28:01,520 --> 00:28:06,000
+saltando aquí diciendo, "Oye, quiero tratar
+
+599
+00:28:04,080 --> 00:28:08,960
+de mostrar cosas en la consola. Oye, aquí
+
+600
+00:28:06,000 --> 00:28:11,520
+tienes algo que puedes hacer y no
+
+601
+00:28:08,960 --> 00:28:14,880
+estás siendo bloqueado por ninguna otra parte
+
+602
+00:28:11,520 --> 00:28:17,600
+del eh del flujo de trabajo. Quiero
+
+603
+00:28:14,880 --> 00:28:19,840
+saber cómo
+
+604
+00:28:17,600 --> 00:28:23,600
+procesar algunos datos. Quiero jugar con
+
+605
+00:28:19,840 --> 00:28:26,080
+eso. Aquí tienes. Quiero obtener algunos. Podré
+
+606
+00:28:23,600 --> 00:28:29,200
+proveer a la gente en
+
+607
+00:28:26,080 --> 00:28:31,760
+el py camp herramientas para jugar con lo que
+
+608
+00:28:29,200 --> 00:28:35,159
+quieran sin ser bloqueados por
+
+609
+00:28:31,760 --> 00:28:35,159
+nadie más.
+
+610
+00:28:35,520 --> 00:28:40,159
+Bien, volvamos.
+
+611
+00:28:38,399 --> 00:28:45,399
+Echemos un vistazo a los datos, a los
+
+612
+00:28:40,159 --> 00:28:45,399
+datos base que tenemos aquí. Así que,
+
+613
+00:28:48,320 --> 00:28:54,399
+estos son
+
+614
+00:28:50,960 --> 00:28:57,679
+todos los datos que tendrás. Bien,
+
+615
+00:28:54,399 --> 00:29:00,159
+necesitarás procesar estos datos.
+
+616
+00:29:57,679 --> 00:29:04,080
+Y si ves aquí, creé un montón de
+
+617
+00:29:00,159 --> 00:29:05,840
+datos dummy usando un script eh hecho por
+
+618
+00:29:04,080 --> 00:29:09,360
+la inteligencia artificial que realmente
+
+619
+00:29:05,840 --> 00:29:11,120
+me ayudó a construir algunos datos dummy
+
+620
+00:29:09,360 --> 00:29:13,600
+y tendrás todas las cosas que
+
+621
+00:29:11,120 --> 00:29:18,960
+necesitas procesar. Así que será fácil
+
+622
+00:29:13,600 --> 00:29:21,039
+para ti probar, jugar, entender.
+
+623
+00:29:18,960 --> 00:29:24,000
+Bien. Así que aquí podemos ver muchas
+
+624
+00:29:21,039 --> 00:29:28,000
+pruebas que se están haciendo usando los datos
+
+625
+00:29:24,000 --> 00:29:30,480
+que tenemos aquí que son algunos
+
+626
+00:29:28,000 --> 00:29:32,960
+datos dummy. Bien. Así que podemos revisar las
+
+627
+00:29:30,480 --> 00:29:36,320
+cosas, podemos ver que estamos mostrando
+
+628
+00:29:32,960 --> 00:29:38,559
+las cosas como queremos aquí usando este eh
+
+629
+00:29:36,320 --> 00:29:40,720
+este tipo de código que parece bastante
+
+630
+00:29:38,559 --> 00:29:43,679
+loco pero está mostrando lo que realmente
+
+631
+00:29:40,720 --> 00:29:46,240
+queremos. Y de esta manera podemos jugar. Tengo
+
+632
+00:29:43,679 --> 00:29:50,159
+muchas pruebas y hacer cosas. Y
+
+633
+00:29:46,240 --> 00:29:52,960
+tengo os aquí que realmente me ayuda y
+
+634
+00:29:50,159 --> 00:29:55,840
+disfruto poder mostrar todos estos datos
+
+635
+00:29:52,960 --> 00:29:58,640
+y hacer commit de algunas cosas aquí. Así que
+
+636
+00:29:55,840 --> 00:30:01,679
+eso estuvo bastante bien.
+
+637
+00:29:58,640 --> 00:30:04,480
+Bien. Tickets bien documentados. Otra vez
+
+638
+00:30:01,679 --> 00:30:10,799
+vimos eso antes. Tomemos tiempo
+
+639
+00:30:04,480 --> 00:30:12,559
+para hablar sobre testing. Bien.
+
+640
+00:30:10,799 --> 00:30:15,679
+Cuál es la diferencia entre las pruebas
+
+641
+00:30:12,559 --> 00:30:18,799
+unitarias y las pruebas de integración?
+
+642
+00:30:15,679 --> 00:30:22,159
+En este caso, tendremos mayormente pruebas
+
+643
+00:30:18,799 --> 00:30:25,279
+unitarias porque no estamos usando servicios
+
+644
+00:30:22,159 --> 00:30:29,120
+de terceros como por ejemplo un cliente de Google Drive
+
+645
+00:30:25,279 --> 00:30:32,320
+o un cliente MySQL o lo que sea o
+
+646
+00:30:29,120 --> 00:30:34,799
+un repositorio MySQL. No estamos haciendo
+
+647
+00:30:32,320 --> 00:30:37,520
+muchas de esas cosas. Así que podemos, no
+
+648
+00:30:34,799 --> 00:30:40,960
+necesitamos mockear cosas para hacer lo que
+
+649
+00:30:37,520 --> 00:30:43,919
+necesitamos. Pero básicamente las pruebas unitarias
+
+650
+00:30:40,960 --> 00:30:46,159
+serán las que traten de hacer las
+
+651
+00:30:43,919 --> 00:30:48,640
+cosas de la manera más pequeña posible.
+
+652
+00:30:46,159 --> 00:30:50,240
+Bien, vamos a probar cada
+
+653
+00:30:48,640 --> 00:30:53,279
+función. Si entras aquí, vas
+
+654
+00:30:50,240 --> 00:30:56,080
+a ver pruebas para cada función y
+
+655
+00:30:53,279 --> 00:30:58,480
+funciones helper que tenemos en el
+
+656
+00:30:56,080 --> 00:31:01,440
+código. Vamos a probar cada una de
+
+657
+00:30:58,480 --> 00:31:03,600
+ellas para asegurar que están
+
+658
+00:31:01,440 --> 00:31:06,320
+haciendo lo que realmente necesitamos, lo que
+
+659
+00:31:03,600 --> 00:31:08,559
+realmente queremos. Bien. Y esto es también una
+
+660
+00:31:06,320 --> 00:31:11,440
+gran documentación. Y luego cuando
+
+661
+00:31:08,559 --> 00:31:15,919
+llegamos a las pruebas de integración en el caso
+
+662
+00:31:11,440 --> 00:31:18,240
+de un producto eh más corporativo
+
+663
+00:31:15,919 --> 00:31:21,520
+verás que tendrás todas las
+
+664
+00:31:18,240 --> 00:31:23,360
+cosas eh con la base de datos por ejemplo
+
+665
+00:31:21,520 --> 00:31:25,600
+con una base de datos dummy, no una base de datos real
+
+666
+00:31:23,360 --> 00:31:29,120
+sino una base de datos dummy con un
+
+667
+00:31:25,600 --> 00:31:31,200
+docker compose pero el mismo motor de base de datos,
+
+668
+00:31:29,120 --> 00:31:32,960
+todas las cosas y probarás todas las
+
+669
+00:31:31,200 --> 00:31:36,799
+cosas ahí para ver que están
+
+670
+00:31:32,960 --> 00:31:39,679
+funcionando como funcionan. No deberíamos eh
+
+671
+00:31:36,799 --> 00:31:41,840
+abusar del mocking de las cosas. Está
+
+672
+00:31:39,679 --> 00:31:44,159
+bien poder mockear algunas cosas
+
+673
+00:31:41,840 --> 00:31:46,240
+a veces, pero es importante también
+
+674
+00:31:44,159 --> 00:31:48,080
+entender cómo funcionan todas juntas.
+
+675
+00:31:46,240 --> 00:31:50,880
+Y en las pruebas de integración,
+
+676
+00:31:48,080 --> 00:31:52,960
+verás por ejemplo todas las cosas del
+
+677
+00:31:50,880 --> 00:31:54,880
+servicio. El servicio que es el que
+
+678
+00:31:52,960 --> 00:31:56,559
+integra todas las cosas será
+
+679
+00:31:54,880 --> 00:31:59,039
+el que integre las cosas y
+
+680
+00:31:56,559 --> 00:32:02,399
+tendrás todo el flujo ahí.
+
+681
+00:31:59,039 --> 00:32:04,159
+Bien. Así que eso es eh algo que quiero
+
+682
+00:32:02,399 --> 00:32:05,760
+aclarar que para mí es bastante
+
+683
+00:32:04,159 --> 00:32:07,679
+importante.
+
+684
+00:32:05,760 --> 00:32:10,720
+También puedes hacer pruebas de contrato por
+
+685
+00:32:07,679 --> 00:32:12,159
+ejemplo, esas son otro tipo de pruebas
+
+686
+00:32:10,720 --> 00:32:14,480
+que puedes hacer cuando estás usando
+
+687
+00:32:12,159 --> 00:32:17,120
+servicios de terceros, dependes de
+
+688
+00:32:14,480 --> 00:32:19,120
+una API y quieres verificar que está
+
+689
+00:32:17,120 --> 00:32:22,320
+devolviendo siempre los datos que
+
+690
+00:32:19,120 --> 00:32:24,399
+esperas. Haces una llamada, verificas que
+
+691
+00:32:22,320 --> 00:32:27,440
+tienes los datos y eso es todo. Esa es
+
+692
+00:32:24,399 --> 00:32:31,760
+una prueba de contrato. Puedes hacer pruebas
+
+693
+00:32:27,440 --> 00:32:36,240
+end to end. Puedes hacer pruebas de API como llamamos eh
+
+694
+00:32:31,760 --> 00:32:39,840
+yendo eh con en un stationing o
+
+695
+00:32:36,240 --> 00:32:42,720
+latest. Puedes hacer pruebas golpeando las APIs
+
+696
+00:32:39,840 --> 00:32:44,640
+desde la primera parte y yendo a través
+
+697
+00:32:42,720 --> 00:32:46,880
+de todo el proceso para entender
+
+698
+00:32:44,640 --> 00:32:49,200
+que las cosas están funcionando.
+
+699
+00:32:46,880 --> 00:32:52,880
+Las cosas mínimas que deberías tener
+
+700
+00:32:49,200 --> 00:32:57,120
+son pruebas unitarias y pruebas de integración en
+
+701
+00:32:52,880 --> 00:33:00,120
+el repo con tanta cobertura como
+
+702
+00:32:57,120 --> 00:33:00,120
+puedas.
+
+703
+00:33:02,159 --> 00:33:07,760
+Esta es la parte que los PMs estaban esperando.
+
+704
+00:33:04,720 --> 00:33:10,880
+Entregar visibilidad y
+
+705
+00:33:07,760 --> 00:33:14,080
+funcionalidades incrementales al negocio.
+
+706
+00:33:10,880 --> 00:33:18,000
+Qué grupo increíble de palabras que
+
+707
+00:33:14,080 --> 00:33:21,760
+podrías darle a tus PMs.
+
+708
+00:33:18,000 --> 00:33:24,000
+Perdón, es gracioso para mí, pero es la
+
+709
+00:33:21,760 --> 00:33:27,279
+realidad. Y no es solo para los
+
+710
+00:33:24,000 --> 00:33:30,480
+PMs, también es para el equipo de desarrollo. Es
+
+711
+00:33:27,279 --> 00:33:33,039
+bastante importante para el equipo poder
+
+712
+00:33:30,480 --> 00:33:34,880
+tener todas estas cosas para tener
+
+713
+00:33:33,039 --> 00:33:38,320
+visibilidad para entender qué los está
+
+714
+00:33:34,880 --> 00:33:42,000
+bloqueando, qué no, qué eh podría
+
+715
+00:33:38,320 --> 00:33:45,279
+ayudarnos a ir y avanzar para entregar
+
+716
+00:33:42,000 --> 00:33:47,600
+cosas y poder volver eh para
+
+717
+00:33:45,279 --> 00:33:50,960
+continuar haciendo otras cosas. Un ticket
+
+718
+00:33:47,600 --> 00:33:54,720
+pequeño les permitirá trabajar de una manera
+
+719
+00:33:50,960 --> 00:33:56,880
+más fluida. Así que esto es para todos pero usualmente
+
+720
+00:33:54,720 --> 00:33:59,880
+suena más como si fuera para la gente
+
+721
+00:33:56,880 --> 00:33:59,880
+de negocio.
+
+722
+00:34:00,480 --> 00:34:06,640
+Así que vamos.
+
+723
+00:34:03,840 --> 00:34:10,720
+Aquí viste la hoja de ruta, la hoja de ruta
+
+724
+00:34:06,640 --> 00:34:14,720
+antes. Bien volvamos y aquí
+
+725
+00:34:10,720 --> 00:34:18,159
+verás cómo todo el trabajo está dividido.
+
+726
+00:34:14,720 --> 00:34:22,079
+Tristemente esta herramienta no me permite tener las
+
+727
+00:34:18,159 --> 00:34:24,480
+conexiones entre los tickets. Bien.
+
+728
+00:34:22,079 --> 00:34:27,040
+Pero cuando estás trabajando con herramientas como
+
+729
+00:34:24,480 --> 00:34:29,440
+Jira o con otras herramientas que te permiten
+
+730
+00:34:27,040 --> 00:34:32,480
+tener las dependencias conectadas,
+
+731
+00:34:29,440 --> 00:34:36,000
+verás líneas con estos tickets y
+
+732
+00:34:32,480 --> 00:34:38,320
+podrás entender fácilmente
+
+733
+00:34:36,000 --> 00:34:40,639
+cuáles son los diferentes flujos que
+
+734
+00:34:38,320 --> 00:34:42,800
+necesitas que puedes implementar al mismo
+
+735
+00:34:40,639 --> 00:34:45,119
+tiempo porque al hacer las dependencias
+
+736
+00:34:42,800 --> 00:34:47,440
+podrías ir aquí y decir oye aquí todos
+
+737
+00:34:45,119 --> 00:34:49,520
+estos dependen de este. Bien, una vez que me
+
+738
+00:34:47,440 --> 00:34:52,480
+libre de estos tres tickets, puedo
+
+739
+00:34:49,520 --> 00:34:56,960
+poner tanta gente como tickets tenga
+
+740
+00:34:52,480 --> 00:34:59,040
+para acelerar esta parte en un sprint y
+
+741
+00:34:56,960 --> 00:35:03,359
+librarme de eso y continuar con la
+
+742
+00:34:59,040 --> 00:35:07,920
+siguiente parte y así y así y así.
+
+743
+00:35:03,359 --> 00:35:12,079
+Y otra vez tener estas herramientas te ayuda
+
+744
+00:35:07,920 --> 00:35:16,079
+a planificar el trabajo, te ayuda a pensar y
+
+745
+00:35:12,079 --> 00:35:18,079
+decir, "Oye, ahora mismo solo podemos poner dos
+
+746
+00:35:16,079 --> 00:35:20,160
+personas a trabajar en este sprint en esta
+
+747
+00:35:18,079 --> 00:35:22,880
+funcionalidad porque tenemos partes bloqueantes
+
+748
+00:35:20,160 --> 00:35:24,960
+que no nos permiten poner más de
+
+749
+00:35:22,880 --> 00:35:27,520
+dos personas. En el siguiente sprint tal vez podamos
+
+750
+00:35:24,960 --> 00:35:30,400
+poner cinco personas o seis personas y
+
+751
+00:35:27,520 --> 00:35:32,800
+en lugar de tener gente esperando a
+
+752
+00:35:30,400 --> 00:35:34,880
+otras personas que los están bloqueando, podríamos
+
+753
+00:35:32,800 --> 00:35:37,680
+ponerlos a hacer otras cosas, puedes
+
+754
+00:35:34,880 --> 00:35:39,599
+ir de compras y ver oye puedo hacer este otro
+
+755
+00:35:37,680 --> 00:35:42,320
+ticket, puedo trabajar en esta otra cosa
+
+756
+00:35:39,599 --> 00:35:44,480
+en la que tengo interés, oye quiero
+
+757
+00:35:42,320 --> 00:35:46,720
+cambiar de esta funcionalidad a la otra,
+
+758
+00:35:44,480 --> 00:35:51,119
+puedes hacer cosas una vez que tienes la
+
+759
+00:35:46,720 --> 00:35:53,760
+visión y tienes un camino claro que
+
+760
+00:35:51,119 --> 00:35:56,000
+seguir, va a ser más fácil para ti,
+
+761
+00:35:53,760 --> 00:35:58,720
+para el equipo, para el negocio y
+
+762
+00:35:56,000 --> 00:36:00,640
+podrías dar fechas estimadas aquí,
+
+763
+00:36:58,720 --> 00:36:03,359
+podrías poner todas las cosas aquí y definir
+
+764
+00:36:00,640 --> 00:36:05,119
+todas las dependencias y después de eso
+
+765
+00:36:03,359 --> 00:36:07,200
+podrías decir por ejemplo yo diría
+
+766
+00:36:05,119 --> 00:36:09,599
+que esto tomará como al menos cuatro
+
+767
+00:36:07,200 --> 00:36:12,720
+sprints digamos y puedes negociar
+
+768
+00:36:09,599 --> 00:36:15,359
+con el negocio decir oye esto idealmente
+
+769
+00:36:12,720 --> 00:36:18,320
+tomará cuatro sprints
+
+770
+00:36:15,359 --> 00:36:21,119
+digamos que vamos a que
+
+771
+00:36:18,320 --> 00:36:23,040
+va a tomar cinco y medio para tener
+
+772
+00:36:21,119 --> 00:36:25,280
+algo de respaldo ahí en caso de que
+
+773
+00:36:23,040 --> 00:36:27,280
+algo pase y tal vez
+
+774
+00:36:25,280 --> 00:36:28,960
+necesites eso tal vez no y
+
+775
+00:36:27,280 --> 00:36:31,599
+entregarás a tiempo, le darás
+
+776
+00:36:28,960 --> 00:36:33,760
+visibilidad y cada vez que tengas un
+
+777
+00:36:31,599 --> 00:36:35,680
+problema podrías venir y decir oye hombre
+
+778
+00:36:33,760 --> 00:36:39,440
+esto pasó aquí, encontramos este bug,
+
+779
+00:36:35,680 --> 00:36:41,760
+creamos el ticket, está aquí, esto retrasa
+
+780
+00:36:39,440 --> 00:36:44,560
+el trabajo de esta manera y podrás
+
+781
+00:36:41,760 --> 00:36:47,839
+tener buenas conversaciones y avanzar
+
+782
+00:36:44,560 --> 00:36:50,160
+y que todos estén más felices que tratando de descifrar
+
+783
+00:36:47,839 --> 00:36:52,880
+cómo va la cosa, por qué no va
+
+784
+00:36:50,160 --> 00:36:54,640
+como esperábamos y así.
+
+785
+00:36:52,880 --> 00:36:57,760
+Para mí, este tipo de herramientas gráficas
+
+786
+00:36:54,640 --> 00:37:00,240
+realmente me ayudan a tener buenas conversaciones
+
+787
+00:36:57,760 --> 00:37:03,880
+eh y avanzar y crear funcionalidades
+
+788
+00:37:00,240 --> 00:37:03,880
+de una mejor manera.
+
+789
+00:37:05,280 --> 00:37:10,160
+Así que
+
+790
+00:37:06,800 --> 00:37:13,119
+eso es todo por hoy. Realmente te agradezco
+
+791
+00:37:10,160 --> 00:37:15,760
+pasar tiempo para escucharme y escuchar
+
+792
+00:37:13,119 --> 00:37:18,160
+lo que tengo que decir.
+
+793
+00:37:15,760 --> 00:37:20,960
+Si tienes algún feedback, solo déjamelo
+
+794
+00:37:18,160 --> 00:37:23,680
+saber en los comentarios. Envíame un DM en LinkedIn.
+
+795
+00:37:20,960 --> 00:37:26,640
+Estoy bastante abierto eh a conversar para aprender
+
+796
+00:37:23,680 --> 00:37:28,320
+más. Eh esto es lo que funciona para mí y
+
+797
+00:37:26,640 --> 00:37:31,359
+para los equipos con los que he estado trabajando
+
+798
+00:37:28,320 --> 00:37:33,760
+durante los últimos años. Eh y
+
+799
+00:37:31,359 --> 00:37:35,920
+es algo que está bastante probado en
+
+800
+00:37:33,760 --> 00:37:38,160
+la experiencia.
+
+801
+00:37:35,920 --> 00:37:40,720
+Pero estoy seguro de que no es la mejor manera. No es
+
+802
+00:37:38,160 --> 00:37:42,800
+la manera más increíble. Es una manera
+
+803
+00:37:40,720 --> 00:37:44,960
+que funciona para mí. Y si tienes
+
+804
+00:37:42,800 --> 00:37:49,280
+algo mejor, por favor házmelo saber para
+
+805
+00:37:44,960 --> 00:37:49,280
+que pueda aprender y mejorar. Gracias.
