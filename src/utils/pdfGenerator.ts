@@ -1,7 +1,6 @@
 import jsPDF from 'jspdf';
 import config from '../config.json';
 
-// 1. Generar HTML con estilos para evitar que los bloques se corten
 const generatePDFContent = (): string => {
   const { personalInfo, workExperience, talks, contact } = config;
 
@@ -41,16 +40,19 @@ const generatePDFContent = (): string => {
         <h3 style="color: #1f2937; font-size: 20px; margin-bottom: 15px; border-bottom: 1px solid #d1d5db; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Work Experience</h3>
         ${workExperience.map(job => `
           <div style="margin-bottom: 25px; page-break-inside: avoid; break-inside: avoid;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-              <div>
-                <h4 style="margin: 0; font-size: 16px; color: #1f2937; font-weight: bold;">${job.jobTitle}</h4>
-                <p style="margin: 5px 0 0 0; color: #059669; font-weight: 600; font-size: 14px;">${job.company}</p>
-              </div>
-              <div style="color: #6b7280; font-size: 12px; text-align: right;">
-                ${formatDate(job.startDate, false)} - ${formatDate(job.endDate, job.currentlyWorking)}
-              </div>
-            </div>
-            <ul style="margin: 10px 0 0 20px; padding: 0; color: #4b5563; font-size: 13px;">
+            <!-- Reemplazado Flexbox por Table para compatibilidad -->
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 10px;">
+              <tr>
+                <td style="vertical-align: top; text-align: left;">
+                  <h4 style="margin: 0; font-size: 16px; color: #1f2937; font-weight: bold;">${job.jobTitle}</h4>
+                  <p style="margin: 5px 0 0 0; color: #059669; font-weight: 600; font-size: 14px;">${job.company}</p>
+                </td>
+                <td style="vertical-align: top; text-align: right; color: #6b7280; font-size: 12px; white-space: nowrap;">
+                  ${formatDate(job.startDate, false)} - ${formatDate(job.endDate, job.currentlyWorking)}
+                </td>
+              </tr>
+            </table>
+            <ul style="margin: 5px 0 0 20px; padding: 0; color: #4b5563; font-size: 13px;">
               ${job.responsibilities.map(resp => `<li style="margin-bottom: 5px;">${resp}</li>`).join('')}
             </ul>
           </div>
@@ -80,14 +82,15 @@ const generatePDFContent = (): string => {
   `;
 };
 
-// 2. Función principal utilizando jsPDF.html()
 export const generatePDF = async () => {
   try {
     const pdfContainer = document.createElement('div');
-    pdfContainer.style.position = 'absolute';
-    pdfContainer.style.left = '-9999px';
+    pdfContainer.style.position = 'fixed';
+    pdfContainer.style.left = '0';
     pdfContainer.style.top = '0';
-    pdfContainer.style.width = '210mm'; // Ancho A4
+    pdfContainer.style.zIndex = '-9999';
+    pdfContainer.style.opacity = '0';
+    pdfContainer.style.width = '210mm';
     pdfContainer.style.padding = '15mm';
     pdfContainer.style.boxSizing = 'border-box';
     pdfContainer.style.backgroundColor = 'white';
@@ -109,8 +112,8 @@ export const generatePDF = async () => {
       x: 0,
       y: 0,
       width: 210,
-      windowWidth: 794, // 210mm a 96 DPI
-      autoPaging: 'text', // Evita romper líneas de texto a la mitad
+      windowWidth: 794,
+      autoPaging: 'slice',
       html2canvas: {
         scale: 2,
         useCORS: true,
