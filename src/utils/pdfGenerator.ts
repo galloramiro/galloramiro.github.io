@@ -85,7 +85,6 @@ const generatePDFContent = (): string => {
 export const generatePDF = async () => {
   try {
     const pdfContainer = document.createElement('div');
-    // Posicionar visible para el motor de renderizado pero detrás del body principal
     pdfContainer.style.position = 'fixed';
     pdfContainer.style.left = '0';
     pdfContainer.style.top = '0';
@@ -99,7 +98,7 @@ export const generatePDF = async () => {
     document.body.appendChild(pdfContainer);
 
     const canvas = await html2canvas(pdfContainer, {
-      scale: 2,
+      scale: 1.5,
       useCORS: true,
       backgroundColor: '#ffffff',
       logging: false,
@@ -108,7 +107,7 @@ export const generatePDF = async () => {
     document.body.removeChild(pdfContainer);
 
     const pdf = new jsPDF('p', 'mm', 'a4');
-    const imgData = canvas.toDataURL('image/png');
+    const imgData = canvas.toDataURL('image/jpeg', 0.8);
 
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = pdf.internal.pageSize.getHeight();
@@ -118,14 +117,14 @@ export const generatePDF = async () => {
     let position = 0;
 
     // Primera página
-    pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
+    pdf.addImage(imgData, 'JPEG', 0, position, pdfWidth, imgHeight, undefined, 'FAST');
     heightLeft -= pdfHeight;
 
     // Páginas siguientes
     while (heightLeft > 0) {
       position -= pdfHeight;
       pdf.addPage();
-      pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
+      pdf.addImage(imgData, 'JPEG', 0, position, pdfWidth, imgHeight, undefined, 'FAST');
       heightLeft -= pdfHeight;
     }
 
