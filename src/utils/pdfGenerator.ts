@@ -1,4 +1,5 @@
 import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import config from '../config.json';
 
 const generatePDFContent = (): string => {
@@ -18,7 +19,7 @@ const generatePDFContent = (): string => {
   return `
     <div style="width: 100%; max-width: 100%; margin: 0 auto; line-height: 1.6; font-family: Arial, sans-serif; color: #1f2937;">
       <!-- Header -->
-      <div style="text-align: center; margin-bottom: 30px; border-bottom: 2px solid #059669; padding-bottom: 20px; page-break-inside: avoid; break-inside: avoid;">
+      <div style="text-align: center; margin-bottom: 30px; border-bottom: 2px solid #059669; padding-bottom: 20px;">
         <h1 style="margin: 0; font-size: 28px; color: #1f2937; font-weight: bold;">${personalInfo.fullName}</h1>
         <h2 style="margin: 10px 0 0 0; font-size: 18px; color: #059669; font-weight: normal;">${personalInfo.title}</h2>
         <div style="margin-top: 15px; font-size: 14px; color: #4b5563;">
@@ -28,7 +29,7 @@ const generatePDFContent = (): string => {
       </div>
 
       <!-- About Me -->
-      <div style="margin-bottom: 30px; page-break-inside: avoid; break-inside: avoid;">
+      <div style="margin-bottom: 30px;">
         <h3 style="color: #1f2937; font-size: 20px; margin-bottom: 15px; border-bottom: 1px solid #d1d5db; padding-bottom: 5px;">About Me</h3>
         <div style="color: #4b5563; font-size: 14px;">
           ${personalInfo.bio.split('\n\n').map(paragraph => `<p style="margin: 0 0 12px 0;">${paragraph}</p>`).join('')}
@@ -37,10 +38,9 @@ const generatePDFContent = (): string => {
 
       <!-- Work Experience -->
       <div style="margin-bottom: 30px;">
-        <h3 style="color: #1f2937; font-size: 20px; margin-bottom: 15px; border-bottom: 1px solid #d1d5db; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Work Experience</h3>
+        <h3 style="color: #1f2937; font-size: 20px; margin-bottom: 15px; border-bottom: 1px solid #d1d5db; padding-bottom: 5px;">Work Experience</h3>
         ${workExperience.map(job => `
-          <div style="margin-bottom: 25px; page-break-inside: avoid; break-inside: avoid;">
-            <!-- Reemplazado Flexbox por Table para compatibilidad -->
+          <div style="margin-bottom: 25px;">
             <table style="width: 100%; border-collapse: collapse; margin-bottom: 10px;">
               <tr>
                 <td style="vertical-align: top; text-align: left;">
@@ -61,9 +61,9 @@ const generatePDFContent = (): string => {
 
       <!-- Technical Talks -->
       <div style="margin-bottom: 30px;">
-        <h3 style="color: #1f2937; font-size: 20px; margin-bottom: 15px; border-bottom: 1px solid #d1d5db; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Technical Talks</h3>
+        <h3 style="color: #1f2937; font-size: 20px; margin-bottom: 15px; border-bottom: 1px solid #d1d5db; padding-bottom: 5px;">Technical Talks</h3>
         ${talks.map(talk => `
-          <div style="margin-bottom: 20px; page-break-inside: avoid; break-inside: avoid;">
+          <div style="margin-bottom: 20px;">
             <h4 style="margin: 0 0 8px 0; font-size: 15px; color: #1f2937; font-weight: bold;">${talk.title}</h4>
             <p style="margin: 0 0 8px 0; color: #4b5563; font-size: 13px;">${talk.description}</p>
             <div style="font-size: 12px; color: #059669;">
@@ -75,7 +75,7 @@ const generatePDFContent = (): string => {
       </div>
 
       <!-- Footer -->
-      <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #d1d5db; font-size: 12px; color: #6b7280; page-break-inside: avoid; break-inside: avoid;">
+      <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #d1d5db; font-size: 12px; color: #6b7280;">
         <p style="margin: 0;">This CV was generated from ${personalInfo.fullName}'s personal website</p>
       </div>
     </div>
@@ -85,41 +85,51 @@ const generatePDFContent = (): string => {
 export const generatePDF = async () => {
   try {
     const pdfContainer = document.createElement('div');
+    // Posicionar visible para el motor de renderizado pero detrás del body principal
     pdfContainer.style.position = 'fixed';
     pdfContainer.style.left = '0';
     pdfContainer.style.top = '0';
     pdfContainer.style.zIndex = '-9999';
-    pdfContainer.style.opacity = '0';
     pdfContainer.style.width = '210mm';
     pdfContainer.style.padding = '15mm';
     pdfContainer.style.boxSizing = 'border-box';
-    pdfContainer.style.backgroundColor = 'white';
+    pdfContainer.style.backgroundColor = '#ffffff';
 
     pdfContainer.innerHTML = generatePDFContent();
     document.body.appendChild(pdfContainer);
 
-    const pdf = new jsPDF({
-      orientation: 'p',
-      unit: 'mm',
-      format: 'a4',
+    const canvas = await html2canvas(pdfContainer, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: '#ffffff',
+      logging: false,
     });
 
-    await pdf.html(pdfContainer, {
-      callback: (doc) => {
-        doc.save(`${config.personalInfo.fullName.replace(/\s+/g, '_')}_CV.pdf`);
-        document.body.removeChild(pdfContainer);
-      },
-      x: 0,
-      y: 0,
-      width: 210,
-      windowWidth: 794,
-      autoPaging: 'slice',
-      html2canvas: {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: 'white',
-      },
-    });
+    document.body.removeChild(pdfContainer);
+
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const imgData = canvas.toDataURL('image/png');
+
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+    const imgHeight = (canvas.height * pdfWidth) / canvas.width;
+
+    let heightLeft = imgHeight;
+    let position = 0;
+
+    // Primera página
+    pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
+    heightLeft -= pdfHeight;
+
+    // Páginas siguientes
+    while (heightLeft > 0) {
+      position -= pdfHeight;
+      pdf.addPage();
+      pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
+      heightLeft -= pdfHeight;
+    }
+
+    pdf.save(`${config.personalInfo.fullName.replace(/\s+/g, '_')}_CV.pdf`);
   } catch (error) {
     console.error('Error generating PDF:', error);
     alert('Sorry, there was an error generating the PDF. Please try again.');
