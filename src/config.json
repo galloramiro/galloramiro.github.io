@@ -39,12 +39,27 @@
   ],
   "workExperience": [
     {
+      "company": "Invgate",
+      "companyLogo": "https://github.com/galloramiro/galloramiro.github.io/blob/main/img/logo_eureka_labs.jpg?raw=true",
+      "jobTitle": "Software Engineer",
+      "startDate": "2026-01",
+      "endDate": null,
+      "currentlyWorking": true,
+      "responsibilities": [
+        "Own end-to-end feature lifecycle from PRD analysis, technical feasibility, and constraint assessment to defining high-performance implementation strategies.",
+        "Developed an AI harness and multi-agent workflow to break down complex features into minimal, context-bounded tasks with automated agent implementation and review.",
+        "Built custom AI-driven tools to aggregate application architecture and performance metrics, streamlining analysis for complex systems and high-volume data.",
+        "Identify gaps in PRDs and proactively collaborate with PMs and engineering teams to propose solutions optimizing user experience, code quality, and performance.",
+        "Specialize in backend engineering while leveraging AI-driven workflows to extend capabilities into frontend development."
+      ]
+    },
+    {
       "company": "Eureka Labs",
       "companyLogo": "https://github.com/galloramiro/galloramiro.github.io/blob/main/img/logo_eureka_labs.jpg?raw=true",
       "jobTitle": "Technical Lead",
       "startDate": "2022-09",
-      "endDate": null,
-      "currentlyWorking": true,
+      "endDate": "2026-01",
+      "currentlyWorking": false,
       "responsibilities": [
         "Designed backend architectures for new features and helped align tech solutions with business goals",
         "Created and maintained API contracts and architecture diagrams",
