@@ -19,6 +19,7 @@ export const generatePDF = async () => {
       scale: 2,
       useCORS: true,
       backgroundColor: 'white',
+      logging: true,
       windowWidth: pdfContainer.scrollWidth
     });
 
